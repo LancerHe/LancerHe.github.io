@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Process bar demo</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="http://twitter.github.com/bootstrap/assets/js/jquery.js"></script>
+<style>
+#layout-left, #layout-right,#loading-frame,#loading-wrap {position: absolute;}
+#layout-left{left: 0;width: 190px;z-index: 9;background-color: #ECF7FE;}
+#layout-left a {font-size: 12px; font-family: "微软雅黑"}
+#layout-right, #loading-frame {left: 197px;right: 0;z-index: 10; background: #FFF}
+#loading-frame {background: #000; z-index: 11;}
+#loading-wrap {width: 300px; left: 50%; top:40%; margin-left: -150px;}
+</style>
+<div id="layout-left">
+    <ul id="left-nav" class="nav nav-list">
+        <li class="active"><a href="http://www.crackedzone.com/"><i class="icon-home"></i>Home</a></li>
+        <li class="nav-header">Category</li>
+        <li><a href="http://www.crackedzone.com/category/crphp"><i class="icon-globe"></i>PHP</a></li>
+        <li><a href="http://demo.crackedzone.com/"><i class="icon-star"></i>DEMO</a></li>
+    </ul>
+</div>
+<div id="loading-frame">
+    <div id="loading-wrap">
+        <div class="progress progress-striped active">
+            <div class="bar" style="width: 0%;"></div>
+        </div>
+    </div>
+</div>
+<div id="layout-right">
+    <iframe id="content" frameborder="0" name="content" src="about:blank"></iframe>
+</div>
+
+<script type="text/javascript">
+
+var layout_left_width=190;
+window.onresize = function() {
+    var widths = document.body.scrollWidth-layout_left_width;
+    var heights = document.documentElement.clientHeight-38;
+    $("#content, #loading-frame").height(heights+25).width(widths-10);
+    var heights = document.documentElement.clientHeight-38;
+    $("#layout-left").height(heights+25);
+}
+window.onresize();
+
+//设置透明度遮罩层，该层大小和IFrame一样，用于遮在IFrame上。
+$("#loading-frame").css('opacity', .8).hide();
+
+var interval = 0;
+function loading_start() {
+    if (interval) {
+        clearInterval(interval);
+    }
+    $("#loading-frame .bar").css('width', 0);
+    $("#loading-frame").show();
+    var percent = 0;
+    interval = setInterval(function(){
+        percent += 10;
+        if (percent == 100) {
+            percent = 99;
+        }
+        if (percent < 100) {
+            $("#loading-frame .bar").animate({'width': percent + '%'},'slow');
+        }
+    }, 300);
+}
+
+function loading_complete() {
+    $("#loading-frame .bar").animate({'width':'100%'},'fast');
+    clearInterval(interval);
+    setTimeout(function() {
+        $("#loading-frame").fadeOut("slow");
+    }, 200) 
+}
+
+$("#left-nav a").bind('click', function(){
+    $("#content").attr('src', $(this).attr("href"));
+    loading_start();
+    var iframe = document.getElementById("content");  
+    if (iframe.attachEvent) {  
+        iframe.attachEvent("onload", function() {  
+            loading_complete();
+        });  
+    } else {  
+        iframe.onload = function() {  
+            loading_complete();
+        };  
+    }
+    return false;
+});
+</script>
