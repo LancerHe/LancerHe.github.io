@@ -101,7 +101,7 @@ $(document).bind('scroll', function() {
   if ( disqus_loaded ) 
     return;
 
-  if ( document.getElementById("disqus_thread").offsetTop - document.body.scrollTop < 1000 ) {
+  if ( document.getElementById("disqus_thread").offsetTop - document.body.scrollTop < 2000 ) {
     var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
     dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);

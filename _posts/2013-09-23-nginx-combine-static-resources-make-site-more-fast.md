@@ -3,8 +3,6 @@ title: 使用nginx-http-concat自动合并静态资源，加速你的网站请�
 author: 谇雨
 layout: post
 permalink: /nginx-combine-static-resources-make-site-more-fast.html
-views:
-  - 508
 categories:
   - Linux
 tags:
@@ -13,9 +11,10 @@ tags:
   - 加速网站
   - 合并资源
 ---
+
 首先了解一下 nginx-http-concat，他是一个淘宝的开源Nginx模块，是一个能把多个CSS和JS合并成一个请求的Nginx模块，对于Web性能优化非常有意义。
 
-Github地址：<a href="https://github.com/alibaba/nginx-http-concat" target="_blank">https://github.com/alibaba/nginx-http-concat</a>，
+Github地址：[https://github.com/alibaba/nginx-http-concat](https://github.com/alibaba/nginx-http-concat){:target="_blank"}
 
 先看看淘宝用起来是什么样的，访问淘宝网主页，查看源代码可以看到类似的这样的style/script链接
 
@@ -40,8 +39,7 @@ Github地址：<a href="https://github.com/alibaba/nginx-http-concat" target="_b
     TLS SNI support disabled
     configure arguments: --prefix=/usr/local/nginx --with-http_stub_status_module --with-http_ssl_module --with-http_gzip_static_module
 
-根据查询的版本号下载对应版本的nginx，可以到官方下载指定版本：<a href="http://nginx.org/download/" target="_blank">http://nginx.org/download/</a>
-
+根据查询的版本号下载对应版本的nginx，可以到官方下载指定版本：[http://nginx.org/download/](http://nginx.org/download/){:target="_blank"}  
 我这里使用的是1.3.1
 
     $ wget nginx-1.3.1.tar.gz

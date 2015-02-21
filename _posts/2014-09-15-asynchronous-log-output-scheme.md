@@ -3,13 +3,15 @@ title: 异步日志输出方案
 author: 谇雨
 layout: post
 permalink: /asynchronous-log-output-scheme.html
-views:
-  - 156
 categories:
   - PHP
+tags:
+  - PHP生命周期
+  - 日志输出
+  - 异步日志
 ---
 
-<p align="right">- 深入了解PHP生命周期</p>
+*深入了解PHP生命周期*
 
 ### 一．背景
 
@@ -42,57 +44,51 @@ PHP有两种运行模式：WEB模式，CLI模式
 
 在CLI模式下直接操作php-cgi也需要通过SAPI执行，以下展示了整个处理过程：
 
-[<img src="{{ site.url }}/uploads/2014/09/log-0.jpg" alt="" title="SAPI处理过程" class="aligncenter size-full wp-image-998" />][1]
+![SAPI处理过程]({{ site.url }}/uploads/2014/09/log-0.jpg)
 
-SAPI也叫Service API，在整个请求过程中承担了很重要的角色，外部应用通过SAPI进行对上层调用，所谓的外部应用可以理解为Apache，FastCgi等，上层也就是我们写的PHP程序。
-
+SAPI也叫Service API，在整个请求过程中承担了很重要的角色，外部应用通过SAPI进行对上层调用，所谓的外部应用可以理解为Apache，FastCgi等，上层也就是我们写的PHP程序。  
 以下是SAPI的简单示意图：
 
-[<img src="{{ site.url }}/uploads/2014/09/log-1.jpg" alt="" title="SAPI简单示意图" class="aligncenter size-full wp-image-998" />][2]
+![SAPI简单示意图]({{ site.url }}/uploads/2014/09/log-1.jpg)
 
 当请求调用SAPI时，将会按顺序促发以下几个阶段：
 
-#### MINIT(Module init) 
-该阶段将调用PHP\_MINIT\_FUNCTION(extension)
+1.   **MINIT(Module init)**  
+    该阶段将调用PHP\_MINIT\_FUNCTION(extension)  
+    该函数作用为遍历需要加载的扩展，并初始化扩展，注册模块常量，类等。
 
-该函数作用为遍历需要加载的扩展，并初始化扩展，注册模块常量，类等。
+2.   **RINIT(Request init)**  
+    该阶段将调用 PHP\_RINT\_FUNCTION(extension)  
+    该函数的作用为遍历加载的扩展，并针对请求信息进行一些初始化工作，比如记录请求开始时间，初始化请求$\_POST, $\_GET全局遍历，若开启session模块下，注册全局Session变量等。
 
-#### RINIT(Request init) 
-该阶段将调用 PHP\_RINT\_FUNCTION(extension)
+3.   **Execute php code**  
+    这部分就是自己编写的PHP代码，也就是真正执行的我们代码执行的部分。
 
-该函数的作用为遍历加载的扩展，并针对请求信息进行一些初始化工作，比如记录请求开始时间，初始化请求$\_POST, $\_GET全局遍历，若开启session模块下，注册全局Session变量等。
+4.   **RSHUTDOWN**  
+    该阶段将调用PHP\_RSHUTDOWN\_FUNCTION(extension)  
+    该函数的作用遍历加载的扩展，并针对请求信息进行一些析构工作，比如记录请求结束时间，把相应的输入写入日志，开启session模块下，全局Session变量写到tmp目录下文件等。
 
-Execute php code 
-
-这部分就是自己编写的PHP代码，也就是真正执行的我们代码执行的部分。
-
-#### RSHUTDOWN 
-该阶段将调用PHP\_RSHUTDOWN\_FUNCTION(extension)
-
-该函数的作用遍历加载的扩展，并针对请求信息进行一些析构工作，比如记录请求结束时间，把相应的输入写入日志，开启session模块下，全局Session变量写到tmp目录下文件等。
-
-#### MSHUTDOWN 
-该阶段将调用PHP\_MSHUTDOWN\_FUNCTION(extension)
-
-该函数的作用为当Web请求结束或命令行执行脚本结束后会执行，完成释放资源操作。
+5.   **MSHUTDOWN**  
+    该阶段将调用PHP\_MSHUTDOWN\_FUNCTION(extension)  
+    该函数的作用为当Web请求结束或命令行执行脚本结束后会执行，完成释放资源操作。
 
 可以通过下图直观的看出php执行test.php生命周期的过程：
 
-[<img src="{{ site.url }}/uploads/2014/09/log-2.jpg" alt="" title="PHP生命周期" class="aligncenter size-full wp-image-998" />][3]
+![PHP生命周期]({{ site.url }}/uploads/2014/09/log-2.jpg)
 
-其实我们编写的程序在复杂PHP生命周期中往往只运行在第3步，假如我们的日志能在第4步处理，那是不是可以避免文章开头提出的问题？那么除了利用编写扩展注册PHP\_RSHUTDOWN\_FUNCTION方法，我们还可以通过register\_shutdown\_function()注册的自定义函数，这些自定义函数在我们编写的PHP代码结束的时候将会被调用。
+其实我们编写的程序在复杂PHP生命周期中往往只运行在第3步，假如我们的日志能在第4步处理，那是不是可以避免文章开头提出的问题？那么除了利用编写扩展注册PHP\_RSHUTDOWN\_FUNCTION方法，我们还可以通过`register_shutdown_function()`注册的自定义函数，这些自定义函数在我们编写的PHP代码结束的时候将会被调用。
 
-register_shutdown_function是php系统函数，注册shutdown的函数将会在PHP生命周期中第4阶段进行执行，如程序结束，或出现exit/die等命令后都会触发注册函数。
+`register_shutdown_function()`是php系统函数，注册shutdown的函数将会在PHP生命周期中第4阶段进行执行，如程序结束，或出现`exit`/`die`等命令后都会触发注册函数。
 
 ### 三．程序实现
 
-为此利用register\_shutdown\_function，我们可以设计一个处理事件类，该类能够注册我们需要的事件，在PHP Shutdown的时候针对已经注册的事件进行处理，这些事件中可能就包括我们需要的日志输出。
+为此利用`register_shutdown_function()`，我们可以设计一个处理事件类，该类能够注册我们需要的事件，在PHP Shutdown的时候针对已经注册的事件进行处理，这些事件中可能就包括我们需要的日志输出。
 
 该类实现的功能很简单：
 
-1.  需要一个增加事件的方法，把我们需要的处理事件过程放入；
-2.  需要一个调用事件的方法，把我们增加的所有事件在SHUTDOWN时调用；
-3.  最后需要注册方法，注册调用方法至SHUTDOWN中；
+1.   需要一个增加事件的方法，把我们需要的处理事件过程放入；
+2.   需要一个调用事件的方法，把我们增加的所有事件在SHUTDOWN时调用；
+3.   最后需要注册方法，注册调用方法至SHUTDOWN中；
 
 以下是该类(Service\_Core\_ShutdownEvent)的实现代码：
 
@@ -153,21 +149,15 @@ register_shutdown_function是php系统函数，注册shutdown的函数将会在P
 
 对于编写好的处理事件类，我们使用一个简单的Log类来验证这个注册事件类是否可行，这个Log类(Service\_Core\_NetLog)具体的程序就不展示了，主要演示以下两个方法：
 
-*   Service\_Core\_NetLog::trace(string $string);
-*   Service\_Core\_NetLog::notice(string $string);
+    Service_Core_NetLog::trace(string $string);
+    Service_Core_NetLog::notice(string $string);
 
 两个方法都比较简单，作用往磁盘中按照一定规则输出一行Log，因此我在一个控制器中来测试它，通过Web访问或者CLI的方式请求：
 
-[<img src="{{ site.url }}/uploads/2014/09/log-3.jpg" alt="" title="日志测试" class="aligncenter size-full wp-image-998" />][4]
+![日志测试]({{ site.url }}/uploads/2014/09/log-3.jpg)
 
 通过Sleep的方式来验证，上图红框处可以更加直观的验证有两条日志是在程序结束以后写入磁盘。
 
 ### 四．小结
 
-通过深入了解PHP生命周期，更直观的理解PHP运行的机制，通过注册shutdown方式(register\_shutdown\_function)在PHP程序结束后处理我们需要的逻辑过程，如日志输出，邮件通知等，降低了程序中的处理额外业务逻辑的风险。
-
-
- [1]: {{ site.url }}/uploads/2014/09/log-0.jpg
- [2]: {{ site.url }}/uploads/2014/09/log-1.jpg
- [3]: {{ site.url }}/uploads/2014/09/log-2.jpg
- [4]: {{ site.url }}/uploads/2014/09/log-3.jpg
+通过深入了解PHP生命周期，更直观的理解PHP运行的机制，通过注册shutdown方式(`register_shutdown_function`)在PHP程序结束后处理我们需要的逻辑过程，如日志输出，邮件通知等，降低了程序中的处理额外业务逻辑的风险。

@@ -17,5 +17,5 @@ tags:
 
 解决方法：  
 在其中一个非文字的对象的样式中增加：  
-margin: (容器的line-height &#8211; 对象本身的高度)/2px 0;  
+margin: (容器的line-height -- 对象本身的高度)/2px 0;  
 vertical-align:middle;

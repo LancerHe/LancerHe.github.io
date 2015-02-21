@@ -38,7 +38,7 @@ RewriteRule ^(.*)/space-(username|uid)-(.+)\.html$ $1/space.php?$2=$3
 RewriteRule ^(.*)/tag-(.+)\.html$ $1/tag.php?name=$2
 </IfModule></pre>
 
-如果没有安装 mod_Rewrite，您可以重新编译 Apache，并在原有 configure 的内容中加入 &#8211;enable-Rewrite=shared，然后再在 Apache 配置文件中加入上述代码即可。
+如果没有安装 mod_Rewrite，您可以重新编译 Apache，并在原有 configure 的内容中加入 --enable-Rewrite=shared，然后再在 Apache 配置文件中加入上述代码即可。
 
 另外一种用户是 Apache 虚拟主机用户。  
 <!--more-->

@@ -3,11 +3,16 @@ title: PHPUnit单元测试YAF模型层
 author: 谇雨
 layout: post
 permalink: /phpunit-yaf-model.html
-views:
-  - 53
 categories:
+  - PHP
+  - Yaf
+  - UT
+tags:
+  - 单元测试
+  - 控制器
   - Yaf
 ---
+
 在Yaf应用中，创建一个模型层UserModel：
 
     Class UserModel {
@@ -41,7 +46,7 @@ categories:
 2. 同时载入我们的Application必备的配置文件；  
 3. 官方文档有注明，Yaf_Application代表的是一个产品/项目，必须保证单例。  
 
-基于以上3点，模型层的测试用例就很好编写了，创建一个Test Case：UserModelTest.php 该文件仅用于测试UserModel的业务。
+基于以上3点，模型层的测试用例就很好编写了，创建一个Test Case：`UserModelTest.php` 该文件仅用于测试UserModel的业务。
 
     define('APP_PATH', dirname(__FILE__) . '/../../');
     define('APP_ENV', 'loc');
@@ -84,6 +89,5 @@ categories:
     }
 
 测试结果：第二个Function由于查不到指定数据返回FALSE测试类型失败。
-[<img class="alignnone size-full wp-image-948" title="TestYafModel" src="{{ site.url }}/uploads/2014/01/TestYafModel.jpg" alt="" />][1]
 
- [1]: {{ site.url }}/uploads/2014/01/TestYafModel.jpg
+![TestYafModel]({{ site.url }}/uploads/2014/01/TestYafModel.jpg)

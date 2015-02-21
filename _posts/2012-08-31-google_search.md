@@ -23,7 +23,7 @@ tags:
 通过以下的图解搜索小技巧，希望让大家在寻找信息时更为顺利又迅速。  
 <!--more-->
 
-**第一招 &#8211; 小试身手**  
+**第一招 -- 小试身手**  
 [<img class="aligncenter size-full wp-image-603" title="1330309577_5594f73c" src="{{ site.url }}/uploads/2012/08/1330309577_5594f73c.jpg" alt="" width="418" height="550" />][2]
 
 想搜索纽约时报在2008到2010年关于大学测试分数但不是SAT入学分数的文章？
@@ -46,7 +46,7 @@ Step2：若只想搜索文章的「标题」，例如：速度（velocity），�
 
 Step3：搜索各式各样的燕子（swallow），在燕子前加上\*，输入\*swallow
 
-**第二招 &#8211; 研究生必杀技**
+**第二招 -- 研究生必杀技**
 
 [<img class="aligncenter size-full wp-image-604" title="1330309619_3471d56c" src="{{ site.url }}/uploads/2012/08/1330309619_3471d56c.jpg" alt="" width="407" height="550" />][3]
 
@@ -58,7 +58,7 @@ Step2：主题关键词，输入potosynthesis
 
 Step3：想让搜索结果更明确，在关键词旁加入双引号，在此加入作者的全名简写，输入”tp buttz”
 
-**第三招 &#8211; 移行换单位**
+**第三招 -- 移行换单位**
 
 [<img class="aligncenter size-full wp-image-605" title="1330309651_84010023" src="{{ site.url }}/uploads/2012/08/1330309651_84010023.jpg" alt="" width="391" height="550" />][4]
 
@@ -80,7 +80,7 @@ Step3：想让搜索结果更明确，在关键词旁加入双引号，在此加
 
 例如：54 pounds in kilograms，中文也可：54磅in公斤
 
-**第四招 &#8211; 杀手键**[<img class="aligncenter size-full wp-image-606" title="1330309688_5034cf07" src="{{ site.url }}/uploads/2012/08/1330309688_5034cf07.jpg" alt="" width="404" height="550" />][5]
+**第四招 -- 杀手键**[<img class="aligncenter size-full wp-image-606" title="1330309688_5034cf07" src="{{ site.url }}/uploads/2012/08/1330309688_5034cf07.jpg" alt="" width="404" height="550" />][5]
 
 在这里一般键盘上为Ctrl 键，Apple的使用者则是用Command键（空格键旁边的那颗）：
 
@@ -100,7 +100,7 @@ Step3：想让搜索结果更明确，在关键词旁加入双引号，在此加
 
 Ctrl加上tab键，可以切换到浏览器下一个分页
 
-**第五招 &#8211; 万宗归一心法**
+**第五招 -- 万宗归一心法**
 
 [<img class="aligncenter size-full wp-image-607" title="1330309736_7583f96d" src="{{ site.url }}/uploads/2012/08/1330309736_7583f96d.jpg" alt="" width="280" height="550" />][6]
 

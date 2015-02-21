@@ -1,5 +1,5 @@
 ---
-title: 'Chrome视频音频下载插件 &#8211; FVD Video Downloader'
+title: 'Chrome视频音频下载插件 -- FVD Video Downloader'
 author: 谇雨
 layout: post
 permalink: /fvd-video-downloader-chrome.html

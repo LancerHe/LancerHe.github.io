@@ -13,7 +13,7 @@ tags:
   - 表单提交
 ---
 <p style="text-indent: 2em;">
-  今天搞了个登陆框，但是在登陆的时候一直出现等待窗体，又找不出什么原因。用FireBug检验的时候发现数据已经成功POST，但是貌似一直获取不到返回值。卡在waitMsg数据处，死循环。FireBug检查的结果是SYNTAX ERROR ：<!&#8211;DOCTYPE html PUBLI&#8230;&#8230;&#8230;&#8230;
+  今天搞了个登陆框，但是在登陆的时候一直出现等待窗体，又找不出什么原因。用FireBug检验的时候发现数据已经成功POST，但是貌似一直获取不到返回值。卡在waitMsg数据处，死循环。FireBug检查的结果是SYNTAX ERROR ：<!--DOCTYPE html PUBLI&#8230;&#8230;&#8230;&#8230;
 </p>
 
 <p style="text-align: center;">

@@ -1,5 +1,5 @@
 ---
-title: 'JavaScript对话框(弹出层) &#8211; artDialog类库'
+title: 'JavaScript对话框(弹出层) -- artDialog类库'
 author: 谇雨
 layout: post
 permalink: /artdialog-alert-layer.html

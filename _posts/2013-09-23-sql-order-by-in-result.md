@@ -3,18 +3,17 @@ title: 让sql语句不排序,按照in语句的顺序返回结果
 author: 谇雨
 layout: post
 permalink: /sql-order-by-in-result.html
-views:
-  - 39
 categories:
   - MySql
 tags:
   - in
   - MySql
 ---
-mysql:
 
-<pre class="lang:tsql decode:true " >SELECT * FROM EVENT WHERE eventId IN(443,419,431,440,420,414,509)  ORDER BY INSTR(',443,419,431,440,420,414,509,',CONCAT(',',eventId,','))</pre>
+MySQL:
 
-oracle:
+    SELECT * FROM EVENT WHERE eventId IN(443,419,431,440,420,414,509)  ORDER BY INSTR(',443,419,431,440,420,414,509,',CONCAT(',',eventId,','))
 
-<pre class="lang:tsql decode:true " >SELECT NAME FROM order WHERE oderid IN (111,222,333,444,555,666) ORDER BY INSTR('111,222,333,444,555,666',orderid)</pre>
+Oracle:
+
+    SELECT NAME FROM order WHERE oderid IN (111,222,333,444,555,666) ORDER BY INSTR('111,222,333,444,555,666',orderid)

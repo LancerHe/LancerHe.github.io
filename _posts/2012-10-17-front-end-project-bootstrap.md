@@ -1,5 +1,5 @@
 ---
-title: '快速搭建你的前端工程 &#8211; Bootstrap'
+title: '快速搭建你的前端工程 -- Bootstrap'
 author: 谇雨
 layout: post
 permalink: /front-end-project-bootstrap.html
@@ -17,7 +17,7 @@ tags:
 
 <!--more-->
 
-首先介绍下[Bootstrap][2]，GitHub上这样介绍 bootstrap：简单灵活可用于架构流行的用户界面和交互接口的html,css,javascript工具集。基于html5、css3的bootstrap，具有大量的诱人特性：友好的学习曲线，卓越的兼容性，响应式设计，12列格网，样式向导文档，自定义JQuery插件，完整的类库，基于[Less][3]等。本系列教程遵循官方文档结构来介绍bootstrap，包括手脚架（Scaffolding),基础CSS,组件,javascript插件，使用LESS与自定义.本文主要介绍Bootstrap的基础布局&#8211;**Scaffolding**.
+首先介绍下[Bootstrap][2]，GitHub上这样介绍 bootstrap：简单灵活可用于架构流行的用户界面和交互接口的html,css,javascript工具集。基于html5、css3的bootstrap，具有大量的诱人特性：友好的学习曲线，卓越的兼容性，响应式设计，12列格网，样式向导文档，自定义JQuery插件，完整的类库，基于[Less][3]等。本系列教程遵循官方文档结构来介绍bootstrap，包括手脚架（Scaffolding),基础CSS,组件,javascript插件，使用LESS与自定义.本文主要介绍Bootstrap的基础布局--**Scaffolding**.
 
 这里提供两个地方，里面的Docs和API方法已经写的非常详细了，相信你一定能很快掌握它：  
 [http://twitter.github.com/bootstrap/  

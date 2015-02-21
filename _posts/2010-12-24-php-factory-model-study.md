@@ -1,5 +1,5 @@
 ---
-title: 'PHP设计模式 &#8211; 工厂模式应用学习心得'
+title: 'PHP设计模式 -- 工厂模式应用学习心得'
 author: 谇雨
 layout: post
 permalink: /php-factory-model-study.html

@@ -3,8 +3,6 @@ title: PHP命令行下模拟Session机制
 author: 谇雨
 layout: post
 permalink: /php-cli-using-session-strategy.html
-views:
-  - 263
 categories:
   - PHP
   - Yaf
@@ -13,7 +11,8 @@ tags:
   - 命令行
   - 策略
 ---
-<p align="right">- 自动化测试过程中常规策略</p>
+
+*自动化测试过程中常规策略*
 
 ### 一．背景
 
@@ -27,15 +26,14 @@ PHP的 `$_SESSION` 的功能之所以如此强大是因为有WebServer的支持�
 
 ### 二．Session的原理
 
-为了探究WebServer下的Session原理，我们做一个简单的测试：
-
+为了探究WebServer下的Session原理，我们做一个简单的测试：  
 session.php的文件，内容很简单：
 
     session_start();
 
 通过浏览器访问该文件，同时观察Request Header中的cookie信息以及服务器下的/tmp/目录：
 
-[<img class="alignnone size-full wp-image-978" title="session_1" src="{{ site.url }}/uploads/2014/04/session_1.jpg" alt="" />][1]
+![请求Cookie Request]({{ site.url }}/uploads/2014/04/session_1.jpg)
 
 Cookie中存在一个PHPSESSID的值，而 /tmp/ 下存在一个对应的值，同时还可以知道这个 /tmp/sess_87bufd4ogid71e1gr6dtcbphi0是刚刚建立的，并且文件大小是0。
 接着我们给SESSION赋点值：
@@ -49,14 +47,13 @@ Cookie中存在一个PHPSESSID的值，而 /tmp/ 下存在一个对应的值，�
         "loc" => 4,
     );
 
-
 再观察浏览器的Request Header中的cookie信息依旧不变，但是却可以发现服务器下 /tmp/sess\_87bufd4ogid71e1gr6dtcbphi0文件的大小更变，打开发现类似序列化(非序列化)的字符串，信息内容是之前$\_SESSION的值：
-        
-[<img src="{{ site.url }}/uploads/2014/04/session_2.jpg" alt="" title="session_2" class="alignnone size-full wp-image-979" />][2]
+
+![请求Cookie Request]({{ site.url }}/uploads/2014/04/session_2.jpg)
 
 我们开启一个新的浏览器，比如IE，再查看/tmp/下的文件：
 
-[<img src="{{ site.url }}/uploads/2014/04/session_3.jpg" alt="" title="session_3" class="alignnone size-full wp-image-980" />][3]
+![请求Cookie Request]({{ site.url }}/uploads/2014/04/session_3.jpg)
 
 观察新出现一个以sess为前缀的文件，同时IE的Cookie下出现了这个PHPSESSID的值。
 
@@ -92,23 +89,22 @@ Cookie中存在一个PHPSESSID的值，而 /tmp/ 下存在一个对应的值，�
 *   在CLI模式下返回的是 \Cores\Session_CLI 对象；
 *   在普通模式下返回的是 \Cores\Session_Http 对象。
 
-既然是一种策略模式， \Cores\Session\_CLI 与 \Cores\Session\_Http 必须拥有同样的方法来操作Session，所以需要提供一个接口 \Cores\Session_Interface 。
-        
-根据我们的想法，设计出简单的UML图，Session具有基本的五个方法：
+既然是一种策略模式， \Cores\Session\_CLI 与 \Cores\Session\_Http 必须拥有同样的方法来操作Session，所以需要提供一个接口 \Cores\Session_Interface 
 
-start(开始), set(赋值), has(存在), get(获取), del(删除)
+根据我们的想法，设计出简单的UML图，Session具有基本的五个方法：  
+`start`(开始), `set`(赋值), `has`(存在), `get`(获取), `del`(删除)
 
-[<img src="{{ site.url }}/uploads/2014/04/session_4.jpg" alt="" title="session_4" class="alignnone size-full wp-image-981" />][4]
+![请求Cookie Request]({{ site.url }}/uploads/2014/04/session_4.jpg)
 
 由于Session启动后在整个应用中必然是唯一实例，因此上图 \Cores\Session\_CLI 与 \Cores\Session\_Http都使用了单例模式，但 \Cores\Session\_CLI 必须具有一些特殊的操作，比如写入session记录，创建session\_id等伪操作，因此添加部分方法：
 
-[<img src="{{ site.url }}/uploads/2014/04/session_5.jpg" alt="" title="session_5" class="alignnone size-full wp-image-982" />][5]
+![请求Cookie Request]({{ site.url }}/uploads/2014/04/session_5.jpg)
 
 ### 四．程序实现
 
 根据Session策略设计，开始编写对应的类：
 
-#### 接口类Session_Interface (不可否认写接口是最没难度的)：
+接口类**Session_Interface** (不可否认写接口是最没难度的)：  
 
     /**
      * Session接口
@@ -129,7 +125,7 @@ start(开始), set(赋值), has(存在), get(获取), del(删除)
         public function del($name);
     }
 
-#### Session_Http类，用于管理Http请求过来的Session策略： 
+**Session_Http**类，用于管理Http请求过来的Session策略：  
 
     /**
      * Http模式下管理$_SESSION类
@@ -230,7 +226,7 @@ start(开始), set(赋值), has(存在), get(获取), del(删除)
         }
     }
         
-#### Session_Cli类，用于命令行下模拟Session效果： 
+**Session_Cli**类，用于命令行下模拟Session效果：  
 
     /**
      * CLI模式下会模拟一个session_id，同时在/tmp/下产生一个sesscli文件用来保存session信息
@@ -373,9 +369,8 @@ start(开始), set(赋值), has(存在), get(获取), del(删除)
             file_put_contents($this->_session_file, serialize($this->_session) );
         }
     }
-        
-#### 环境使用角色类 Session： 
 
+环境使用角色类 **Session**：  
 由于具体策略类已经完成，所以我们只需要定义一个常量用于区分是否是CLI请求，同样使用单例模式自动装载对应的具体策略。
 
     class Session {
@@ -384,33 +379,18 @@ start(开始), set(赋值), has(存在), get(获取), del(删除)
         }
     }
         
-#### 测试过程：将设计的程序，通过Http和Cli方式分别测试： 
+**测试过程**：将设计的程序，通过Http和Cli方式分别测试：  
+Cli测试结果：  
+![请求Cookie Request]({{ site.url }}/uploads/2014/04/session_6.jpg)  
+![请求Cookie Request]({{ site.url }}/uploads/2014/04/session_7.jpg)  
 
-Cli测试结果：
-[<img src="{{ site.url }}/uploads/2014/04/session_6.jpg" alt="" title="session_6" class="alignnone size-full wp-image-983" />][6]
+Http测试结果：  
+![请求Cookie Request]({{ site.url }}/uploads/2014/04/session_8.jpg)  
+![请求Cookie Request]({{ site.url }}/uploads/2014/04/session_9.jpg)  
 
-[<img src="{{ site.url }}/uploads/2014/04/session_7.jpg" alt="" title="session_7" class="alignnone size-full wp-image-984" />][7]
-
-Http测试结果：
-
-[<img src="{{ site.url }}/uploads/2014/04/session_8.jpg" alt="" title="session_8" class="alignnone size-full wp-image-985" />][8]
-
-[<img src="{{ site.url }}/uploads/2014/04/session_9.jpg" alt="" title="session_9" class="alignnone size-full wp-image-986" />][9]
-
-虽然保存在 /tmp/ 目录下的内容格式不一致，但已经模拟出一个Session仓库的功能，实现了对这个仓库的增删改查功能。 </li> </ol> 
+虽然保存在 /tmp/ 目录下的内容格式不一致，但已经模拟出一个Session仓库的功能，实现了对这个仓库的增删改查功能。
 
 ### 五．小结
 通过策略模式模拟一个虚拟的Session功能，保证Session在命令行下能够正常工作，为项目的自动化测试提供了基本支持。
 
 策略模式其用意在于封装了一组新的算法，基于不同的策略下能够互相替换，为此我们能够在自动化测试中模拟出更多的功能，如请求的Request功能，渲染的View功能等。
-
-
- [1]: {{ site.url }}/uploads/2014/04/session_1.jpg
- [2]: {{ site.url }}/uploads/2014/04/session_2.jpg
- [3]: {{ site.url }}/uploads/2014/04/session_3.jpg
- [4]: {{ site.url }}/uploads/2014/04/session_4.jpg
- [5]: {{ site.url }}/uploads/2014/04/session_5.jpg
- [6]: {{ site.url }}/uploads/2014/04/session_6.jpg
- [7]: {{ site.url }}/uploads/2014/04/session_7.jpg
- [8]: {{ site.url }}/uploads/2014/04/session_8.jpg
- [9]: {{ site.url }}/uploads/2014/04/session_9.jpg
