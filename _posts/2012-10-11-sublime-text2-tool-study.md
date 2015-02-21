@@ -11,21 +11,21 @@ tags:
   - Sublime Text
   - Tool
 ---
-[<img class="alignnone size-full wp-image-693" title="sublime2" src="http://www.crackedzone.com/wp-content/uploads/2012/10/sublime2.jpg" alt="" width="590" height="150" />][1]
+[<img class="alignnone size-full wp-image-693" title="sublime2" src="{{ site.url }}/uploads/2012/10/sublime2.jpg" alt="" width="590" height="150" />][1]
 
 今天看到一款神器级的开发工具，<a href="http://sublimetext.com/" target="_blank">sublime text2(点这官网下载)</a> ，这一两天试用中，对各种编辑辅助功能，语法高亮，快捷键，snippet，插件都有大致的了解，列下各个细节功能点吧：
 
 **<!--more-->1. 项目文件夹浏览：** sublime不同于np++，它是基于项目管理，侧边栏可以导入正在开发的项目文件夹，(ctrl+k,ctrl+b)快捷键可以开关侧栏(ps: 这里逗号分隔的两个快捷键代表按下ctrl的同时先按K再按B，这种方式大大增加了快捷键的使用有效率),同时右键菜单里可以remove folder移除文件夹
 
   
-[<img class="aligncenter size-full wp-image-625" title="1" src="http://www.crackedzone.com/wp-content/uploads/2012/10/1.jpg" alt="" width="335" height="346" />][2]
+[<img class="aligncenter size-full wp-image-625" title="1" src="{{ site.url }}/uploads/2012/10/1.jpg" alt="" width="335" height="346" />][2]
 
 **2. 文件快速导航：** 这是sublime上面很好用的功能之一，ctrl+p可以调出窗口，菜单上的解释是goto anythings ，确实如其所言，调出窗口后，直接输入关键字，可以在已打开的项目文件夹中进行快速文件名导航，而且支持模糊搜索 ，对于不想一直鼠标点开文件夹的同学来说极为方便，并且在该窗口里加上:前缀即为行跳转(ctrl+G)，加上@(ctrl+R)前缀在html里是id关键字导航，css里是每条规则导航，js里则是每个function导航。  
-[<img class="aligncenter size-full wp-image-626" title="2" src="http://www.crackedzone.com/wp-content/uploads/2012/10/2.jpg" alt="" width="487" height="280" />][3]
+[<img class="aligncenter size-full wp-image-626" title="2" src="{{ site.url }}/uploads/2012/10/2.jpg" alt="" width="487" height="280" />][3]
 
 **3. 命令行模式** ctrl+\` 可以调出命令行模式，主要支持python语法等，没试用过只知 quit()可以退出 。。不过sublime的插件平台package controller可以用命令行安装，<a href="http://wbond.net/sublime_packages/package_control/installation" target="_blank">详见这里</a>
 
-[<img class="aligncenter size-full wp-image-627" title="31" src="http://www.crackedzone.com/wp-content/uploads/2012/10/31.png" alt="" width="338" height="173" />][4]
+[<img class="aligncenter size-full wp-image-627" title="31" src="{{ site.url }}/uploads/2012/10/31.png" alt="" width="338" height="173" />][4]
 
 4. ctrl+up, ctrl+down可以一行一行的滚动屏幕，pageUp pageDown一页一页翻动
 
@@ -34,7 +34,7 @@ tags:
 6. ctrl+/ 单行注释， ctrl+shift+/块注释，sublime会自动根据语言选择注释方式
 
 7. ctrl+L 选择当前行，ctrl+d 选择当前文字块，ctrl+shift+a 可以HTML标签内容，每按一次逐级往上， ctrl+shift+space可以选择js等语言里的块{内容}, ctrl+shift+F 是文件夹里查找，与普通编辑不同的地方是sublime允许添加多个文件夹进行查找(add directory)  
-[<img class="aligncenter size-full wp-image-628" title="12" src="http://www.crackedzone.com/wp-content/uploads/2012/10/12.png" alt="" width="448" height="118" />][5]
+[<img class="aligncenter size-full wp-image-628" title="12" src="{{ site.url }}/uploads/2012/10/12.png" alt="" width="448" height="118" />][5]
 
 8. 在 菜单View-syntax下可以将当前面面以指定的语言进行语法高亮，通常情况下sublime会自动进行判断选择
 
@@ -56,7 +56,7 @@ package control安装见其[官网][6]，就是在控制台里运行如下一段
 [python]import urllib2,os; pf=&#8217;Package Control.sublime-package'; ipp=sublime.installed\_packages\_path(); os.makedirs(ipp) if not os.path.exists(ipp) else None; urllib2.install\_opener(urllib2.build\_opener(urllib2.ProxyHandler())); open(os.path.join(ipp,pf),&#8217;wb&#8217;).write(urllib2.urlopen(&#8216;http://sublime.wbond.net/&#8217;+pf.replace(&#8216; &#8216;,&#8217;%20&#8242;)).read()); print &#8216;Please restart Sublime Text to finish installation'[/python]
 
 安装完即可在菜单preferences-package control下打开（这里有个快捷键ctrl+shift+p是编辑器操作的命令集合，可以直接根据关键字索引，省却菜单栏寻找的过程），在package control下 Install Package是安装插件，选择后会连网获取插件列表，disabled package 是禁用某插件，enabled package 启用插件，remove package 移除插件，list package列出插件列表。  
-[<img class="aligncenter size-full wp-image-629" title="14" src="http://www.crackedzone.com/wp-content/uploads/2012/10/14.png" alt="" width="422" height="418" />][7]
+[<img class="aligncenter size-full wp-image-629" title="14" src="{{ site.url }}/uploads/2012/10/14.png" alt="" width="422" height="418" />][7]
 
 **比如以下常用的插件**
 
@@ -76,10 +76,10 @@ package control安装见其[官网][6]，就是在控制台里运行如下一段
 
 **9. Alignment** 该插件可以试一段代码中所有的等号对齐。
 
- [1]: http://www.crackedzone.com/wp-content/uploads/2012/10/sublime2.jpg
- [2]: http://www.crackedzone.com/wp-content/uploads/2012/10/1.jpg
- [3]: http://www.crackedzone.com/wp-content/uploads/2012/10/2.jpg
- [4]: http://www.crackedzone.com/wp-content/uploads/2012/10/31.png
- [5]: http://www.crackedzone.com/wp-content/uploads/2012/10/12.png
+ [1]: {{ site.url }}/uploads/2012/10/sublime2.jpg
+ [2]: {{ site.url }}/uploads/2012/10/1.jpg
+ [3]: {{ site.url }}/uploads/2012/10/2.jpg
+ [4]: {{ site.url }}/uploads/2012/10/31.png
+ [5]: {{ site.url }}/uploads/2012/10/12.png
  [6]: http://wbond.net/sublime_packages/package_control/installation
- [7]: http://www.crackedzone.com/wp-content/uploads/2012/10/14.png
+ [7]: {{ site.url }}/uploads/2012/10/14.png

@@ -13,7 +13,7 @@ tags:
   - position
   - z-index
 ---
-[<img class="alignnone size-full wp-image-698" title="IE7-position" src="http://www.crackedzone.com/wp-content/uploads/2011/04/IE7-position.jpg" alt="" width="590" height="150" />][1]
+[<img class="alignnone size-full wp-image-698" title="IE7-position" src="{{ site.url }}/uploads/2011/04/IE7-position.jpg" alt="" width="590" height="150" />][1]
 
 通常设置position后，通过z-index属性来设置div的层叠情况。
 
@@ -33,10 +33,10 @@ tags:
 
 请先认真看他们的HTML和CSS信息：
 
-<pre class="lang:xhtml decode:true " title="HTML结构" >&lt;div id="container"&gt;
-    &lt;div id="box1"&gt;This box should be on top&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id="box2"&gt;This box should not be on top; IE however seems to create a new stacking context for positioned elements, even when the computed z-index of that element is 'auto'.&lt;/div&gt;
+<pre class="lang:xhtml decode:true " title="HTML结构" ><div id="container">
+    <div id="box1">This box should be on top</div>
+</div>
+<div id="box2">This box should not be on top; IE however seems to create a new stacking context for positioned elements, even when the computed z-index of that element is 'auto'.</div>
 </pre>
 
 <pre class="lang:css decode:true " >body { margin: 0; padding: 0; }
@@ -58,4 +58,4 @@ tags:
 
 这一Bug差点搞残我。。。
 
- [1]: http://www.crackedzone.com/wp-content/uploads/2011/04/IE7-position.jpg
+ [1]: {{ site.url }}/uploads/2011/04/IE7-position.jpg

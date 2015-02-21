@@ -17,7 +17,7 @@ tags:
 
 Html中**mailto标签**是一个非常实用的贴近用户体验的标签，大多情况下人们都在这样使用
 
-<pre class="lang:default decode:true " >&lt;a href="mailto:example@phplamp.com"&gt;example@phplamp.com&lt;/a&gt;</pre>
+<pre class="lang:default decode:true " ><a href="mailto:example@phplamp.com">example@phplamp.com</a></pre>
 
 这样，当我们点击了example@phplamp.com链接后浏览器会为我们自动选择本地的默认邮件软件，并将mailto标签后example@phplamp.com邮件地址放到邮件软件的发送地址中，少去了我们发送邮件时输入发送地址的烦扰，同时也可以避免输错邮件地址。
 

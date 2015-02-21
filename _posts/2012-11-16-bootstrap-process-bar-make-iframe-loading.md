@@ -12,35 +12,35 @@ tags:
   - iframe
   - Loading
 ---
-[<img class="alignnone size-full wp-image-726" title="bootstrap-loading" src="http://www.crackedzone.com/wp-content/uploads/2012/11/bootstrap-loading.jpg" alt="" width="590" height="150" />][1]
+[<img class="alignnone size-full wp-image-726" title="bootstrap-loading" src="{{ site.url }}/uploads/2012/11/bootstrap-loading.jpg" alt="" width="590" height="150" />][1]
 
 最近特别喜欢Bootstrap，不仅仅因为他的简洁和漂亮，更因为他的可扩展和自定义组合效果让我着迷。  
 今天正好在研究iframe loading，发现bootstrap process bar的样式非常适合做loading载入的样式。
 
-先看看演示效果：<a target="_blank" href='http://www.crackedzone.com/wp-content/uploads/2012/11/demo.html'>点此查看</a>
+先看看演示效果：<a target="_blank" href='{{ site.url }}/uploads/2012/11/demo.html'>点此查看</a>
 
 <!--more-->
 
 现在来讲讲过程，其实很简单。首先先定义HTML结构
 
-<pre class="lang:xhtml decode:true " title="HTML部分" >&lt;div id="layout-left"&gt;
-    &lt;ul id="left-nav" class="nav nav-list"&gt;
-        &lt;li class="active"&gt;&lt;a href="http://www.crackedzone.com/"&gt;&lt;i class="icon-home"&gt;&lt;/i&gt;Home&lt;/a&gt;&lt;/li&gt;
-        &lt;li class="nav-header"&gt;Category&lt;/li&gt;
-        &lt;li&gt;&lt;a href="http://www.crackedzone.com/category/crphp"&gt;&lt;i class="icon-globe"&gt;&lt;/i&gt;PHP&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="http://demo.crackedzone.com/"&gt;&lt;i class="icon-star"&gt;&lt;/i&gt;DEMO&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-&lt;/div&gt;
-&lt;div id="loading-frame"&gt;
-    &lt;div id="loading-wrap"&gt;
-        &lt;div class="progress progress-striped active"&gt;
-            &lt;div class="bar" style="width: 0%;"&gt;&lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;div id="layout-right"&gt;
-    &lt;iframe id="content" frameborder="0" name="content" src="about:blank"&gt;&lt;/iframe&gt;
-&lt;/div&gt;</pre>
+<pre class="lang:xhtml decode:true " title="HTML部分" ><div id="layout-left">
+    <ul id="left-nav" class="nav nav-list">
+        <li class="active"><a href="http://www.crackedzone.com/"><i class="icon-home"></i>Home</a></li>
+        <li class="nav-header">Category</li>
+        <li><a href="http://www.crackedzone.com/category/crphp"><i class="icon-globe"></i>PHP</a></li>
+        <li><a href="http://demo.crackedzone.com/"><i class="icon-star"></i>DEMO</a></li>
+    </ul>
+</div>
+<div id="loading-frame">
+    <div id="loading-wrap">
+        <div class="progress progress-striped active">
+            <div class="bar" style="width: 0%;"></div>
+        </div>
+    </div>
+</div>
+<div id="layout-right">
+    <iframe id="content" frameborder="0" name="content" src="about:blank"></iframe>
+</div></pre>
 
 loading-Frame为Loading所在整个区域，将用于覆盖在IFrame之上，形成遮罩效果。  
 layout-left为左侧导航用于点击将内容显示在iframe内中。  
@@ -87,7 +87,7 @@ function loading_start() {
         if (percent == 100) {
             percent = 99;
         }
-        if (percent &lt; 100) {
+        if (percent < 100) {
             $("#loading-frame .bar").animate({'width': percent + '%'},'slow');
         }
     }, 300);
@@ -120,7 +120,7 @@ $("#left-nav a").bind('click', function(){
 });</pre>
 
 效果图如下：  
-[<img src="http://www.crackedzone.com/wp-content/uploads/2012/11/bootstrap-loading-screen.jpg" alt="" title="bootstrap-loading-screen" width="1009" height="562" class="alignnone size-full wp-image-727" />][2]
+[<img src="{{ site.url }}/uploads/2012/11/bootstrap-loading-screen.jpg" alt="" title="bootstrap-loading-screen" width="1009" height="562" class="alignnone size-full wp-image-727" />][2]
 
- [1]: http://www.crackedzone.com/wp-content/uploads/2012/11/bootstrap-loading.jpg
- [2]: http://www.crackedzone.com/wp-content/uploads/2012/11/bootstrap-loading-screen.jpg
+ [1]: {{ site.url }}/uploads/2012/11/bootstrap-loading.jpg
+ [2]: {{ site.url }}/uploads/2012/11/bootstrap-loading-screen.jpg

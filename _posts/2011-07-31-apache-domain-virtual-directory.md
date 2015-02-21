@@ -16,20 +16,20 @@ tags:
 
 找到NameVirtualHost *:80  去掉注释符，保证前面没有#，开始建立虚拟目录.
 
-<pre class="lang:apache decode:true " >&lt;VirtualHost *:80&gt;
+<pre class="lang:apache decode:true " ><VirtualHost *:80>
 DocumentRoot "D:\www\guestbook"
 ServerName local.guestbook.com
-&lt;/VirtualHost&gt;
+</VirtualHost>
 
-&lt;VirtualHost *:80&gt;
+<VirtualHost *:80>
 DocumentRoot "D:\www\cart"
 ServerName local.cart.com
-&lt;/VirtualHost&gt;
+</VirtualHost>
 
-&lt;VirtualHost *:80&gt;
+<VirtualHost *:80>
 DocumentRoot "D:\www\zone"
 ServerName local.zone.com
-&lt;/VirtualHost&gt;</pre>
+</VirtualHost></pre>
 
 保存配置文件，重启apache后，虚拟目录就创建好了。然后需要对域名进行强制解析转向到我们的虚拟目录。  
 打开C:\WINDOWS\system32\drivers\etc文件夹下的host文件  

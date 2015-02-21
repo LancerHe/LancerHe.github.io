@@ -27,10 +27,10 @@ $("input:checkbox[name='option[]']").each(function(){
   	//点击的时候 得到复选框已经勾选的数目
     var checkNum = $("input:checkbox[name='option[]']:checked").length;
     
-    if (checkNum &gt; voteMax ) {
+    if (checkNum > voteMax ) {
       $(this).attr("checked","");
       alert(errorMsgMax);
-    } else if(checkNum &lt; voteMin ) {
+    } else if(checkNum < voteMin ) {
       $(this).attr("checked","checked");
       alert(errorMsgMin);
     }

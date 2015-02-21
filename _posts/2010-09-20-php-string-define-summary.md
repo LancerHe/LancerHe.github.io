@@ -29,7 +29,7 @@ tags:
 1、定义方式与双引号一致  
 2、可以在里面存在各种引号，不需要转义引号
 
-<pre class="lang:php decode:true " >&lt;?php
+<pre class="lang:php decode:true " ><?php
 $num = 10;
 //双引号
 $str = "I am a boy , I am $num years old."; 
@@ -52,13 +52,13 @@ $str = `dir`;
 //echo $str 相当于在windows的cmd命令提示框下输入信息，也可以在Unix/Linux中用
 
 //定界符
-$str = &lt;&lt;&lt;EOT
-	&lt;table id="id1" border="1"&gt;
-		&lt;tr&gt;
-			&lt;td&gt;这是一个表格&lt;/td&gt;
-		&lt;/tr&gt;
-	&lt;/table&gt;
+$str = <<<EOT
+	<table id="id1" border="1">
+		<tr>
+			<td>这是一个表格</td>
+		</tr>
+	</table>
 EOT;
 echo $str;
-// 以&lt;&lt;&lt;{name}开头,{name};结束。{name}可以自己定义，只要一致即可，但{$name}前后不能有空格和其他符号，内部可以直接存在单引号双引号，\r\n等，不需转义.
-?&gt;</pre>
+// 以<<<{name}开头,{name};结束。{name}可以自己定义，只要一致即可，但{$name}前后不能有空格和其他符号，内部可以直接存在单引号双引号，\r\n等，不需转义.
+?></pre>

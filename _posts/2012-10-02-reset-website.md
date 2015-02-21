@@ -8,7 +8,7 @@ views:
 categories:
   - 站长日记
 ---
-[<img src="http://www.crackedzone.com/wp-content/uploads/2012/10/demo.jpg" alt="" title="demo" width="590" height="150" class="alignnone size-full wp-image-716" />][1]
+[<img src="{{ site.url }}/uploads/2012/10/demo.jpg" alt="" title="demo" width="590" height="150" class="alignnone size-full wp-image-716" />][1]
 
 转眼已经国庆假期的第三天，每次放假都毫无作为，度日如梦的我，这次的假期出乎意料的平淡和无聊。没有总是在玩游戏，也许是厌倦了虚拟生活，也许是现实生活给予的更大压力吧。
 
@@ -21,4 +21,4 @@ categories:
 完成了一个Demo子域，用来完善自己将来的作品，也许将来能赚大钱，这谁说的准呢？  
 <a title="Demo" href="http://demo.crackedzone.com" target="_blank">http://demo.crackedzone.com</a>
 
- [1]: http://www.crackedzone.com/wp-content/uploads/2012/10/demo.jpg
+ [1]: {{ site.url }}/uploads/2012/10/demo.jpg

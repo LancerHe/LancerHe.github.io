@@ -35,8 +35,8 @@ tags:
         vertical-align:middle;
 }</pre>
 
-<pre class="lang:xhtml decode:true " >&lt;div class="box"&gt;
-        &lt;img src="http://www.playgoogle.com/image/logo/playgoogleLogo.jpg" /&gt;
-&lt;/div&gt;</pre>
+<pre class="lang:xhtml decode:true " ><div class="box">
+        <img src="http://www.playgoogle.com/image/logo/playgoogleLogo.jpg" />
+</div></pre>
 
 这种解决方法的好处是不用加一些不必要的xhtml代码。缺陷是需要已知容器的高度，在容器高度未知时，无法处理。

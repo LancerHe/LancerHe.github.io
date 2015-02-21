@@ -25,33 +25,33 @@ tags:
 
 <!--more-->
 
-<pre class="lang:php decode:true " >&lt;?php
+<pre class="lang:php decode:true " ><?php
 class Validation extends Controller{
 	function __construct(){
 		parent::Controller();
 		//加载验证码类
-		$this-&gt;load-&gt;library('authcode');
+		$this->load->library('authcode');
 	}
 	function show(){
-		$this-&gt;authcode-&gt;show();
+		$this->authcode->show();
 	}
 	function script(){
-		$this-&gt;authcode-&gt;showScript();
+		$this->authcode->showScript();
 	}
 	function check(){
 		//调用authcode类中的check方法 判断验证码输入是否正确，ajax回传...
-		if ($this-&gt;authcode-&gt;check(strtolower($this-&gt;uri-&gt;segment(3)))) {
+		if ($this->authcode->check(strtolower($this->uri->segment(3)))) {
 			echo 1;//成功
 		} else {
 			echo 2;
 		}
 	}
 }
-?&gt;</pre>
+?></pre>
 
 在views下建立一个视图 register,直接显示控制器Validation中的script方法.
 
-<pre class="lang:xhtml decode:true " >&lt;script type="text/javascript" src="&lt;?=site_url('validation/script')?&gt;"&gt;&lt;/script&gt;</pre>
+<pre class="lang:xhtml decode:true " ><script type="text/javascript" src="<?=site_url('validation/script')?>"></script></pre>
 
 附件下载：[Authcode CI验证码类][1]
 

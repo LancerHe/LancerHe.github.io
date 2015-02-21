@@ -52,7 +52,7 @@ function foo() {
     // 取得所有的传入参数的数组
     $args = func_get_args();
 
-    foreach ($args as $k =&gt; $v) {
+    foreach ($args as $k => $v) {
         echo "arg".($k+1).": $v\n";
     }
 
@@ -88,10 +88,10 @@ print_r($files);
 /* 输出:
 Array
 (
-    [0] =&gt; phptest.php
-    [1] =&gt; pi.php
-    [2] =&gt; post_output.php
-    [3] =&gt; test.php
+    [0] => phptest.php
+    [1] => pi.php
+    [2] => post_output.php
+    [3] => test.php
 )
 */</pre>
 
@@ -104,12 +104,12 @@ print_r($files);
 /* 输出:
 Array
 (
-    [0] =&gt; phptest.php
-    [1] =&gt; pi.php
-    [2] =&gt; post_output.php
-    [3] =&gt; test.php
-    [4] =&gt; log.txt
-    [5] =&gt; test.txt
+    [0] => phptest.php
+    [1] => pi.php
+    [2] => post_output.php
+    [3] => test.php
+    [4] => log.txt
+    [5] => test.txt
 )
 */</pre>
 
@@ -121,8 +121,8 @@ print_r($files);
 /* 输出:
 Array
 (
-    [0] =&gt; ../images/apple.jpg
-    [1] =&gt; ../images/art.jpg
+    [0] => ../images/apple.jpg
+    [1] => ../images/art.jpg
 )
 */</pre>
 
@@ -137,8 +137,8 @@ print_r($files);
 /* output looks like:
 Array
 (
-    [0] =&gt; C:\wamp\www\images\apple.jpg
-    [1] =&gt; C:\wamp\www\images\art.jpg
+    [0] => C:\wamp\www\images\apple.jpg
+    [1] => C:\wamp\www\images\art.jpg
 )
 */</pre>
 
@@ -156,12 +156,12 @@ Initial: 361400 bytes
 */
 
 // 使用内存
-for ($i = 0; $i &lt; 100000; $i++) {
+for ($i = 0; $i < 100000; $i++) {
     $array []= md5($i);
 }
 
 // 删除一半的内存
-for ($i = 0; $i &lt; 100000; $i++) {
+for ($i = 0; $i < 100000; $i++) {
     unset($array[$i]);
 }
 
@@ -185,23 +185,23 @@ Peak: 13687072 bytes
 /* 输出
 Array
 (
-    [ru_oublock] =&gt; 0
-    [ru_inblock] =&gt; 0
-    [ru_msgsnd] =&gt; 2
-    [ru_msgrcv] =&gt; 3
-    [ru_maxrss] =&gt; 12692
-    [ru_ixrss] =&gt; 764
-    [ru_idrss] =&gt; 3864
-    [ru_minflt] =&gt; 94
-    [ru_majflt] =&gt; 0
-    [ru_nsignals] =&gt; 1
-    [ru_nvcsw] =&gt; 67
-    [ru_nivcsw] =&gt; 4
-    [ru_nswap] =&gt; 0
-    [ru_utime.tv_usec] =&gt; 0
-    [ru_utime.tv_sec] =&gt; 0
-    [ru_stime.tv_usec] =&gt; 6269
-    [ru_stime.tv_sec] =&gt; 0
+    [ru_oublock] => 0
+    [ru_inblock] => 0
+    [ru_msgsnd] => 2
+    [ru_msgrcv] => 3
+    [ru_maxrss] => 12692
+    [ru_ixrss] => 764
+    [ru_idrss] => 3864
+    [ru_minflt] => 94
+    [ru_majflt] => 0
+    [ru_nsignals] => 1
+    [ru_nvcsw] => 67
+    [ru_nivcsw] => 4
+    [ru_nswap] => 0
+    [ru_utime.tv_usec] => 0
+    [ru_utime.tv_sec] => 0
+    [ru_stime.tv_usec] => 6269
+    [ru_stime.tv_sec] => 0
 )
 
 */</pre>
@@ -246,7 +246,7 @@ System time: 0</pre>
 sleep是不占用系统时间的，我们可以来看下面的一个例子：
 
 <pre class="lang:php decode:true">// loop 10 million times (busy)
-for($i=0;$i&lt;10000000;$i++) {
+for($i=0;$i<10000000;$i++) {
 
 }
 
@@ -269,7 +269,7 @@ System time: 0.004204
 
 <pre class="lang:php decode:true">$start = microtime(true);
 // keep calling microtime for about 3 seconds
-while(microtime(true) - $start &lt; 3) {
+while(microtime(true) - $start < 3) {
 
 }
 
@@ -398,15 +398,15 @@ print_r($newvar);
 /* 输出
 Array
 (
-    [0] =&gt; hello
-    [1] =&gt; 42
-    [2] =&gt; Array
+    [0] => hello
+    [1] => 42
+    [2] => Array
         (
-            [0] =&gt; 1
-            [1] =&gt; two
+            [0] => 1
+            [1] => two
         )
 
-    [3] =&gt; apple
+    [3] => apple
 )
 */</pre>
 
@@ -437,15 +437,15 @@ print_r($newvar);
 /* prints
 Array
 (
-    [0] =&gt; hello
-    [1] =&gt; 42
-    [2] =&gt; Array
+    [0] => hello
+    [1] => 42
+    [2] => Array
         (
-            [0] =&gt; 1
-            [1] =&gt; two
+            [0] => 1
+            [1] => two
         )
 
-    [3] =&gt; apple
+    [3] => apple
 )
 */</pre>
 

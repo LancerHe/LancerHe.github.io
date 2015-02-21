@@ -18,7 +18,7 @@ db.c1.save({_id: 1, name:'user7'});
 db.c1.remove({name:'user1'});
 
 #批量插入数据
-for(i=1; i&lt;20; i++) { db.c1.insert({name:'user'+i, age:i }) }
+for(i=1; i<20; i++) { db.c1.insert({name:'user'+i, age:i }) }
 
 #查询结构只需要 name, age, _id(id是默认有的)
 db.c1.find({name:'user29'}, {name:1, age:1})

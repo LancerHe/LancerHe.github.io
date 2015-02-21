@@ -46,17 +46,17 @@ id通常都是用数字，不巧的是只有10个数字来使用，所以如果�
 *   alphaID()将其转换为999999999999
 *   你查找的记录id 999999999999在你的数据库
 
-<pre class="lang:php decode:true " >&lt;?php
+<pre class="lang:php decode:true " ><?php
 /**
  * Translates a number to a short alhanumeric version
  *
  * Translated any number up to 9007199254740992
  * to a shorter version in letters e.g.:
- * 9007199254740989 --&gt; PpQXn7COf
+ * 9007199254740989 --> PpQXn7COf
  *
  * specifiying the second argument true, it will
  * translate back e.g.:
- * PpQXn7COf --&gt; 9007199254740989
+ * PpQXn7COf --> 9007199254740989
  *
  * this function is based on any2dec && dec2any by
  * fragmer[at]mail[dot]ru
@@ -90,7 +90,7 @@ id通常都是用数字，不巧的是只有10个数字来使用，所以如果�
  * matters feel free to leave a comment.
  *
  * The following code block can be utilized by PEAR's Testing_DocTest
- * &lt;code&gt;
+ * <code>
  * // Input //
  * $number_in = 2188847690240;
  * $alpha_in  = "SpQXn7Cb";
@@ -109,18 +109,18 @@ id通常都是用数字，不巧的是只有10个数字来使用，所以如果�
  * }
  *
  * // Show //
- * echo $number_out." =&gt; ".$alpha_out."\n";
- * echo $alpha_in." =&gt; ".$number_out."\n";
- * echo alphaID(238328, false)." =&gt; ".alphaID(alphaID(238328, false), true)."\n";
+ * echo $number_out." => ".$alpha_out."\n";
+ * echo $alpha_in." => ".$number_out."\n";
+ * echo alphaID(238328, false)." => ".alphaID(alphaID(238328, false), true)."\n";
  *
  * // expects:
- * // 2188847690240 =&gt; SpQXn7Cb
- * // SpQXn7Cb =&gt; 2188847690240
- * // aaab =&gt; 238328
+ * // 2188847690240 => SpQXn7Cb
+ * // SpQXn7Cb => 2188847690240
+ * // aaab => 238328
  *
- * &lt;/code&gt;
+ * </code>
  *
- * @author   Kevin van Zonneveld &lt;kevin@vanzonneveld.net&gt;
+ * @author   Kevin van Zonneveld <kevin@vanzonneveld.net>
  * @author   Simon Franz
  * @author   Deadfish
  * @copyright 2008 Kevin van Zonneveld (http://kevin.vanzonneveld.net)
@@ -145,16 +145,16 @@ function alphaID($in, $to_num = false, $pad_up = false, $passKey = null)
       // you can optionally supply a password to make it harder
       // to calculate the corresponding numeric ID
 
-      for ($n = 0; $n&lt;strlen($index); $n++) {
+      for ($n = 0; $n<strlen($index); $n++) {
           $i[] = substr( $index,$n ,1);
       }
 
       $passhash = hash('sha256',$passKey);
-      $passhash = (strlen($passhash) &lt; strlen($index))
+      $passhash = (strlen($passhash) < strlen($index))
           ? hash('sha512',$passKey)
           : $passhash;
 
-      for ($n=0; $n &lt; strlen($index); $n++) {
+      for ($n=0; $n < strlen($index); $n++) {
           $p[] =  substr($passhash, $n ,1);
       }
 
@@ -165,34 +165,34 @@ function alphaID($in, $to_num = false, $pad_up = false, $passKey = null)
   $base  = strlen($index);
 
   if ($to_num) {
-      // Digital number  &lt;&lt;--  alphabet letter code
+      // Digital number  <<--  alphabet letter code
       $in  = strrev($in);
       $out = 0;
       $len = strlen($in) - 1;
-      for ($t = 0; $t &lt;= $len; $t++) {
+      for ($t = 0; $t <= $len; $t++) {
           $bcpow = bcpow($base, $len - $t);
           $out   = $out + strpos($index, substr($in, $t, 1)) * $bcpow;
       }
 
       if (is_numeric($pad_up)) {
           $pad_up--;
-          if ($pad_up &gt; 0) {
+          if ($pad_up > 0) {
               $out -= pow($base, $pad_up);
           }
       }
       $out = sprintf('%F', $out);
       $out = substr($out, 0, strpos($out, '.'));
   } else {
-      // Digital number  --&gt;&gt;  alphabet letter code
+      // Digital number  -->>  alphabet letter code
       if (is_numeric($pad_up)) {
           $pad_up--;
-          if ($pad_up &gt; 0) {
+          if ($pad_up > 0) {
               $in += pow($base, $pad_up);
           }
       }
 
       $out = "";
-      for ($t = floor(log($in, $base)); $t &gt;= 0; $t--) {
+      for ($t = floor(log($in, $base)); $t >= 0; $t--) {
           $bcp = bcpow($base, $t);
           $a   = floor($in / $bcp) % $base;
           $out = $out . substr($index, $a, 1);
@@ -211,9 +211,9 @@ function alphaID($in, $to_num = false, $pad_up = false, $passKey = null)
 
 <pre class="lang:javascript decode:true">/**
  *  Javascript AlphabeticID class
- *  (based on a script by Kevin van Zonneveld &lt;kevin@vanzonneveld.net>)
+ *  (based on a script by Kevin van Zonneveld <kevin@vanzonneveld.net>)
  *
- *  Author: Even Simon &lt;even.simon@gmail.com>
+ *  Author: Even Simon <even.simon@gmail.com>
  *
  *  Description: Translates a numeric identifier into a short string and backwords.
  *
@@ -265,7 +265,7 @@ var AlphabeticID = {
     var str = _string.reverse();
     var ret = 0;
 
-    for(var i=0;i&lt;=(str.length - 1);i++){
+    for(var i=0;i<=(str.length - 1);i++){
       ret = ret + AlphabeticID.index.indexOf(str.substr(i,1)) * (AlphabeticID.bcpow(AlphabeticID.index.length, (str.length - 1) - i));
     }
 

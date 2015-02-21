@@ -33,7 +33,7 @@ ccs-combo的源文件托管地址：
 <a href="http://nodejs.org/dist/npm/" target="_blank">http://nodejs.org/dist/npm/</a>  
 将npm源代码解压到D:\npmjs目录中，在命令提示符窗口中执行下面的操作，完成npm的安装：
 
-<pre class="lang:sh decode:true">D:\&gt;cd npmjs
+<pre class="lang:sh decode:true">D:\>cd npmjs
 node cli.js install npm -gf</pre>
 
 3. 安装css-combo  

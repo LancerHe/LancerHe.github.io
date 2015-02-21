@@ -29,14 +29,14 @@ LoadModule Rewrite\_module modules/mod\_Rewrite.so
 
 如果存在，那么在配置文件（通常就是 conf/httpd.conf）中加入如下代码。此时请务必注意，如果网站使用通过虚拟主机来定义，请务必加到虚拟主机配置，即 <VirtualHost> 中去，如果加在虚拟主机配置外部将可能无法使用，改好后将 Apache 重启。
 
-<pre class="lang:apache decode:true">&lt;IfModule mod_Rewrite.c&gt;
+<pre class="lang:apache decode:true"><IfModule mod_Rewrite.c>
 RewriteEngine On
 RewriteRule ^(.*)/archiver/((fid|tid)-[\w\-]+\.html)$ $1/archiver/index.php?$2
 RewriteRule ^(.*)/forum-([0-9]+)-([0-9]+)\.html$ $1/forumdisplay.php?fid=$2&page=$3
 RewriteRule ^(.*)/thread-([0-9]+)-([0-9]+)-([0-9]+)\.html$ $1/viewthread.php?tid=$2&extra=page\%3D$4&page=$3
 RewriteRule ^(.*)/space-(username|uid)-(.+)\.html$ $1/space.php?$2=$3
 RewriteRule ^(.*)/tag-(.+)\.html$ $1/tag.php?name=$2
-&lt;/IfModule&gt;</pre>
+</IfModule></pre>
 
 如果没有安装 mod_Rewrite，您可以重新编译 Apache，并在原有 configure 的内容中加入 &#8211;enable-Rewrite=shared，然后再在 Apache 配置文件中加入上述代码即可。
 
@@ -66,7 +66,7 @@ RewriteRule ^tag-(.+)\.html$ tag.php?name=$1</pre>
 
 Apache 独立主机用户：
 
-<pre class="lang:apache decode:true">&lt;IfModule mod_Rewrite.c&gt;
+<pre class="lang:apache decode:true"><IfModule mod_Rewrite.c>
 RewriteEngine On
 ###Rewrite 系统规则请勿修改
 RewriteRule ^/([0-9]+)/spacelist(.+)$ /index.php?uid/$1/action/spacelist/type$2 [L]
@@ -79,7 +79,7 @@ RewriteRule ^/category(.+)$ /index.php?action/category/catid$1 [L]
 RewriteRule ^/viewnews(.+)$ /index.php?action/viewnews/itemid$1 [L]
 RewriteRule ^/viewthread(.+)$ /index.php?action/viewthread/tid$1 [L]
 RewriteRule ^/mygroup(.+)$ /index.php?action/mygroup/gid$1 [L]
-&lt;/IfModule&gt;</pre>
+</IfModule></pre>
 
 Apache 虚拟主机用户：
 
@@ -108,7 +108,7 @@ RewriteRule ^mygroup(.+)$ index.php?action/mygroup/gid$1 [L]</pre>
     Apache 独立主机用户：
   </p>
   
-  <pre class="lang:apache decode:true ">&lt;IfModule mod_Rewrite.c&gt;
+  <pre class="lang:apache decode:true "><IfModule mod_Rewrite.c>
 RewriteEngine On
 RewriteRule ^(.*)/index.html$ $1/index.php
 RewriteRule ^(.*)/category$ $1/index.php [L]
@@ -133,7 +133,7 @@ RewriteRule ^(.*)/brand-([0-9]+)(.*)\.html $1/brand.php?id=$2
 RewriteRule ^(.*)/tag-(.*)\.html $1/search.php?keywords=$2
 RewriteRule ^(.*)/snatch-([0-9])\.html$ $1/snatch.php?id=$2
 RewriteRule ^(.*)/group_buy-([0-9])\.html$ $1/group_buy.php?act=view&id=$2
-&lt;/IfModule&gt;</pre>
+</IfModule></pre>
   
   <p>
     Apache 虚拟主机用户：
@@ -176,7 +176,7 @@ RewriteRule ^auction-([0-9]+)\.html$ auction\.php\?act=view&id=$1 [QSA,L]</pre>
     Apache 独立主机用户：
   </p>
   
-  <pre class="lang:apache decode:true ">&lt;IfModule mod_Rewrite.c&gt;
+  <pre class="lang:apache decode:true "><IfModule mod_Rewrite.c>
 RewriteEngine On
 RewriteRule ^(.*)/ivideo(-tv-([0-9]+))?(-ti-([0-9]+))?(-tc-([0-9]+))?(-page-([0-9]+))?\.html$ $1/ivideo.php?tv=$3&ti=$5&tc=$7&page=$9
 RewriteRule ^(.*)/ispecial(-tv-([0-9]+))?(-ti-([0-9]+))?(-tc-([0-9]+))?(-page-([0-9]+))?\.html$ $1/ispecial.php?tv=$3&ti=$5&tc=$7&page=$9
@@ -185,7 +185,7 @@ RewriteRule ^(.*)/category-cid-([0-9]+)(-tag-([^-]*))?(-timelimit-([0-9]+))?(-or
 RewriteRule ^(.*)/vspace-(mid|username)-(.+)\.html$ $1/vspace.php?$2=$3
 RewriteRule ^(.*)/video-(vid|ivid)-(.+)\.html$ $1/video.php?$2=$3
 RewriteRule ^(.*)/special-spid-([0-9]+)\.html$ $1/special.php?spid=$2
-&lt;/IfModule&gt;</pre>
+</IfModule></pre>
   
   <p>
     Apache 虚拟主机用户：

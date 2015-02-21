@@ -21,7 +21,7 @@ tags:
 
 主要采用JS的方法加载 
 
-<pre class="lang:xhtml decode:true " >&lt;script type="text/javascript" src="https://www.google.com/jsapi?key=INSERT_YOUR_KEY"&gt;&lt;/script&gt;</pre>
+<pre class="lang:xhtml decode:true " ><script type="text/javascript" src="https://www.google.com/jsapi?key=INSERT_YOUR_KEY"></script></pre>
 
 然后通过search对象控制搜索，官方API文档写的很具体。
 
@@ -80,37 +80,37 @@ HttpClient类可参考我之前写的这篇文章：
   //print_r($json);
   
   //Response Succeess 200
-  if ($json-&gt;responseStatus == 200) {
+  if ($json->responseStatus == 200) {
   
-  $jsonResults = $json-&gt;responseData-&gt;results;
-  $jsonCursor  = $json-&gt;responseData-&gt;cursor;
-  $jsonRow     = $jsonCursor-&gt;estimatedResultCount;
+  $jsonResults = $json->responseData->results;
+  $jsonCursor  = $json->responseData->cursor;
+  $jsonRow     = $jsonCursor->estimatedResultCount;
   
   if (count($jsonResults)) {
   //Resules Exists
   foreach($jsonResults as $searchResult) {
-  if($searchResult-&gt;GsearchResultClass == 'GwebSearch') {
+  if($searchResult->GsearchResultClass == 'GwebSearch') {
   $formattedresults .= 
-'&lt;/p&gt;
-          &lt;div class="searchresult"&gt;
-						&lt;div class="title"&gt;&lt;a href="' . $searchResult-&gt;unescapedUrl . '"&gt;' . $searchResult-&gt;title . '&lt;/a&gt;&lt;/div&gt;
-						&lt;div class="desc"&gt;' . $searchResult-&gt;content . '&lt;/div&gt;
-						&lt;div class="url"&gt;' . $searchResult-&gt;visibleUrl . '&lt;/div&gt;
-					&lt;/div&gt;';
+'</p>
+          <div class="searchresult">
+						<div class="title"><a href="' . $searchResult->unescapedUrl . '">' . $searchResult->title . '</a></div>
+						<div class="desc">' . $searchResult->content . '</div>
+						<div class="url">' . $searchResult->visibleUrl . '</div>
+					</div>';
 				}
 			}
 			
 			
-			$formattedresults .= '&lt;div class="searchpage"&gt;';
-			foreach($jsonCursor-&gt;pages as $searchPage) {
-				$class = $searchPage-&gt;label == $page ? 'class="current"' : NULL;
-				$formattedresults .= "&lt;a {$class} href='?keyword={$keyword}&page=".$searchPage-&gt;label."'\&gt;".$searchPage-&gt;label.'&lt;/a&gt;';
+			$formattedresults .= '<div class="searchpage">';
+			foreach($jsonCursor->pages as $searchPage) {
+				$class = $searchPage->label == $page ? 'class="current"' : NULL;
+				$formattedresults .= "<a {$class} href='?keyword={$keyword}&page=".$searchPage->label."'\>".$searchPage->label.'</a>';
 			}
-			$formattedresults .= '&lt;/div&gt;';
+			$formattedresults .= '</div>';
 			
 		} else {
 			//Result Noting
-			$formattedresults = '&lt;p class="note"&gt;Your search - '.$keyword.' - did not match any documents.&lt;/p&gt;';
+			$formattedresults = '<p class="note">Your search - '.$keyword.' - did not match any documents.</p>';
 		
 		}
 		
@@ -122,20 +122,20 @@ HttpClient类可参考我之前写的这篇文章：
 //使用函数方式
 $keyword = trim($_GET['keyword']);
 $page = $_GET['page'] ? (int)$_GET['page'] : 1;
-$page &lt; 1 && $page = 1;
+$page < 1 && $page = 1;
 
 if(!$keyword) {
 	//没有输入关键字的时候
-	$content = '&lt;p class="note"&gt;Please enter one or more search terms in the search box above.&lt;/p&gt;';
+	$content = '<p class="note">Please enter one or more search terms in the search box above.</p>';
   
 } else {
 	
 	$content = getSearchFormat(array( 
-		'q'      =&gt; urlencode($keyword), // search keywords
-		'key'    =&gt; 'Your API Key', 
-		'userip' =&gt; getIP(), //客户机IP
-		'rsz'    =&gt; 8, //每页显示记录数  最高8条
-		'start'  =&gt; ($page-1) * 8 //记录开始的下界。
+		'q'      => urlencode($keyword), // search keywords
+		'key'    => 'Your API Key', 
+		'userip' => getIP(), //客户机IP
+		'rsz'    => 8, //每页显示记录数  最高8条
+		'start'  => ($page-1) * 8 //记录开始的下界。
 	), true); 
 }</pre>
 

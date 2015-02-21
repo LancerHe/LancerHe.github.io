@@ -13,7 +13,7 @@ tags:
   - jquery
   - select
 ---
-[<img class="alignnone size-full wp-image-712" title="czCombobox" src="http://www.crackedzone.com/wp-content/uploads/2012/07/czCombobox.jpg" alt="" width="590" height="150" />][1]
+[<img class="alignnone size-full wp-image-712" title="czCombobox" src="{{ site.url }}/uploads/2012/07/czCombobox.jpg" alt="" width="590" height="150" />][1]
 
 其实之前也用过网上很多select美化插件，但是由于很多事件没有办法自定义，或者一些Bug的原因我无法对原始插件进行扩展。所以还是决定自己写一个。
 
@@ -24,7 +24,7 @@ tags:
   
 效果图：
 
-[<img class="aligncenter size-full wp-image-583" title="Combobox Preview" src="http://www.crackedzone.com/wp-content/uploads/2012/07/demopic.gif" alt="" width="550" height="450" />][2]
+[<img class="aligncenter size-full wp-image-583" title="Combobox Preview" src="{{ site.url }}/uploads/2012/07/demopic.gif" alt="" width="550" height="450" />][2]
 
 <a href="http://project.crackedzone.com/czUI/demos/czCombobox/demo.html" target="_blank">查看Demo</a>    <a href="http://czui.googlecode.com/files/czCombobox-1.0.zip" target="_blank">下载插件</a>
 
@@ -32,7 +32,7 @@ tags:
 
 可以通过[google svn checkout][3]历史信息，或者[下载][4]其他插件。
 
- [1]: http://www.crackedzone.com/wp-content/uploads/2012/07/czCombobox.jpg
- [2]: http://www.crackedzone.com/wp-content/uploads/2012/07/demopic.gif
+ [1]: {{ site.url }}/uploads/2012/07/czCombobox.jpg
+ [2]: {{ site.url }}/uploads/2012/07/demopic.gif
  [3]: http://code.google.com/p/czui/source/checkout
  [4]: http://code.google.com/p/czui/downloads/list

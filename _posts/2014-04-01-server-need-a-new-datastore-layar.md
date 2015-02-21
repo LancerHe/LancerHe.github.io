@@ -11,11 +11,9 @@ tags:
   - 数据缓存层
   - 服务端
 ---
-<p style="text-align: right;">
-  — 实现读取缓存在数据访问层中抽离策略
-</p>
+<p align="right">- 实现读取缓存在数据访问层中抽离策略</p>
 
-#### 一. 背景
+### 一. 背景
 
 使用数据缓存在WEB工程中是一个非常有意义的策略，不仅仅可以减少数据库负载，而且当数据缓存在内存中，能大大提高了的读取速度。
 
@@ -35,44 +33,44 @@ tags:
   
 &nbsp;
 
-#### 二. 引发思考的根源
+### 二. 引发思考的根源
 
 先来看一个简单的例子：*获取服务器的数据列表*
 
-<pre class="lang:php decode:true">// 这是一个读取服务器相关信息的数据访问类
-Class ServerStore {
+    // 这是一个读取服务器相关信息的数据访问类
+    Class ServerStore {
 
-    // 根据数量获取最新的测试服务器列表数据
-    public function fetchTestingList($limit);
-}</pre>
+        // 根据数量获取最新的测试服务器列表数据
+        public function fetchTestingList($limit);
+    }
 
 看到这个类基本所有人都知道fetchTestingList的方法体要这么写：
 
-<pre class="lang:php decode:true">// 这是一个读取服务器相关信息的数据访问类
-Class ServerStore {
+    // 这是一个读取服务器相关信息的数据访问类
+    Class ServerStore {
 
-    // 根据数量获取最新的测试服务器列表数据
-    public function fetchTestingList($limit) {
-        // OK，开始找Cache
-        $cache_key = "ServerTestingList:{$limit}";
-        if ( FALSE !== $data_from_cache = Cache::getInstance()-&gt;get($cache_key) ) {
-            return $data_from_cache;
+        // 根据数量获取最新的测试服务器列表数据
+        public function fetchTestingList($limit) {
+            // OK，开始找Cache
+            $cache_key = "ServerTestingList:{$limit}";
+            if ( FALSE !== $data_from_cache = Cache::getInstance()->get($cache_key) ) {
+                return $data_from_cache;
+            }
+            // Cache没找到，找数据表吧
+            $data = $this->db->select('id','name','time')
+                ->from('server')
+                ->limit($limit)
+                ->fetchRow();
+            // 写缓存，给个600秒意思下吧
+            Cache::getInstance()->set($cache_key, $data, 600);
+            return $data;
         }
-        // Cache没找到，找数据表吧
-        $data = $this-&gt;db-&gt;select('id','name','time')
-            -&gt;from('server')
-            -&gt;limit($limit)
-            -&gt;fetchRow();
-        // 写缓存，给个600秒意思下吧
-        Cache::getInstance()-&gt;set($cache_key, $data, 600);
-        return $data;
     }
-}</pre>
 
 现在我们调用这个方法获取数据：
 
-<pre class="lang:php decode:true">$ServerStore = new ServeStore();
-$list = $ServerStore-&gt;fetchTestingList(4);</pre>
+    $ServerStore = new ServeStore();
+    $list = $ServerStore->fetchTestingList(4);
 
 这个对象我们统一称之为<strong style="color: #000080;">Store(数据访问) </strong>对象
 
@@ -88,17 +86,17 @@ $list = $ServerStore-&gt;fetchTestingList(4);</pre>
 
 &nbsp;
 
-#### 三. 独立缓存层的设计
+### 三. 独立缓存层的设计
 
 为什么我们将缓存写在<strong style="color: #000080;">Store</strong>对象内，如果写在<strong style="color: #000080;">Store</strong>对象外头可以吗？形如这般：
 
-<pre class="lang:php decode:true">$ServerStore-&gt;ttl(600)-&gt;fetchTestingList(4);
-$ServerStore-&gt;nocache()-&gt;fetchTestingList(4);</pre>
+    $ServerStore->ttl(600)->fetchTestingList(4);
+    $ServerStore->nocache()->fetchTestingList(4);
 
 那么这应该不是一个<strong style="color: #000080;">Store</strong>对象可以做到方式，我们不妨将它叫做<strong style="color: #000080;">Service(数据服务)</strong>对象：
 
-<pre class="lang:php decode:true">$ServerService-&gt;ttl(600)-&gt;fetchTestingList(4);
-$ServerService-&gt;nocache()-&gt;fetchTestingList(4);</pre>
+    $ServerService->ttl(600)->fetchTestingList(4);
+    $ServerService->nocache()->fetchTestingList(4);
 
 我们可以猜想到：
 
@@ -110,11 +108,11 @@ $ServerService-&gt;nocache()-&gt;fetchTestingList(4);</pre>
 
 根据我们的猜想，画出UML图：
 
-[<img class="alignnone size-full wp-image-960" title="cachestore-uml-1" src="http://www.crackedzone.com/wp-content/uploads/2014/04/cachestore-uml-1.jpg" alt="" />][1]
+[<img class="alignnone size-full wp-image-960" title="cachestore-uml-1" src="{{ site.url }}/uploads/2014/04/cachestore-uml-1.jpg" alt="" />][1]
 
 为了保证通用性我们将<strong style="color: #000080;">Cache</strong>和<strong style="color: #000080;">Service</strong>都继承一个抽象基类：
 
-[<img class="alignnone size-full wp-image-961" title="cachestore-uml-2" src="http://www.crackedzone.com/wp-content/uploads/2014/04/cachestore-uml-2.jpg" alt="" />][2]
+[<img class="alignnone size-full wp-image-961" title="cachestore-uml-2" src="{{ site.url }}/uploads/2014/04/cachestore-uml-2.jpg" alt="" />][2]
 
 一切看似逻辑没什么异常了，可是我们Key的组合怎么处理呢？怎么创建这个Key？
 
@@ -122,7 +120,7 @@ $ServerService-&gt;nocache()-&gt;fetchTestingList(4);</pre>
 
 为此我们可以建立一个<strong style="color: #000080;">ServerCacheKey(数据缓存键)</strong>对象，里面的每个方法都应该匹配<strong style="color: #000080;">ServerStore</strong>中对应的方法。那么我们不妨设计一个接口<strong style="color: #000080;">iServer</strong>，然而<strong style="color: #000080;">ServerCacheKey，ServerCache</strong>以及<strong style="color: #000080;">ServerStore</strong>实现这个接口，通过这样的实现<strong style="color: #000080;">ServerCacheKey</strong>将也有fetchTodayTestingList这个方法，自然能通过对应的参数组合出需要的Key。
 
-[<img class="alignnone size-full wp-image-962" title="cachestore-uml-3" src="http://www.crackedzone.com/wp-content/uploads/2014/04/cachestore-uml-3.jpg" alt="" />][3]
+[<img class="alignnone size-full wp-image-962" title="cachestore-uml-3" src="{{ site.url }}/uploads/2014/04/cachestore-uml-3.jpg" alt="" />][3]
 
 <strong style="color: #000080;">       </strong>那么第二个问题，创建这个Key的工作可能出现的位置在：
 
@@ -133,11 +131,11 @@ $ServerService-&gt;nocache()-&gt;fetchTestingList(4);</pre>
 
 注：<strong style="color: #000080;">ServerCache</strong>可以继承抽象类Call魔术自动通过<strong style="color: #000080;">CacheKeyCreater</strong>实现的接口方法，进行读取数据缓存方法，因此我们这里移除<strong style="color: #000080;">ServerCache</strong>实现<strong style="color: #000080;">iServer</strong>的过程。
 
-[<img class="alignnone size-full wp-image-959" title="cachestore-uml-4" src="http://www.crackedzone.com/wp-content/uploads/2014/04/cachestore-uml-4.jpg" alt="" />][4]
+[<img class="alignnone size-full wp-image-959" title="cachestore-uml-4" src="{{ site.url }}/uploads/2014/04/cachestore-uml-4.jpg" alt="" />][4]
 
 &nbsp;
 
-#### 四. 程序实现
+### 四. 程序实现
 
 为了方便程序实现和调试，以下使用ThinkPHP框架模拟程序，将App下Lib目录结构做如下规划：
 
@@ -155,179 +153,187 @@ $ServerService-&gt;nocache()-&gt;fetchTestingList(4);</pre>
 
 使用ThinkPHP自带的D函数自动装载对应目录下类库，部分类库需要增加自定义的autoload功能。
 
-1.  接口类iServer： <pre class="lang:php decode:true">// 服务器列表接口
-Interface iServer {
-    // 获取今日开服列表
-    public function fetchTodayOpeningList($limit);
-    // 获取今日测试列表
-    public function fetchTodayTestingList($limit);
-}</pre>
+#### 接口类iServer： 
 
-2.  CacheKeyCreater 创建Key类： <pre class="lang:php decode:true">/**
- * APP Cache Key生成类
- *
- * @category Core
- * @package  Core
- * @author   Lancer &lt;lancer.he@gmail.com&gt;
- * @since    2014-03-06
- */
-Final Class CacheKeyCreater {
-
-    public static function create($class, $func, $args) {
-        $cachekey_class = $class . 'CacheKey';
-        return call_user_func_array(array($cachekey_class, $func), $args);
-    }
-}</pre>
-
-3.  Cache抽象基类BaseCache： <pre class="lang:php decode:true">/**
- * APP Cache层抽象基类
- *
- * @category Core
- * @package  Core
- * @author   Lancer &lt;lancer.he@gmail.com&gt;
- * @since    2014-03-06
- */
-Abstract Class BaseCache {
-    public function __call($func, $args) {
-        $class = str_replace('Cache', '', get_class($this) );
-        $key = CacheKeyCreater::create($class, $func, $args);
-        return Cache::getInstance()-&gt;get($key);
-    }
-}</pre>
-
-4.  Service抽象基类BaseService： <pre class="lang:default decode:true">/**
- * APP Service层抽象基类，自动选择Cache层/Store层
- *
- * @category Core
- * @package  Core
- * @author   Lancer &lt;lancer.he@gmail.com&gt;
- * @since    2014-03-06
- */
-Abstract Class BaseService {
-
-    protected $_cache_handler;
-
-    protected $_db_handler;
-
-    protected $_class_name;
-
-    protected $_layer_cache_tag = 'Cache';//Cache类放在Cache目录下
-
-    protected $_layer_store_tag = 'Store';//Store类放在Store对象下
-
-    public function __construct() {
-        $this-&gt;_class_name    = str_replace('Service', '', get_class($this) );
-        $this-&gt;_cache_handler = D($this-&gt;_class_name, $this-&gt;_layer_cache_tag);
-        $this-&gt;_db_handler    = D($this-&gt;_class_name, $this-&gt;_layer_store_tag);
+    // 服务器列表接口
+    Interface iServer {
+        // 获取今日开服列表
+        public function fetchTodayOpeningList($limit);
+        // 获取今日测试列表
+        public function fetchTodayTestingList($limit);
     }
 
-    public function ttl($ttl) {
-        $this-&gt;_cache_handler-&gt;ttl = $ttl;
-        return $this;
+#### CacheKeyCreater 创建Key类： 
+
+    /**
+     * APP Cache Key生成类
+     *
+     * @category Core
+     * @package  Core
+     * @author   Lancer <lancer.he@gmail.com>
+     * @since    2014-03-06
+     */
+    Final Class CacheKeyCreater {
+
+        public static function create($class, $func, $args) {
+            $cachekey_class = $class . 'CacheKey';
+            return call_user_func_array(array($cachekey_class, $func), $args);
+        }
     }
 
-    public function nocache() {
-        return $this-&gt;_db_handler;
+#### Cache抽象基类BaseCache： 
+
+    /**
+     * APP Cache层抽象基类
+     *
+     * @category Core
+     * @package  Core
+     * @author   Lancer <lancer.he@gmail.com>
+     * @since    2014-03-06
+     */
+    Abstract Class BaseCache {
+        public function __call($func, $args) {
+            $class = str_replace('Cache', '', get_class($this) );
+            $key = CacheKeyCreater::create($class, $func, $args);
+            return Cache::getInstance()->get($key);
+        }
     }
 
-    public function __call($func, $args) {
-        $data_from_cache = call_user_func_array(array($this-&gt;_cache_handler, $func), $args);
-        if ( FALSE !== $data_from_cache ) 
-            return $data_from_cache;
+#### Service抽象基类BaseService： 
 
-        $data = call_user_func_array(array($this-&gt;_db_handler, $func), $args);
-        $key  = CacheKeyCreater::create($this-&gt;_class_name, $func, $args);
-        Cache::getInstance()-&gt;set($key, $data, $this-&gt;_cache_handler-&gt;ttl );
-        return $data;
-    }
-}</pre>
+    /**
+     * APP Service层抽象基类，自动选择Cache层/Store层
+     *
+     * @category Core
+     * @package  Core
+     * @author   Lancer <lancer.he@gmail.com>
+     * @since    2014-03-06
+     */
+    Abstract Class BaseService {
 
-5.  ServeStore：必须实现接口iServer的方法 <pre class="lang:php decode:true">/**
- * 服务器数据读取层
- *
- * @category Cache
- * @package  Core
- * @author   Lancer &lt;lancer.he@gmail.com&gt;
- * @since    2014-03-02
- */
-Class ServerStore implements iServer{
+        protected $_cache_handler;
 
-    public function fetchTodayOpeningList($limit=4) {
-        $condition  = array('status' =&gt; 1, 'audit' =&gt; 1 'opendate' =&gt; date('Y-m-d') );
-        return D('Server')-&gt;order('opentime DESC')
-            -&gt;where($condition)
-            -&gt;limit($limit);
-            -&gt;getField('id, game_id, name, opentime, statusval');
-    }
+        protected $_db_handler;
 
-    public function fetchTodayTestingList($limit=4) {
-        $condition  = array('status' =&gt; 0, 'audit' =&gt; 1 'opendate' =&gt; date('Y-m-d') );
-        $pagination = array('limit' =&gt; 4);
-        return D('Server')-&gt;order('opentime DESC')
-            -&gt;where($condition)
-            -&gt;limit($limit);
-            -&gt;getField('id, game_id, name, opentime, statusval');
-    }
-}</pre>
+        protected $_class_name;
 
-6.  ServerCacheKey：必须实现接口iServer的方法 <pre class="lang:php decode:true">/**
- * 服务器列表缓存键类
- *
- * @category CacheKey
- * @package  Extend
- * @author   Lancer &lt;lancer.he@gmail.com&gt;
- * @since    2014-03-02
- */
-Class ServerCacheKey implements iServer {
+        protected $_layer_cache_tag = 'Cache';//Cache类放在Cache目录下
 
-    public function fetchTodayOpeningList($limit) {
-        return 'ServerTodayOpeningList:' . $limit;
+        protected $_layer_store_tag = 'Store';//Store类放在Store对象下
+
+        public function __construct() {
+            $this->_class_name    = str_replace('Service', '', get_class($this) );
+            $this->_cache_handler = D($this->_class_name, $this->_layer_cache_tag);
+            $this->_db_handler    = D($this->_class_name, $this->_layer_store_tag);
+        }
+
+        public function ttl($ttl) {
+            $this->_cache_handler->ttl = $ttl;
+            return $this;
+        }
+
+        public function nocache() {
+            return $this->_db_handler;
+        }
+
+        public function __call($func, $args) {
+            $data_from_cache = call_user_func_array(array($this->_cache_handler, $func), $args);
+            if ( FALSE !== $data_from_cache ) 
+                return $data_from_cache;
+
+            $data = call_user_func_array(array($this->_db_handler, $func), $args);
+            $key  = CacheKeyCreater::create($this->_class_name, $func, $args);
+            Cache::getInstance()->set($key, $data, $this->_cache_handler->ttl );
+            return $data;
+        }
     }
 
-    public function fetchTodayTestingList($limit) {
-        return 'ServerTodayTestingList:' . $limit;
+####  ServeStore：必须实现接口iServer的方法 
+
+    /**
+     * 服务器数据读取层
+     *
+     * @category Cache
+     * @package  Core
+     * @author   Lancer <lancer.he@gmail.com>
+     * @since    2014-03-02
+     */
+    Class ServerStore implements iServer{
+
+        public function fetchTodayOpeningList($limit=4) {
+            $condition  = array('status' => 1, 'audit' => 1 'opendate' => date('Y-m-d') );
+            return D('Server')->order('opentime DESC')
+                ->where($condition)
+                ->limit($limit);
+                ->getField('id, game_id, name, opentime, statusval');
+        }
+
+        public function fetchTodayTestingList($limit=4) {
+            $condition  = array('status' => 0, 'audit' => 1 'opendate' => date('Y-m-d') );
+            $pagination = array('limit' => 4);
+            return D('Server')->order('opentime DESC')
+                ->where($condition)
+                ->limit($limit);
+                ->getField('id, game_id, name, opentime, statusval');
+        }
     }
-}</pre>
 
-7.  ServerService / ServerCache 由于集成父类，目前暂时是空的： <pre class="lang:default decode:true">Class ServerCache extends BaseCache {}
-Class ServerService extends BaseService {}</pre>
+#### ServerCacheKey：必须实现接口iServer的方法 
 
-<p align="left">
-  <strong style="color: #000080;">测试过程：</strong>将设计的程序，我们大胆的在Action下做一个测试：
-</p>
+    /**
+     * 服务器列表缓存键类
+     *
+     * @category CacheKey
+     * @package  Extend
+     * @author   Lancer <lancer.he@gmail.com>
+     * @since    2014-03-02
+     */
+    Class ServerCacheKey implements iServer {
 
-<pre class="lang:php decode:true">Class TestAction extends BaseAction {
+        public function fetchTodayOpeningList($limit) {
+            return 'ServerTodayOpeningList:' . $limit;
+        }
 
-    public function cachetest() {
-        D('Server', 'Service')-&gt;ttl(600)-&gt;fetchTodayTestingList(4);
-        D('Server', 'Service')-&gt;nocache()-&gt;fetchTodayOpeningList(4);
-        $this-&gt;show(' ');
+        public function fetchTodayTestingList($limit) {
+            return 'ServerTodayTestingList:' . $limit;
+        }
     }
-}</pre>
+
+#### ServerService / ServerCache 由于集成父类，目前暂时是空的： 
+
+    Class ServerCache extends BaseCache {}
+    Class ServerService extends BaseService {}
+
+#### 测试过程：将设计的程序，我们大胆的在Action下做一个测试：
+
+    Class TestAction extends BaseAction {
+
+        public function cachetest() {
+            D('Server', 'Service')->ttl(600)->fetchTodayTestingList(4);
+            D('Server', 'Service')->nocache()->fetchTodayOpeningList(4);
+            $this->show(' ');
+        }
+    }
 
 <strong style="color: #000080;">测试结果：</strong>访问页面后在Memadmin查询：  
-[<img class="alignnone size-full wp-image-963" title="cachestore-result-1" src="http://www.crackedzone.com/wp-content/uploads/2014/04/cachestore-result-1.jpg" alt="" />][5]
+[<img class="alignnone size-full wp-image-963" title="cachestore-result-1" src="{{ site.url }}/uploads/2014/04/cachestore-result-1.jpg" alt="" />][5]
 
 <strong style="color: #000080;">测试结果：</strong>利用ThinkPHP自带的追踪SQL记录来查看下效果：  
-[<img class="alignnone size-full wp-image-964" title="cachestore-result-2" src="http://www.crackedzone.com/wp-content/uploads/2014/04/cachestore-result-2.jpg" alt="" />][6]
+[<img class="alignnone size-full wp-image-964" title="cachestore-result-2" src="{{ site.url }}/uploads/2014/04/cachestore-result-2.jpg" alt="" />][6]
 
 确实只有一条SQL查询，证明我们的设计和程序逻辑是没有问题。
 
-&nbsp;
+### 五. 小结
 
-#### 五. 小结
-
-<p align="left">
-  通过设计模式分离出一个数据缓存层，解决了以下的问题：
-</p>
+通过设计模式分离出一个数据缓存层，解决了以下的问题：
 
 1.  其他关联模块中可以通过<strong style="color: #000080;">CacheKeyCreater</strong>的方式直接获取到Key进行操作处理；
 2.  单元测试时可以自主选择使用缓存层或是数据层进行测试；
 3.  通过接口的规数据访问层和数据缓存层的方法，一旦修改出错，必然抛出致命错误，提高开发人员在项目初期对接口进行规范设计的技能，减少对数据层的修改。
 
- [1]: http://www.crackedzone.com/wp-content/uploads/2014/04/cachestore-uml-1.jpg
- [2]: http://www.crackedzone.com/wp-content/uploads/2014/04/cachestore-uml-2.jpg
- [3]: http://www.crackedzone.com/wp-content/uploads/2014/04/cachestore-uml-3.jpg
- [4]: http://www.crackedzone.com/wp-content/uploads/2014/04/cachestore-uml-4.jpg
- [5]: http://www.crackedzone.com/wp-content/uploads/2014/04/cachestore-result-1.jpg
- [6]: http://www.crackedzone.com/wp-content/uploads/2014/04/cachestore-result-2.jpg
+ [1]: {{ site.url }}/uploads/2014/04/cachestore-uml-1.jpg
+ [2]: {{ site.url }}/uploads/2014/04/cachestore-uml-2.jpg
+ [3]: {{ site.url }}/uploads/2014/04/cachestore-uml-3.jpg
+ [4]: {{ site.url }}/uploads/2014/04/cachestore-uml-4.jpg
+ [5]: {{ site.url }}/uploads/2014/04/cachestore-result-1.jpg
+ [6]: {{ site.url }}/uploads/2014/04/cachestore-result-2.jpg

@@ -21,7 +21,7 @@ tags:
 	function getCategory() {
 		//这时我们不得不重新初始化一个数据库句柄,试想多个应用场景下，这样的代码是多么可怕啊？！ 
 		$db = new DB();
-		$db-&gt;query($sql);
+		$db->query($sql);
 		//当然也可以使用全局变量
 		global $db;
 		//但一般在OPP编程中，不使用这样的方法，同时global存在安全隐患
@@ -36,8 +36,8 @@ tags:
 	function getCategory() {
 		//所有的应用情景只有一个数据库句柄资源，嘿嘿，效率老高了， 
 		//资源也大大的得到节省，代码简洁明了：）
-		$query = Db::getInstance()-&gt;query($sql);
-		$array = Db::getInstance()-&gt;fetch_array($query);
+		$query = Db::getInstance()->query($sql);
+		$array = Db::getInstance()->fetch_array($query);
 	}
 }</pre>
 

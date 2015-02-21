@@ -27,9 +27,9 @@ class MYSQL {
 	function __construct() {}
   function connect() {}
 }
-&lt;/coolcode&gt;
-&lt;!--more--&gt;
-&lt;coolcode lang="php" linenum="off"&gt;
+</coolcode>
+<!--more-->
+<coolcode lang="php" linenum="off">
 
 //我们现在创建一个工厂类
 
@@ -50,7 +50,7 @@ class Database {
 // -- 用法 -- 
 
 $db = Database::load();
-$db-&gt;connect();</pre>
+$db->connect();</pre>
 
 通过工厂类Database, 通过不同的配置实例化不同的数据库类。
 

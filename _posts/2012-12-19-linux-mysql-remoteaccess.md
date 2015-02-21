@@ -13,7 +13,7 @@ tags:
   - MySql
   - 远程访问
 ---
-[<img class="alignnone size-full wp-image-748" title="remote-mysql" src="http://www.crackedzone.com/wp-content/uploads/2012/12/remote-mysql.jpg" alt="" width="590" height="150" />][1]
+[<img class="alignnone size-full wp-image-748" title="remote-mysql" src="{{ site.url }}/uploads/2012/12/remote-mysql.jpg" alt="" width="590" height="150" />][1]
 
 ### 步骤一 激活Mysql配置文件my.cnf中的远程访问
 
@@ -29,7 +29,7 @@ tags:
 <!--more-->
 
   
-[<img class="alignnone size-full wp-image-749" title="remote-mysql-2" src="http://www.crackedzone.com/wp-content/uploads/2012/12/remote-mysql-2.jpg" alt="" width="363" height="265" />][2]
+[<img class="alignnone size-full wp-image-749" title="remote-mysql-2" src="{{ site.url }}/uploads/2012/12/remote-mysql-2.jpg" alt="" width="363" height="265" />][2]
 
 ### 步骤二 授权帐户具有远程访问属性
 
@@ -38,7 +38,7 @@ tags:
 <pre class="lang:default decode:true " >use mysql;
 select host, user from mysql;</pre>
 
-[<img class="alignnone size-full wp-image-751" title="remote-mysql-2" src="http://www.crackedzone.com/wp-content/uploads/2012/12/remote-mysql-2.gif" alt="" width="370" height="300" />][3]
+[<img class="alignnone size-full wp-image-751" title="remote-mysql-2" src="{{ site.url }}/uploads/2012/12/remote-mysql-2.gif" alt="" width="370" height="300" />][3]
 
 正常情况下是只有三个root用户，他们的host分别是
 
@@ -64,6 +64,6 @@ mysql > grant all privileges on *.* to admin@'%' identified by '123456' with gra
 
 是不是发现有两个新的用户名是admin，这时我们就可以开启远程访问了。
 
- [1]: http://www.crackedzone.com/wp-content/uploads/2012/12/remote-mysql.jpg
- [2]: http://www.crackedzone.com/wp-content/uploads/2012/12/remote-mysql-2.jpg
- [3]: http://www.crackedzone.com/wp-content/uploads/2012/12/remote-mysql-2.gif
+ [1]: {{ site.url }}/uploads/2012/12/remote-mysql.jpg
+ [2]: {{ site.url }}/uploads/2012/12/remote-mysql-2.jpg
+ [3]: {{ site.url }}/uploads/2012/12/remote-mysql-2.gif

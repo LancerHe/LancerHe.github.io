@@ -16,10 +16,10 @@ tags:
 
 延迟载入广告JS
 
-<pre class="lang:xhtml decode:true " >&lt;script language="JavaScript" src="" id="my"&gt;&lt;/script&gt; 
-&lt;script&gt; 
+<pre class="lang:xhtml decode:true " ><script language="JavaScript" src="" id="my"></script> 
+<script> 
 setTimeout("document.getElementById('my').src='js/ad.js'; ",3000); 
-&lt;/script&gt;</pre>
+</script></pre>
 
 <!--more-->
 

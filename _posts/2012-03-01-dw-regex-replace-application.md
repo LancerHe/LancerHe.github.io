@@ -18,25 +18,25 @@ tags:
 
 网站优化过程中，经常会遇到很多要批量修改的东西，一个个修改，明显效率低下。本文是使用DW正则表达式批量替换的一个实例。
 
-<pre class="lang:xhtml decode:true " >&lt;!--想法：想把--&gt;
-&lt;a  href="#" target="_blank"&gt;BBBBBBB&lt;/a&gt;
-&lt;!--替换成 --&gt;
-&lt;a  href="http://www.yourdomain.com/keyword.asp?=BBBBBBB" target="_blank"&gt;BBBBBBB&lt;/a&gt;
+<pre class="lang:xhtml decode:true " ><!--想法：想把-->
+<a  href="#" target="_blank">BBBBBBB</a>
+<!--替换成 -->
+<a  href="http://www.yourdomain.com/keyword.asp?=BBBBBBB" target="_blank">BBBBBBB</a>
 </pre>
 
 如果&#8221;BBBBBBB&#8221;一样的话，那么简单，如果内容不一样的话，就不能使用简单的查找替换功能了。那么就使用DW正则表达式批量替换吧。
 
 要替换内容：
 
-[<img class="aligncenter size-full wp-image-530" title="1" src="http://www.crackedzone.com/wp-content/uploads/2012/03/1.png" alt="" width="311" height="369" />][1]
+[<img class="aligncenter size-full wp-image-530" title="1" src="{{ site.url }}/uploads/2012/03/1.png" alt="" width="311" height="369" />][1]
 
 替换要达到的效果：
 
-[<img class="aligncenter size-full wp-image-530" title="1" src="http://www.crackedzone.com/wp-content/uploads/2012/03/1.png" alt="" width="311" height="369" />][1]
+[<img class="aligncenter size-full wp-image-530" title="1" src="{{ site.url }}/uploads/2012/03/1.png" alt="" width="311" height="369" />][1]
 
 <!--more-->替换的正则表达式：
 
-[<img class="aligncenter size-full wp-image-532" title="2" src="http://www.crackedzone.com/wp-content/uploads/2012/03/2.png" alt="" width="653" height="286" />][2]
+[<img class="aligncenter size-full wp-image-532" title="2" src="{{ site.url }}/uploads/2012/03/2.png" alt="" width="653" height="286" />][2]
 
 说明： （.\S+） &#8212;-用来替换A标签中的锚文本 {S为大写，代表任何单个非空白字符。}.  
 $1 则是引用A标签中的锚文本（.\S+）的参数。  
@@ -44,7 +44,7 @@ $1 则是引用A标签中的锚文本（.\S+）的参数。
 
 最终效果：
 
-[<img class="aligncenter size-full wp-image-533" title="4" src="http://www.crackedzone.com/wp-content/uploads/2012/03/4.png" alt="" width="649" height="357" />][3]
+[<img class="aligncenter size-full wp-image-533" title="4" src="{{ site.url }}/uploads/2012/03/4.png" alt="" width="649" height="357" />][3]
 
 下面提供DW正则表达式表说明:
 
@@ -386,6 +386,6 @@ $1 则是引用A标签中的锚文本（.\S+）的参数。
   </tr>
 </table>
 
- [1]: http://www.crackedzone.com/wp-content/uploads/2012/03/1.png
- [2]: http://www.crackedzone.com/wp-content/uploads/2012/03/2.png
- [3]: http://www.crackedzone.com/wp-content/uploads/2012/03/4.png
+ [1]: {{ site.url }}/uploads/2012/03/1.png
+ [2]: {{ site.url }}/uploads/2012/03/2.png
+ [3]: {{ site.url }}/uploads/2012/03/4.png

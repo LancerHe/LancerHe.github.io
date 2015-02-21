@@ -12,7 +12,7 @@ tags:
   - ckfinder
   - php
 ---
-[<img class="alignnone size-full wp-image-700" title="Ckeditor Ckfinder" src="http://www.crackedzone.com/wp-content/uploads/2011/03/Ckeditor-Ckfinder.jpg" alt="" width="590" height="150" />][1]
+[<img class="alignnone size-full wp-image-700" title="Ckeditor Ckfinder" src="{{ site.url }}/uploads/2011/03/Ckeditor-Ckfinder.jpg" alt="" width="590" height="150" />][1]
 
 最近由于工作需要，一次性需要把所有的编辑器改进成CKEditor，不过这玩意没有上传功能，只好找到它的姐妹产品CKFinder。网上一查，才知道这两东西合伙才有希望完成上传等诸多功能。
 
@@ -30,9 +30,9 @@ config.toolbar = 'Basic';
 
 <pre class="lang:php decode:true " >require_once ROOTPATH . "ckeditor/ckeditor.php";
 $CKEditor = new CKEditor();
-$CKEditor-&gt;returnOutput = true; //设置输出可用变量的情况
-$CKEditor-&gt;basePath = '/ckeditor/';//设置路径
-$contentarea = $CKEditor-&gt;editor("content", $rs['contents']); //生成一个以name为content的textarea
+$CKEditor->returnOutput = true; //设置输出可用变量的情况
+$CKEditor->basePath = '/ckeditor/';//设置路径
+$contentarea = $CKEditor->editor("content", $rs['contents']); //生成一个以name为content的textarea
 
 echo $contentarea;</pre>
 
@@ -95,4 +95,4 @@ $contentarea = $CKEditor->editor("content", $rs['contents']);
 
 两者配合用起来还是挺不错的，更重要的原因是安全性高了很多。
 
- [1]: http://www.crackedzone.com/wp-content/uploads/2011/03/Ckeditor-Ckfinder.jpg
+ [1]: {{ site.url }}/uploads/2011/03/Ckeditor-Ckfinder.jpg

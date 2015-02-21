@@ -14,7 +14,7 @@ tags:
   - nat
   - VMware
 ---
-[<img src="http://www.crackedzone.com/wp-content/uploads/2012/12/vmware.jpg" alt="" title="vmware" width="590" height="150" class="alignnone size-full wp-image-757" />][1]
+[<img src="{{ site.url }}/uploads/2012/12/vmware.jpg" alt="" title="vmware" width="590" height="150" class="alignnone size-full wp-image-757" />][1]
 
 > 本文主要记录Vmware虚拟机上通过NAT方式与Linux与主机进行相互通信的问题，通过FTP上传文件，另外介绍putty工具的使用。
 
@@ -28,7 +28,7 @@ tags:
 
 所以设置我的一个虚拟机子网段为192.168.100.0
 
-[<img class="alignnone size-full wp-image-738" title="vmware-1" src="http://www.crackedzone.com/wp-content/uploads/2012/12/vmware-1.jpg" alt="" width="614" height="569" />][2]
+[<img class="alignnone size-full wp-image-738" title="vmware-1" src="{{ site.url }}/uploads/2012/12/vmware-1.jpg" alt="" width="614" height="569" />][2]
 
 点击打开NAT Setting，
 
@@ -40,7 +40,7 @@ tags:
 
 设置好虚拟机Linux的IP为：192.168.100.100
 
-[<img class="alignnone size-full wp-image-739" title="vmware-2" src="http://www.crackedzone.com/wp-content/uploads/2012/12/vmware-2.jpg" alt="" width="516" height="506" />][3]
+[<img class="alignnone size-full wp-image-739" title="vmware-2" src="{{ site.url }}/uploads/2012/12/vmware-2.jpg" alt="" width="516" height="506" />][3]
 
 上述操作完毕后，就进入Linux系统吧，首先根据刚才的设置，找到文件
 
@@ -84,9 +84,9 @@ nameserver 192.168.100.2 (网关)
 </pre>
 
 安装好后我们就可以使用Putty登陆  
-[<img class="alignnone size-full wp-image-740" title="vmware-3" src="http://www.crackedzone.com/wp-content/uploads/2012/12/vmware-3.jpg" alt="" width="589" height="176" />][4]
+[<img class="alignnone size-full wp-image-740" title="vmware-3" src="{{ site.url }}/uploads/2012/12/vmware-3.jpg" alt="" width="589" height="176" />][4]
 
- [1]: http://www.crackedzone.com/wp-content/uploads/2012/12/vmware.jpg
- [2]: http://www.crackedzone.com/wp-content/uploads/2012/12/vmware-1.jpg
- [3]: http://www.crackedzone.com/wp-content/uploads/2012/12/vmware-2.jpg
- [4]: http://www.crackedzone.com/wp-content/uploads/2012/12/vmware-3.jpg
+ [1]: {{ site.url }}/uploads/2012/12/vmware.jpg
+ [2]: {{ site.url }}/uploads/2012/12/vmware-1.jpg
+ [3]: {{ site.url }}/uploads/2012/12/vmware-2.jpg
+ [4]: {{ site.url }}/uploads/2012/12/vmware-3.jpg

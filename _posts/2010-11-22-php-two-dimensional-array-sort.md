@@ -29,9 +29,9 @@ tags:
 由于我们通常取出处理的二维数组是这样的：
 
 <pre class="lang:php decode:true " >$arr = array (
-	1 =&gt; array('id' =&gt; 2, 'fid' =&gt; '3' , 'data' =&gt; 'aa' ),
-	2 =&gt; array('id' =&gt; 3, 'fid' =&gt; '1' , 'data' =&gt; 'bb' ),
-	3 =&gt; array('id' =&gt; 1, 'fid' =&gt; '2' , 'data' =&gt; 'bb' )
+	1 => array('id' => 2, 'fid' => '3' , 'data' => 'aa' ),
+	2 => array('id' => 3, 'fid' => '1' , 'data' => 'bb' ),
+	3 => array('id' => 1, 'fid' => '2' , 'data' => 'bb' )
 );</pre>
 
 假如我们需要把这个数组按照fid排序，按照array_multisort函数的要求我们就要取出fid这一列，然后根据这一列的升序，来调整原来的数组也升序。

@@ -18,7 +18,7 @@ header(&#8216;Content-Type: text/html; charset=utf-8&#8242;);
 下面列出header函数的大部分使用方式  
 <!--more-->
 
-<pre class="lang:php decode:true " >&lt;?php
+<pre class="lang:php decode:true " ><?php
 // fix 404 pages: 
 header('HTTP/1.1 200 OK'); 
 
@@ -36,7 +36,7 @@ header('Location: http://www.example.org/');
 header('Refresh: 10; url=http://www.example.org/'); 
 print 'You will be redirected in 10 seconds'; 
 
-// you could also use the HTML syntax:// &lt;meta http-equiv="refresh" content="10;http://www.example.org/ /&gt; 
+// you could also use the HTML syntax:// <meta http-equiv="refresh" content="10;http://www.example.org/ /> 
 
 // override X-Powered-By: PHP: 
 header('X-Powered-By: PHP/4.4.0'); 
@@ -91,4 +91,4 @@ header('HTTP/1.1 401 Unauthorized');
 header('WWW-Authenticate: Basic realm="Top Secret"'); 
 print 'Text that will be displayed if the user hits cancel or '; 
 print 'enters wrong login data'; 
-?&gt;</pre>
+?></pre>

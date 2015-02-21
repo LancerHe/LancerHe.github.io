@@ -80,32 +80,32 @@ tags:
   </p>
   
   <p>
-    <code>&lt;span style="color: #000000;">&lt;span style="color: #0000cc;">&lt;&lt;/span>&lt;span style="color: #0000cc;">?&lt;/span>&lt;span style="color: #0000ff;">php&lt;/span>&lt;/span></code>
+    <code><span style="color: #000000;"><span style="color: #0000cc;"><</span><span style="color: #0000cc;">?</span><span style="color: #0000ff;">php</span></span></code>
   </p>
   
   <p>
-    <code> </code><code>&lt;span style="color: #0000ff;">$&lt;/span>&lt;span style="color: #008080;">value&lt;/span> &lt;span style="color: #0000cc;">=&lt;/span> &lt;span style="color: #ff00ff;">'something from somewhere'&lt;/span>&lt;span style="color: #0000cc;">;&lt;/span></code>
+    <code> </code><code><span style="color: #0000ff;">$</span><span style="color: #008080;">value</span> <span style="color: #0000cc;">=</span> <span style="color: #ff00ff;">'something from somewhere'</span><span style="color: #0000cc;">;</span></code>
   </p>
   
   <p>
-    <code>&lt;br />
+    <code><br />
 </code>
   </p>
   
   <p>
-    <code>&lt;span style="color: #ff0000;">setcookie&lt;/span>&lt;span style="color: #0000cc;">(&lt;/span>&lt;span style="color: #ff00ff;">"TestCookie"&lt;/span>&lt;span style="color: #0000cc;">,&lt;/span> &lt;span style="color: #0000ff;">$&lt;/span>&lt;span style="color: #008080;">value&lt;/span>&lt;span style="color: #0000cc;">)&lt;/span>&lt;span style="color: #0000cc;">;&lt;/span> &lt;span style="color: #ff9900;">/* 简单cookie设置 */&lt;/span></code>
+    <code><span style="color: #ff0000;">setcookie</span><span style="color: #0000cc;">(</span><span style="color: #ff00ff;">"TestCookie"</span><span style="color: #0000cc;">,</span> <span style="color: #0000ff;">$</span><span style="color: #008080;">value</span><span style="color: #0000cc;">)</span><span style="color: #0000cc;">;</span> <span style="color: #ff9900;">/* 简单cookie设置 */</span></code>
   </p>
   
   <p>
-    <code>&lt;span style="color: #ff0000;">setcookie&lt;/span>&lt;span style="color: #0000cc;">(&lt;/span>&lt;span style="color: #ff00ff;">"TestCookie"&lt;/span>&lt;span style="color: #0000cc;">,&lt;/span> &lt;span style="color: #0000ff;">$&lt;/span>&lt;span style="color: #008080;">value&lt;/span>&lt;span style="color: #0000cc;">,&lt;/span> &lt;span style="color: #ff0000;">time&lt;/span>&lt;span style="color: #0000cc;">(&lt;/span>&lt;span style="color: #0000cc;">)&lt;/span>&lt;span style="color: #0000cc;">+&lt;/span>3600&lt;span style="color: #0000cc;">)&lt;/span>&lt;span style="color: #0000cc;">;&lt;/span> &lt;span style="color: #ff9900;">/* 有效期1个小时 */&lt;/span></code>
+    <code><span style="color: #ff0000;">setcookie</span><span style="color: #0000cc;">(</span><span style="color: #ff00ff;">"TestCookie"</span><span style="color: #0000cc;">,</span> <span style="color: #0000ff;">$</span><span style="color: #008080;">value</span><span style="color: #0000cc;">,</span> <span style="color: #ff0000;">time</span><span style="color: #0000cc;">(</span><span style="color: #0000cc;">)</span><span style="color: #0000cc;">+</span>3600<span style="color: #0000cc;">)</span><span style="color: #0000cc;">;</span> <span style="color: #ff9900;">/* 有效期1个小时 */</span></code>
   </p>
   
   <p>
-    <code>&lt;span style="color: #ff0000;">setcookie&lt;/span>&lt;span style="color: #0000cc;">(&lt;/span>&lt;span style="color: #ff00ff;">"TestCookie"&lt;/span>&lt;span style="color: #0000cc;">,&lt;/span> &lt;span style="color: #0000ff;">$&lt;/span>&lt;span style="color: #008080;">value&lt;/span>&lt;span style="color: #0000cc;">,&lt;/span> &lt;span style="color: #ff0000;">time&lt;/span>&lt;span style="color: #0000cc;">(&lt;/span>&lt;span style="color: #0000cc;">)&lt;/span>&lt;span style="color: #0000cc;">+&lt;/span>3600&lt;span style="color: #0000cc;">,&lt;/span> &lt;span style="color: #ff00ff;">"/~rasmus/"&lt;/span>&lt;span style="color: #0000cc;">,&lt;/span> &lt;span style="color: #ff00ff;">".example.com"&lt;/span>&lt;span style="color: #0000cc;">,&lt;/span> 1&lt;span style="color: #0000cc;">)&lt;/span>&lt;span style="color: #0000cc;">;&lt;/span> &lt;span style="color: #ff9900;">/* 有效目录 /~rasmus,有效域名example.com及其所有子域名 */&lt;/span></code>
+    <code><span style="color: #ff0000;">setcookie</span><span style="color: #0000cc;">(</span><span style="color: #ff00ff;">"TestCookie"</span><span style="color: #0000cc;">,</span> <span style="color: #0000ff;">$</span><span style="color: #008080;">value</span><span style="color: #0000cc;">,</span> <span style="color: #ff0000;">time</span><span style="color: #0000cc;">(</span><span style="color: #0000cc;">)</span><span style="color: #0000cc;">+</span>3600<span style="color: #0000cc;">,</span> <span style="color: #ff00ff;">"/~rasmus/"</span><span style="color: #0000cc;">,</span> <span style="color: #ff00ff;">".example.com"</span><span style="color: #0000cc;">,</span> 1<span style="color: #0000cc;">)</span><span style="color: #0000cc;">;</span> <span style="color: #ff9900;">/* 有效目录 /~rasmus,有效域名example.com及其所有子域名 */</span></code>
   </p>
   
   <p>
-    <code> </code><code>&lt;span style="color: #0000cc;">?&lt;/span>&lt;span style="color: #0000cc;">&gt;&lt;/span></code>
+    <code> </code><code><span style="color: #0000cc;">?</span><span style="color: #0000cc;">></span></code>
   </p>
   
   <p class="MsoNormal" style="text-align: left;">
@@ -127,11 +127,11 @@ tags:
   </p>
   
   <p class="MsoNormal" style="text-align: left;">
-    <code>&lt;span style="color: #000000;">&lt;span style="color: #0000ff;">$&lt;/span>&lt;span style="color: #008080;">value&lt;/span> &lt;span style="color: #0000cc;">=&lt;/span> &lt;span style="color: #ff00ff;">'something from somewhere'&lt;/span>&lt;span style="color: #0000cc;">;&lt;/span>&lt;/span></code>
+    <code><span style="color: #000000;"><span style="color: #0000ff;">$</span><span style="color: #008080;">value</span> <span style="color: #0000cc;">=</span> <span style="color: #ff00ff;">'something from somewhere'</span><span style="color: #0000cc;">;</span></span></code>
   </p>
   
   <p>
-    <code> </code><span style="font-size: 9pt; color: #ff0102; font-family: Verdana;" lang="EN-US">header(“</span><code>&lt;span style="color: #000000;">&lt;span style="color: #ff00ff;">Set-Cookie:name=&lt;/span>&lt;/span></code><span style="font-size: 9pt; color: #ff0102; font-family: Verdana;" lang="EN-US">$value</span><span style="font-size: 9pt; color: #ff0102; font-family: Verdana;" lang="EN-US">“);</span>
+    <code> </code><span style="font-size: 9pt; color: #ff0102; font-family: Verdana;" lang="EN-US">header(“</span><code><span style="color: #000000;"><span style="color: #ff00ff;">Set-Cookie:name=</span></span></code><span style="font-size: 9pt; color: #ff0102; font-family: Verdana;" lang="EN-US">$value</span><span style="font-size: 9pt; color: #ff0102; font-family: Verdana;" lang="EN-US">“);</span>
   </p>
   
   <p>
@@ -151,7 +151,7 @@ tags:
   </p>
   
   <p class="MsoNormal" style="text-align: left;">
-    <code>&lt;span style="color: #000000;">print $_COOKIE&lt;span style="color: #0000cc;">[&lt;/span>&lt;span style="color: #ff00ff;">'TestCookie'&lt;/span>&lt;span style="color: #0000cc;">]&lt;/span>&lt;span style="color: #0000cc;">;&lt;/span>&lt;/span></code>
+    <code><span style="color: #000000;">print $_COOKIE<span style="color: #0000cc;">[</span><span style="color: #ff00ff;">'TestCookie'</span><span style="color: #0000cc;">]</span><span style="color: #0000cc;">;</span></span></code>
   </p>
   
   <p class="MsoNormal" style="text-align: left;">
@@ -259,7 +259,7 @@ tags:
   </p>
   
   <p class="MsoNormal" style="text-align: left;">
-    这一行就是我们用<code>&lt;span style="color: #000000;">setcookie&lt;span style="color: #0000cc;">(&lt;/span>&lt;span style="color: #ff00ff;">'TestCookie'&lt;/span>&lt;span style="color: #0000cc;">,&lt;/span>&lt;span style="color: #ff00ff;">'something from somewhere'&lt;/span>&lt;span style="color: #0000cc;">,&lt;/span>&lt;span style="color: #ff00ff;">'/'&lt;/span>&lt;span style="color: #0000cc;">)&lt;/span>&lt;span style="color: #0000cc;">;&lt;/span>&lt;/span></code>的结果.也就是用<code>&lt;span style="color: #000000;">header&lt;span style="color: #0000cc;">(&lt;/span>&lt;span style="color: #ff00ff;">'Set-Cookie: TestCookie=something from somewhere; path=/'&lt;/span>&lt;span style="color: #0000cc;">)&lt;/span>&lt;span style="color: #0000cc;">;&lt;/span>&lt;/span></code>的结果.
+    这一行就是我们用<code><span style="color: #000000;">setcookie<span style="color: #0000cc;">(</span><span style="color: #ff00ff;">'TestCookie'</span><span style="color: #0000cc;">,</span><span style="color: #ff00ff;">'something from somewhere'</span><span style="color: #0000cc;">,</span><span style="color: #ff00ff;">'/'</span><span style="color: #0000cc;">)</span><span style="color: #0000cc;">;</span></span></code>的结果.也就是用<code><span style="color: #000000;">header<span style="color: #0000cc;">(</span><span style="color: #ff00ff;">'Set-Cookie: TestCookie=something from somewhere; path=/'</span><span style="color: #0000cc;">)</span><span style="color: #0000cc;">;</span></span></code>的结果.
   </p>
   
   <p>
@@ -347,63 +347,63 @@ tags:
   </p>
   
   <p style="margin: 5px; line-height: 150%;">
-    <code>&lt;span style="color: #000000;">&lt;span style="color: #0000cc;">&lt;&lt;/span>&lt;span style="color: #0000cc;">?&lt;/span>&lt;span style="color: #0000ff;">php&lt;/span>&lt;/span></code>
+    <code><span style="color: #000000;"><span style="color: #0000cc;"><</span><span style="color: #0000cc;">?</span><span style="color: #0000ff;">php</span></span></code>
   </p>
   
   <p>
-    <code>&lt;span style="color: #ff9900;">// page1.php&lt;/span></code>
+    <code><span style="color: #ff9900;">// page1.php</span></code>
   </p>
   
   <p>
-    <code>&lt;span style="color: #ff0000;">session_start&lt;/span>&lt;span style="color: #0000cc;">(&lt;/span>&lt;span style="color: #0000cc;">)&lt;/span>&lt;span style="color: #0000cc;">;&lt;/span></code>
+    <code><span style="color: #ff0000;">session_start</span><span style="color: #0000cc;">(</span><span style="color: #0000cc;">)</span><span style="color: #0000cc;">;</span></code>
   </p>
   
   <p>
-    <code>&lt;span style="color: #ff0000;">echo&lt;/span> &lt;span style="color: #ff00ff;">'Welcome to page #1'&lt;/span>&lt;span style="color: #0000cc;">;&lt;/span>&lt;/p>
-&lt;p>&lt;span style="color: #ff9900;">/* 创建session变量并给session变量赋值 */&lt;/span>&lt;/p>
-&lt;p>&lt;span style="color: #0000ff;">$&lt;/span>&lt;span style="color: #008080;">_SESSION&lt;/span>&lt;span style="color: #0000cc;">[&lt;/span>&lt;span style="color: #ff00ff;">'favcolor'&lt;/span>&lt;span style="color: #0000cc;">]&lt;/span> &lt;span style="color: #0000cc;">=&lt;/span> &lt;span style="color: #ff00ff;">'green'&lt;/span>&lt;span style="color: #0000cc;">;&lt;/span>&lt;/p>
-&lt;p>&lt;span style="color: #0000ff;">$&lt;/span>&lt;span style="color: #008080;">_SESSION&lt;/span>&lt;span style="color: #0000cc;">[&lt;/span>&lt;span style="color: #ff00ff;">'animal'&lt;/span>&lt;span style="color: #0000cc;">]&lt;/span> &lt;span style="color: #0000cc;">=&lt;/span> &lt;span style="color: #ff00ff;">'cat'&lt;/span>&lt;span style="color: #0000cc;">;&lt;/span>&lt;/p>
-&lt;p></code><code>&lt;span style="color: #0000ff;">$&lt;/span>&lt;span style="color: #008080;">_SESSION&lt;/span>&lt;span style="color: #0000cc;">[&lt;/span>&lt;span style="color: #ff00ff;">'time'&lt;/span>&lt;span style="color: #0000cc;">]&lt;/span> &lt;span style="color: #0000cc;">=&lt;/span> &lt;span style="color: #ff0000;">time&lt;/span>&lt;span style="color: #0000cc;">(&lt;/span>&lt;span style="color: #0000cc;">)&lt;/span>&lt;span style="color: #0000cc;">;&lt;/span></code>
+    <code><span style="color: #ff0000;">echo</span> <span style="color: #ff00ff;">'Welcome to page #1'</span><span style="color: #0000cc;">;</span></p>
+<p><span style="color: #ff9900;">/* 创建session变量并给session变量赋值 */</span></p>
+<p><span style="color: #0000ff;">$</span><span style="color: #008080;">_SESSION</span><span style="color: #0000cc;">[</span><span style="color: #ff00ff;">'favcolor'</span><span style="color: #0000cc;">]</span> <span style="color: #0000cc;">=</span> <span style="color: #ff00ff;">'green'</span><span style="color: #0000cc;">;</span></p>
+<p><span style="color: #0000ff;">$</span><span style="color: #008080;">_SESSION</span><span style="color: #0000cc;">[</span><span style="color: #ff00ff;">'animal'</span><span style="color: #0000cc;">]</span> <span style="color: #0000cc;">=</span> <span style="color: #ff00ff;">'cat'</span><span style="color: #0000cc;">;</span></p>
+<p></code><code><span style="color: #0000ff;">$</span><span style="color: #008080;">_SESSION</span><span style="color: #0000cc;">[</span><span style="color: #ff00ff;">'time'</span><span style="color: #0000cc;">]</span> <span style="color: #0000cc;">=</span> <span style="color: #ff0000;">time</span><span style="color: #0000cc;">(</span><span style="color: #0000cc;">)</span><span style="color: #0000cc;">;</span></code>
   </p>
   
   <p>
-    <code>&lt;span style="color: #ff9900;">// 如果客户端使用cookie,可直接传递session到page2.php&lt;/span></code>
+    <code><span style="color: #ff9900;">// 如果客户端使用cookie,可直接传递session到page2.php</span></code>
   </p>
   
   <p>
-    <code>&lt;span style="color: #ff0000;">echo&lt;/span> &lt;span style="color: #ff00ff;">'&lt;br /&gt;&lt;a href="page2.php"&gt;page 2&lt;/a&gt;'&lt;/span>&lt;span style="color: #0000cc;">;&lt;/span></code>
+    <code><span style="color: #ff0000;">echo</span> <span style="color: #ff00ff;">'<br /><a href="page2.php">page 2</a>'</span><span style="color: #0000cc;">;</span></code>
   </p>
   
   <p>
-    <code>&lt;span style="color: #ff9900;">// 如果客户端禁用cookie&lt;/span></code>
+    <code><span style="color: #ff9900;">// 如果客户端禁用cookie</span></code>
   </p>
   
   <p>
-    <code>&lt;span style="color: #ff0000;">echo&lt;/span> &lt;span style="color: #ff00ff;">'&lt;br /&gt;&lt;a href="page2.php?'&lt;/span> &lt;span style="color: #0000cc;">.&lt;/span> SID &lt;span style="color: #0000cc;">.&lt;/span> &lt;span style="color: #ff00ff;">'"&gt;page 2&lt;/a&gt;'&lt;/span>&lt;span style="color: #0000cc;">;&lt;/span>&lt;/p>
-&lt;p>&lt;span style="color: #ff9900;">/*&lt;/span>&lt;/p>
-&lt;p>默认php5.2.1下,SID只有在cookie被写入的同时才会有值,如果该session&lt;/p>
-&lt;p>对应的cookie已经存在,那么SID将为(未定义)空&lt;/p>
-&lt;p>*/&lt;/p>
-&lt;p>&lt;span style="color: #0000cc;">?&lt;/span>&lt;span style="color: #0000cc;">&gt;&lt;/span>&lt;/p>
-&lt;p></code>
+    <code><span style="color: #ff0000;">echo</span> <span style="color: #ff00ff;">'<br /><a href="page2.php?'</span> <span style="color: #0000cc;">.</span> SID <span style="color: #0000cc;">.</span> <span style="color: #ff00ff;">'">page 2</a>'</span><span style="color: #0000cc;">;</span></p>
+<p><span style="color: #ff9900;">/*</span></p>
+<p>默认php5.2.1下,SID只有在cookie被写入的同时才会有值,如果该session</p>
+<p>对应的cookie已经存在,那么SID将为(未定义)空</p>
+<p>*/</p>
+<p><span style="color: #0000cc;">?</span><span style="color: #0000cc;">></span></p>
+<p></code>
   </p>
   
   <p>
-    <code>&lt;span style="color: #0000cc;">&lt;&lt;/span>&lt;span style="color: #0000cc;">?&lt;/span>&lt;span style="color: #0000ff;">php&lt;/span></code>
+    <code><span style="color: #0000cc;"><</span><span style="color: #0000cc;">?</span><span style="color: #0000ff;">php</span></code>
   </p>
   
   <p>
-    <code>&lt;span style="color: #ff9900;">// page2.php&lt;/span></code>
+    <code><span style="color: #ff9900;">// page2.php</span></code>
   </p>
   
   <p>
-    <code>&lt;span style="color: #ff0000;">session_start&lt;/span>&lt;span style="color: #0000cc;">(&lt;/span>&lt;span style="color: #0000cc;">)&lt;/span>&lt;span style="color: #0000cc;">;&lt;/span></code>
+    <code><span style="color: #ff0000;">session_start</span><span style="color: #0000cc;">(</span><span style="color: #0000cc;">)</span><span style="color: #0000cc;">;</span></code>
   </p>
   
   <p>
-    <code>&lt;span style="color: #ff0000;">print&lt;/span> &lt;span style="color: #0000ff;">$&lt;/span>&lt;span style="color: #008080;">_SESSION&lt;/span>&lt;span style="color: #0000cc;">[&lt;/span>&lt;span style="color: #ff00ff;">'animal'&lt;/span>&lt;span style="color: #0000cc;">]&lt;/span>&lt;span style="color: #0000cc;">;&lt;/span> &lt;span style="color: #ff9900;">// 打印出单个session&lt;/span>&lt;/p>
-&lt;p>&lt;span style="color: #ff0000;">var_dump&lt;/span>&lt;span style="color: #0000cc;">(&lt;/span>&lt;span style="color: #0000ff;">$&lt;/span>&lt;span style="color: #008080;">_SESSION&lt;/span>&lt;span style="color: #0000cc;">)&lt;/span>&lt;span style="color: #0000cc;">;&lt;/span> &lt;span style="color: #ff9900;">// 打印出page1.php传过来的session值&lt;/span>&lt;/p>
-&lt;p></code><code>&lt;span style="color: #0000cc;">?&lt;/span>&lt;span style="color: #0000cc;">&gt;&lt;/span></code>
+    <code><span style="color: #ff0000;">print</span> <span style="color: #0000ff;">$</span><span style="color: #008080;">_SESSION</span><span style="color: #0000cc;">[</span><span style="color: #ff00ff;">'animal'</span><span style="color: #0000cc;">]</span><span style="color: #0000cc;">;</span> <span style="color: #ff9900;">// 打印出单个session</span></p>
+<p><span style="color: #ff0000;">var_dump</span><span style="color: #0000cc;">(</span><span style="color: #0000ff;">$</span><span style="color: #008080;">_SESSION</span><span style="color: #0000cc;">)</span><span style="color: #0000cc;">;</span> <span style="color: #ff9900;">// 打印出page1.php传过来的session值</span></p>
+<p></code><code><span style="color: #0000cc;">?</span><span style="color: #0000cc;">></span></code>
   </p>
   
   <p class="MsoNormal" style="text-align: left;">
@@ -627,40 +627,40 @@ tags:
   </p>
   
   <p style="margin: 5px; line-height: 150%;">
-    <code>&lt;span style="color: #000000;">&lt;span style="color: #0000ff;">if&lt;/span>&lt;span style="color: #0000cc;">(&lt;/span>&lt;span style="color: #0000cc;">!&lt;/span>&lt;span style="color: #ff0000;">isset&lt;/span>&lt;span style="color: #0000cc;">(&lt;/span>&lt;span style="color: #0000ff;">$&lt;/span>&lt;span style="color: #008080;">_SESSION&lt;/span>&lt;span style="color: #0000cc;">[&lt;/span>&lt;span style="color: #ff00ff;">'user_agent'&lt;/span>&lt;span style="color: #0000cc;">]&lt;/span>&lt;span style="color: #0000cc;">)&lt;/span>&lt;span style="color: #0000cc;">)&lt;/span>&lt;span style="color: #0000cc;">{&lt;/span>&lt;/span></code>
+    <code><span style="color: #000000;"><span style="color: #0000ff;">if</span><span style="color: #0000cc;">(</span><span style="color: #0000cc;">!</span><span style="color: #ff0000;">isset</span><span style="color: #0000cc;">(</span><span style="color: #0000ff;">$</span><span style="color: #008080;">_SESSION</span><span style="color: #0000cc;">[</span><span style="color: #ff00ff;">'user_agent'</span><span style="color: #0000cc;">]</span><span style="color: #0000cc;">)</span><span style="color: #0000cc;">)</span><span style="color: #0000cc;">{</span></span></code>
   </p>
   
   <p>
-    <code>&lt;span style="color: #0000ff;">$&lt;/span>&lt;span style="color: #008080;">_SESSION&lt;/span>&lt;span style="color: #0000cc;">[&lt;/span>&lt;span style="color: #ff00ff;">'user_agent'&lt;/span>&lt;span style="color: #0000cc;">]&lt;/span> &lt;span style="color: #0000cc;">=&lt;/span> &lt;span style="color: #0000ff;">$&lt;/span>&lt;span style="color: #008080;">_SERVER&lt;/span>&lt;span style="color: #0000cc;">[&lt;/span>&lt;span style="color: #ff00ff;">'REMOTE_ADDR'&lt;/span>&lt;span style="color: #0000cc;">]&lt;/span>&lt;span style="color: #0000cc;">.&lt;/span>&lt;span style="color: #0000ff;">$&lt;/span>&lt;span style="color: #008080;">_SERVER&lt;/span>&lt;span style="color: #0000cc;">[&lt;/span>&lt;span style="color: #ff00ff;">'HTTP_USER_AGENT'&lt;/span>&lt;span style="color: #0000cc;">]&lt;/span>&lt;span style="color: #0000cc;">;&lt;/span></code>
+    <code><span style="color: #0000ff;">$</span><span style="color: #008080;">_SESSION</span><span style="color: #0000cc;">[</span><span style="color: #ff00ff;">'user_agent'</span><span style="color: #0000cc;">]</span> <span style="color: #0000cc;">=</span> <span style="color: #0000ff;">$</span><span style="color: #008080;">_SERVER</span><span style="color: #0000cc;">[</span><span style="color: #ff00ff;">'REMOTE_ADDR'</span><span style="color: #0000cc;">]</span><span style="color: #0000cc;">.</span><span style="color: #0000ff;">$</span><span style="color: #008080;">_SERVER</span><span style="color: #0000cc;">[</span><span style="color: #ff00ff;">'HTTP_USER_AGENT'</span><span style="color: #0000cc;">]</span><span style="color: #0000cc;">;</span></code>
   </p>
   
   <p>
-    <code> </code><code>&lt;span style="color: #0000cc;">}&lt;/span></code>
+    <code> </code><code><span style="color: #0000cc;">}</span></code>
   </p>
   
   <p>
-    <code>&lt;br />
+    <code><br />
 </code>
   </p>
   
   <p>
-    <code>&lt;span style="color: #ff9900;">/* 如果用户session ID是伪造 */&lt;/span></code>
+    <code><span style="color: #ff9900;">/* 如果用户session ID是伪造 */</span></code>
   </p>
   
   <p>
-    <code>&lt;span style="color: #0000ff;">elseif&lt;/span> &lt;span style="color: #0000cc;">(&lt;/span>&lt;span style="color: #0000ff;">$&lt;/span>&lt;span style="color: #008080;">_SESSION&lt;/span>&lt;span style="color: #0000cc;">[&lt;/span>&lt;span style="color: #ff00ff;">'user_agent'&lt;/span>&lt;span style="color: #0000cc;">]&lt;/span> &lt;span style="color: #0000cc;">!&lt;/span>&lt;span style="color: #0000cc;">=&lt;/span> &lt;span style="color: #0000ff;">$&lt;/span>&lt;span style="color: #008080;">_SERVER&lt;/span>&lt;span style="color: #0000cc;">[&lt;/span>&lt;span style="color: #ff00ff;">'REMOTE_ADDR'&lt;/span>&lt;span style="color: #0000cc;">]&lt;/span> &lt;span style="color: #0000cc;">.&lt;/span> &lt;span style="color: #0000ff;">$&lt;/span>&lt;span style="color: #008080;">_SERVER&lt;/span>&lt;span style="color: #0000cc;">[&lt;/span>&lt;span style="color: #ff00ff;">'HTTP_USER_AGENT'&lt;/span>&lt;span style="color: #0000cc;">]&lt;/span>&lt;span style="color: #0000cc;">)&lt;/span> &lt;span style="color: #0000cc;">{&lt;/span></code>
+    <code><span style="color: #0000ff;">elseif</span> <span style="color: #0000cc;">(</span><span style="color: #0000ff;">$</span><span style="color: #008080;">_SESSION</span><span style="color: #0000cc;">[</span><span style="color: #ff00ff;">'user_agent'</span><span style="color: #0000cc;">]</span> <span style="color: #0000cc;">!</span><span style="color: #0000cc;">=</span> <span style="color: #0000ff;">$</span><span style="color: #008080;">_SERVER</span><span style="color: #0000cc;">[</span><span style="color: #ff00ff;">'REMOTE_ADDR'</span><span style="color: #0000cc;">]</span> <span style="color: #0000cc;">.</span> <span style="color: #0000ff;">$</span><span style="color: #008080;">_SERVER</span><span style="color: #0000cc;">[</span><span style="color: #ff00ff;">'HTTP_USER_AGENT'</span><span style="color: #0000cc;">]</span><span style="color: #0000cc;">)</span> <span style="color: #0000cc;">{</span></code>
   </p>
   
   <p>
-    <code> </code><code>&lt;span style="color: #000000;">&lt;span style="color: #ff0000;">session_regenerate_id&lt;/span>&lt;span style="color: #0000cc;">(&lt;/span>&lt;span style="color: #0000cc;">)&lt;/span>&lt;span style="color: #0000cc;">;&lt;/span>&lt;/span></code>
+    <code> </code><code><span style="color: #000000;"><span style="color: #ff0000;">session_regenerate_id</span><span style="color: #0000cc;">(</span><span style="color: #0000cc;">)</span><span style="color: #0000cc;">;</span></span></code>
   </p>
   
   <p>
-    <code>&lt;span style="color: #0000cc;">}&lt;/span></code>
+    <code><span style="color: #0000cc;">}</span></code>
   </p>
   
   <p>
-    <code> </code><code>&lt;span style="color: #0000cc;">?&lt;/span>&lt;span style="color: #0000cc;">&gt;&lt;/span></code>
+    <code> </code><code><span style="color: #0000cc;">?</span><span style="color: #0000cc;">></span></code>
   </p>
   
   <p class="MsoNormal">
@@ -677,11 +677,11 @@ tags:
     </p>
     
     <p style="margin: 5px; line-height: 150%;">
-      <code>&lt;span style="color: #000000;">&lt;span style="color: #0000cc;">&lt;&lt;/span>&lt;span style="color: #0000cc;">?&lt;/span>&lt;span style="color: #0000ff;">php&lt;/span>&lt;/span></code>
+      <code><span style="color: #000000;"><span style="color: #0000cc;"><</span><span style="color: #0000cc;">?</span><span style="color: #0000ff;">php</span></span></code>
     </p>
     
     <p>
-      <code>&lt;span style="color: #ff9900;">/**&lt;/span></code>
+      <code><span style="color: #ff9900;">/**</span></code>
     </p>
     
     <p>
@@ -689,28 +689,28 @@ tags:
     </p>
     
     <p>
-      <code>*&lt;/p>
-&lt;p>*/&lt;/p>
-&lt;p>&lt;span style="color: #0000ff;">function&lt;/span> sessionVerify&lt;span style="color: #0000cc;">(&lt;/span>&lt;span style="color: #0000cc;">)&lt;/span> &lt;span style="color: #0000cc;">{&lt;/span>&lt;/p>
-&lt;p>&lt;span style="color: #0000ff;">if&lt;/span>&lt;span style="color: #0000cc;">(&lt;/span>&lt;span style="color: #0000cc;">!&lt;/span>&lt;span style="color: #ff0000;">isset&lt;/span>&lt;span style="color: #0000cc;">(&lt;/span>&lt;span style="color: #0000ff;">$&lt;/span>&lt;span style="color: #008080;">_SESSION&lt;/span>&lt;span style="color: #0000cc;">[&lt;/span>&lt;span style="color: #ff00ff;">'user_agent'&lt;/span>&lt;span style="color: #0000cc;">]&lt;/span>&lt;span style="color: #0000cc;">)&lt;/span>&lt;span style="color: #0000cc;">)&lt;/span>&lt;span style="color: #0000cc;">{&lt;/span>&lt;/p>
-&lt;p>&lt;span style="color: #0000ff;">$&lt;/span>&lt;span style="color: #008080;">_SESSION&lt;/span>&lt;span style="color: #0000cc;">[&lt;/span>&lt;span style="color: #ff00ff;">'user_agent'&lt;/span>&lt;span style="color: #0000cc;">]&lt;/span> &lt;span style="color: #0000cc;">=&lt;/span> &lt;span style="color: #ff0000;">MD5&lt;/span>&lt;span style="color: #0000cc;">(&lt;/span>&lt;span style="color: #0000ff;">$&lt;/span>&lt;span style="color: #008080;">_SERVER&lt;/span>&lt;span style="color: #0000cc;">[&lt;/span>&lt;span style="color: #ff00ff;">'REMOTE_ADDR'&lt;/span>&lt;span style="color: #0000cc;">]&lt;/span>&lt;/p>
-&lt;p>&lt;span style="color: #0000cc;">.&lt;/span>&lt;span style="color: #0000ff;">$&lt;/span>&lt;span style="color: #008080;">_SERVER&lt;/span>&lt;span style="color: #0000cc;">[&lt;/span>&lt;span style="color: #ff00ff;">'HTTP_USER_AGENT'&lt;/span>&lt;span style="color: #0000cc;">]&lt;/span>&lt;span style="color: #0000cc;">)&lt;/span>&lt;span style="color: #0000cc;">;&lt;/span>&lt;/p>
-&lt;p>&lt;span style="color: #0000cc;">}&lt;/span>&lt;/p>
-&lt;p>&lt;span style="color: #ff9900;">/* 如果用户session ID是伪造,则重新分配session ID */&lt;/span>&lt;/p>
-&lt;p>&lt;span style="color: #0000ff;">elseif&lt;/span> &lt;span style="color: #0000cc;">(&lt;/span>&lt;span style="color: #0000ff;">$&lt;/span>&lt;span style="color: #008080;">_SESSION&lt;/span>&lt;span style="color: #0000cc;">[&lt;/span>&lt;span style="color: #ff00ff;">'user_agent'&lt;/span>&lt;span style="color: #0000cc;">]&lt;/span> &lt;span style="color: #0000cc;">!&lt;/span>&lt;span style="color: #0000cc;">=&lt;/span> &lt;span style="color: #ff0000;">MD5&lt;/span>&lt;span style="color: #0000cc;">(&lt;/span>&lt;span style="color: #0000ff;">$&lt;/span>&lt;span style="color: #008080;">_SERVER&lt;/span>&lt;span style="color: #0000cc;">[&lt;/span>&lt;span style="color: #ff00ff;">'REMOTE_ADDR'&lt;/span>&lt;span style="color: #0000cc;">]&lt;/span>&lt;/p>
-&lt;p>&lt;span style="color: #0000cc;">.&lt;/span> &lt;span style="color: #0000ff;">$&lt;/span>&lt;span style="color: #008080;">_SERVER&lt;/span>&lt;span style="color: #0000cc;">[&lt;/span>&lt;span style="color: #ff00ff;">'HTTP_USER_AGENT'&lt;/span>&lt;span style="color: #0000cc;">]&lt;/span>&lt;span style="color: #0000cc;">)&lt;/span>&lt;span style="color: #0000cc;">)&lt;/span> &lt;span style="color: #0000cc;">{&lt;/span>&lt;/p>
-&lt;p>&lt;span style="color: #ff0000;">session_regenerate_id&lt;/span>&lt;span style="color: #0000cc;">(&lt;/span>&lt;span style="color: #0000cc;">)&lt;/span>&lt;span style="color: #0000cc;">;&lt;/span>&lt;/p>
-&lt;p>&lt;span style="color: #0000cc;">}&lt;/span>&lt;/p>
-&lt;p></code><code>&lt;span style="color: #0000cc;">}&lt;/span></code>
+      <code>*</p>
+<p>*/</p>
+<p><span style="color: #0000ff;">function</span> sessionVerify<span style="color: #0000cc;">(</span><span style="color: #0000cc;">)</span> <span style="color: #0000cc;">{</span></p>
+<p><span style="color: #0000ff;">if</span><span style="color: #0000cc;">(</span><span style="color: #0000cc;">!</span><span style="color: #ff0000;">isset</span><span style="color: #0000cc;">(</span><span style="color: #0000ff;">$</span><span style="color: #008080;">_SESSION</span><span style="color: #0000cc;">[</span><span style="color: #ff00ff;">'user_agent'</span><span style="color: #0000cc;">]</span><span style="color: #0000cc;">)</span><span style="color: #0000cc;">)</span><span style="color: #0000cc;">{</span></p>
+<p><span style="color: #0000ff;">$</span><span style="color: #008080;">_SESSION</span><span style="color: #0000cc;">[</span><span style="color: #ff00ff;">'user_agent'</span><span style="color: #0000cc;">]</span> <span style="color: #0000cc;">=</span> <span style="color: #ff0000;">MD5</span><span style="color: #0000cc;">(</span><span style="color: #0000ff;">$</span><span style="color: #008080;">_SERVER</span><span style="color: #0000cc;">[</span><span style="color: #ff00ff;">'REMOTE_ADDR'</span><span style="color: #0000cc;">]</span></p>
+<p><span style="color: #0000cc;">.</span><span style="color: #0000ff;">$</span><span style="color: #008080;">_SERVER</span><span style="color: #0000cc;">[</span><span style="color: #ff00ff;">'HTTP_USER_AGENT'</span><span style="color: #0000cc;">]</span><span style="color: #0000cc;">)</span><span style="color: #0000cc;">;</span></p>
+<p><span style="color: #0000cc;">}</span></p>
+<p><span style="color: #ff9900;">/* 如果用户session ID是伪造,则重新分配session ID */</span></p>
+<p><span style="color: #0000ff;">elseif</span> <span style="color: #0000cc;">(</span><span style="color: #0000ff;">$</span><span style="color: #008080;">_SESSION</span><span style="color: #0000cc;">[</span><span style="color: #ff00ff;">'user_agent'</span><span style="color: #0000cc;">]</span> <span style="color: #0000cc;">!</span><span style="color: #0000cc;">=</span> <span style="color: #ff0000;">MD5</span><span style="color: #0000cc;">(</span><span style="color: #0000ff;">$</span><span style="color: #008080;">_SERVER</span><span style="color: #0000cc;">[</span><span style="color: #ff00ff;">'REMOTE_ADDR'</span><span style="color: #0000cc;">]</span></p>
+<p><span style="color: #0000cc;">.</span> <span style="color: #0000ff;">$</span><span style="color: #008080;">_SERVER</span><span style="color: #0000cc;">[</span><span style="color: #ff00ff;">'HTTP_USER_AGENT'</span><span style="color: #0000cc;">]</span><span style="color: #0000cc;">)</span><span style="color: #0000cc;">)</span> <span style="color: #0000cc;">{</span></p>
+<p><span style="color: #ff0000;">session_regenerate_id</span><span style="color: #0000cc;">(</span><span style="color: #0000cc;">)</span><span style="color: #0000cc;">;</span></p>
+<p><span style="color: #0000cc;">}</span></p>
+<p></code><code><span style="color: #0000cc;">}</span></code>
     </p>
     
     <p>
-      <code>&lt;br />
+      <code><br />
 </code>
     </p>
     
     <p>
-      <code>&lt;span style="color: #ff9900;">/**&lt;/span></code>
+      <code><span style="color: #ff9900;">/**</span></code>
     </p>
     
     <p>
@@ -722,19 +722,19 @@ tags:
     </p>
     
     <p>
-      <code>*&lt;/p>
-&lt;p>*/&lt;/p>
-&lt;p>&lt;span style="color: #0000ff;">function&lt;/span> sessionDestroy&lt;span style="color: #0000cc;">(&lt;/span>&lt;span style="color: #0000cc;">)&lt;/span> &lt;span style="color: #0000cc;">{&lt;/span>&lt;/p>
-&lt;p>&lt;span style="color: #ff0000;">session_destroy&lt;/span>&lt;span style="color: #0000cc;">(&lt;/span>&lt;span style="color: #0000cc;">)&lt;/span>&lt;span style="color: #0000cc;">;&lt;/span>&lt;/p>
-&lt;p>&lt;span style="color: #ff0000;">setcookie&lt;/span>&lt;span style="color: #0000cc;">(&lt;/span>&lt;span style="color: #ff0000;">session_name&lt;/span>&lt;span style="color: #0000cc;">(&lt;/span>&lt;span style="color: #0000cc;">)&lt;/span>&lt;span style="color: #0000cc;">,&lt;/span>&lt;span style="color: #ff00ff;">''&lt;/span>&lt;span style="color: #0000cc;">,&lt;/span>&lt;span style="color: #ff0000;">time&lt;/span>&lt;span style="color: #0000cc;">(&lt;/span>&lt;span style="color: #0000cc;">)&lt;/span>&lt;span style="color: #0000cc;">-&lt;/span>3600&lt;span style="color: #0000cc;">)&lt;/span>&lt;span style="color: #0000cc;">;&lt;/span>&lt;/p>
-&lt;p>&lt;span style="color: #0000ff;">$&lt;/span>&lt;span style="color: #008080;">_SESSION&lt;/span> &lt;span style="color: #0000cc;">=&lt;/span> &lt;span style="color: #ff0000;">array&lt;/span>&lt;span style="color: #0000cc;">(&lt;/span>&lt;span style="color: #0000cc;">)&lt;/span>&lt;span style="color: #0000cc;">;&lt;/span>&lt;/p>
-&lt;p>&lt;span style="color: #0000cc;">}&lt;/span>&lt;/p>
-&lt;p></code><code>&lt;span style="color: #0000cc;">?&lt;/span>&lt;span style="color: #0000cc;">&gt;&lt;/span></code>
+      <code>*</p>
+<p>*/</p>
+<p><span style="color: #0000ff;">function</span> sessionDestroy<span style="color: #0000cc;">(</span><span style="color: #0000cc;">)</span> <span style="color: #0000cc;">{</span></p>
+<p><span style="color: #ff0000;">session_destroy</span><span style="color: #0000cc;">(</span><span style="color: #0000cc;">)</span><span style="color: #0000cc;">;</span></p>
+<p><span style="color: #ff0000;">setcookie</span><span style="color: #0000cc;">(</span><span style="color: #ff0000;">session_name</span><span style="color: #0000cc;">(</span><span style="color: #0000cc;">)</span><span style="color: #0000cc;">,</span><span style="color: #ff00ff;">''</span><span style="color: #0000cc;">,</span><span style="color: #ff0000;">time</span><span style="color: #0000cc;">(</span><span style="color: #0000cc;">)</span><span style="color: #0000cc;">-</span>3600<span style="color: #0000cc;">)</span><span style="color: #0000cc;">;</span></p>
+<p><span style="color: #0000ff;">$</span><span style="color: #008080;">_SESSION</span> <span style="color: #0000cc;">=</span> <span style="color: #ff0000;">array</span><span style="color: #0000cc;">(</span><span style="color: #0000cc;">)</span><span style="color: #0000cc;">;</span></p>
+<p><span style="color: #0000cc;">}</span></p>
+<p></code><code><span style="color: #0000cc;">?</span><span style="color: #0000cc;">></span></code>
     </p>
     
     <p style="margin: 5px; line-height: 150%;">
       <p style="margin: 5px; line-height: 150%;">
-        <code>&lt;span style="color: #000000;">&lt;span style="color: #0000cc;">注明:&lt;/span>&lt;/span></code>
+        <code><span style="color: #000000;"><span style="color: #0000cc;">注明:</span></span></code>
       </p>
       
       <p>
@@ -742,11 +742,11 @@ tags:
       </p>
       
       <p style="margin: 5px; line-height: 150%;">
-        <code>&lt;span style="color: #000000;">&lt;span style="color: #0000cc;"> session 出现头信息已经发出的原因与cookie一样.&lt;/span>&lt;/span></code>
+        <code><span style="color: #000000;"><span style="color: #0000cc;"> session 出现头信息已经发出的原因与cookie一样.</span></span></code>
       </p>
       
       <p>
-        <code> </code><code>&lt;span style="color: #000000;">&lt;span style="color: #0000cc;"> 在php5中,所有php session 的注册表配置选项都是编程时可配置的,一般情况下,我们是不用修改其配置的.要了解php的session注册表配置选项,请参考手册的Session 会话处理函数处.&lt;/span>&lt;/span></code>
+        <code> </code><code><span style="color: #000000;"><span style="color: #0000cc;"> 在php5中,所有php session 的注册表配置选项都是编程时可配置的,一般情况下,我们是不用修改其配置的.要了解php的session注册表配置选项,请参考手册的Session 会话处理函数处.</span></span></code>
       </p>
       
       <div>

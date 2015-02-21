@@ -38,7 +38,7 @@ http://localhost/ci/index.php/welcome
   
 为此开始第一个实例：模仿welcome在控制器下建立一个Blog类，但要注意类名第一个字母要大写的
 
-<pre class="lang:php decode:true " >&lt;?php
+<pre class="lang:php decode:true " ><?php
 class Blog extends Controller{
 	function __construct(){
 		parent::Controller();
@@ -48,7 +48,7 @@ class Blog extends Controller{
 		echo $id;
 	}
 }
-?&gt;</pre>
+?></pre>
 
 现在访问:http://localhost/ci/index.php/blog/category/2  
 浏览器输出:2  

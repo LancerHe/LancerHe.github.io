@@ -23,9 +23,9 @@ $arrTemp['c'] = 3;  </pre>
 
 <pre class="lang:php decode:true " >$arrTemp = array(); 
 $objTemp = (object)$arrTemp;   
-$objTemp-&gt;a = 1;   
-$objTemp-&gt;b = 2;   
-$objTemp-&gt;c = 3; </pre>
+$objTemp->a = 1;   
+$objTemp->b = 2;   
+$objTemp->c = 3; </pre>
 
 <!--more-->
 
@@ -35,17 +35,17 @@ $objTemp-&gt;c = 3; </pre>
 倘若使用 stdClass
 
 <pre class="lang:php decode:true " >$user = new stdClass();   
-$user-&gt;name = 'gouki';   
-$user-&gt;id = '12';
-$user-&gt;group = 'manager'</pre>
+$user->name = 'gouki';   
+$user->id = '12';
+$user->group = 'manager'</pre>
 
 我们可以这么理解一下，正因为PHP5的对象的独特性，对象在任何地方被调用，都是引用地址型的，所以相对消耗的资源会少一点。在其它页面为它赋值时是直接修改，而不是引用一个拷贝。  
 例如：
 
 <pre class="lang:php decode:true " >$user = new stdClass();   
-$user-&gt;name = 'gouki';   
+$user->name = 'gouki';   
 $myUser = $user;   
-$myUser-&gt;name = 'flypig';  </pre>
+$myUser->name = 'flypig';  </pre>
 
 如果在PHP4时代，这样的代码就是在消耗系统资源。因为：
 

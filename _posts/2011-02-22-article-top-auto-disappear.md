@@ -24,8 +24,8 @@ tags:
 
 举个例子就很好理解
 
-<pre class="lang:sh decode:true " >mysql &gt; SELECT IF(1&gt;2,'yes ','no');
-          &gt; 'yes'</pre>
+<pre class="lang:sh decode:true " >mysql > SELECT IF(1>2,'yes ','no');
+          > 'yes'</pre>
 
 数据库表结构设计：
 
@@ -41,5 +41,5 @@ PHP中操作Mysql：
 $timestamp = mktime(); //获取当前时间戳
 //置顶为1时，截止时间大于当前时间或者 截止时间为0，定义一个字段为top为其赋值
 $sql = "SELECT id, title,
-IF(istop=1 AND (topdeadline&gt;" . $timestamp . " OR topdeadline=0), 1, 0) AS top,1
+IF(istop=1 AND (topdeadline>" . $timestamp . " OR topdeadline=0), 1, 0) AS top,1
 FROM article ORDER BY id DESC";</pre>

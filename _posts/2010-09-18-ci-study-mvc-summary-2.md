@@ -29,7 +29,7 @@ tags:
   今天学习了CI的Model模型，总的来说Model完全就是用来给数据库打交道用了。<br /> 在models文件架建立blog_model.php用于给文章的数据增加，更新，查询的Model。
 </p>
 
-<pre class="lang:php decode:true " >&lt;?php
+<pre class="lang:php decode:true " ><?php
 class Blog_model extends Model {
 	
 	public $post_title;
@@ -41,53 +41,53 @@ class Blog_model extends Model {
 	}
 	
 	function insert_art(){
-		$this-&gt;post_content = $this-&gt;input-&gt;post('content');
-		$this-&gt;post_title   = $this-&gt;input-&gt;post('title');
-		$this-&gt;post_date    = date('Y-m-d H:m:s');
-		$this-&gt;db-&gt;insert('posts',$this);
+		$this->post_content = $this->input->post('content');
+		$this->post_title   = $this->input->post('title');
+		$this->post_date    = date('Y-m-d H:m:s');
+		$this->db->insert('posts',$this);
 	}
 	
 	function update_art($id){
-		$this-&gt;post_content = $this-&gt;input-&gt;post('content');
-		$this-&gt;post_title   = $this-&gt;input-&gt;post('title');
-		$this-&gt;post_date    = date('Y-m-d H:m:s');
-		$this-&gt;db-&gt;update('posts',$this,array('id'=&gt;$id));
+		$this->post_content = $this->input->post('content');
+		$this->post_title   = $this->input->post('title');
+		$this->post_date    = date('Y-m-d H:m:s');
+		$this->db->update('posts',$this,array('id'=>$id));
 	}
 	
 	function get_ten_art() {
 		$sql   = "select post_content,post_title,post_date from wp_posts limit 3";
-		$query = $this-&gt;db-&gt;query($sql);
-		return $query-&gt;result_array();
+		$query = $this->db->query($sql);
+		return $query->result_array();
 	}
 }
-?&gt;</pre>
+?></pre>
 
 <!--more-->
 
   
 在控制器页面：
 
-<pre class="lang:default decode:true " >&lt;?php
+<pre class="lang:default decode:true " ><?php
 class Blog extends Controller{
 	function __construct(){
 		parent::Controller();
 		//构造时，加载模型
-		$this-&gt;load-&gt;model('Blog_model','',TRUE);
+		$this->load->model('Blog_model','',TRUE);
 	}
 
 	function index(){
 		$data['title'] = 'my web';
-		$data['art']   = $this-&gt;Blog_model-&gt;get_ten_art();
+		$data['art']   = $this->Blog_model->get_ten_art();
 
-		$this-&gt;load-&gt;view('blog_view',$data);
+		$this->load->view('blog_view',$data);
 	}
 	
 	function insert(){
-		$this-&gt;Blog_model-&gt;insert_art();
+		$this->Blog_model->insert_art();
 	}
 	
 	function update($id){
-		$this-&gt;Blog_model-&gt;update_art($id);
+		$this->Blog_model->update_art($id);
 	}
 }
-?&gt;</pre>
+?></pre>

@@ -11,7 +11,7 @@ tags:
   - google
   - search
 ---
-[<img src="http://www.crackedzone.com/wp-content/uploads/2012/08/google.jpg" alt="" title="google" width="590" height="150" class="alignnone size-full wp-image-718" />][1]
+[<img src="{{ site.url }}/uploads/2012/08/google.jpg" alt="" title="google" width="590" height="150" class="alignnone size-full wp-image-718" />][1]
 
 2月24日，《商业周刊》近日刊登名为《五招图解 Google 搜索秘籍》的文章，详细分析利用Google 搜索信息技巧。以下为全文：  
 江湖上有这么一说：欲练神功，必先谷歌！
@@ -24,7 +24,7 @@ tags:
 <!--more-->
 
 **第一招 &#8211; 小试身手**  
-[<img class="aligncenter size-full wp-image-603" title="1330309577_5594f73c" src="http://www.crackedzone.com/wp-content/uploads/2012/08/1330309577_5594f73c.jpg" alt="" width="418" height="550" />][2]
+[<img class="aligncenter size-full wp-image-603" title="1330309577_5594f73c" src="{{ site.url }}/uploads/2012/08/1330309577_5594f73c.jpg" alt="" width="418" height="550" />][2]
 
 想搜索纽约时报在2008到2010年关于大学测试分数但不是SAT入学分数的文章？
 
@@ -48,7 +48,7 @@ Step3：搜索各式各样的燕子（swallow），在燕子前加上\*，输入
 
 **第二招 &#8211; 研究生必杀技**
 
-[<img class="aligncenter size-full wp-image-604" title="1330309619_3471d56c" src="http://www.crackedzone.com/wp-content/uploads/2012/08/1330309619_3471d56c.jpg" alt="" width="407" height="550" />][3]
+[<img class="aligncenter size-full wp-image-604" title="1330309619_3471d56c" src="{{ site.url }}/uploads/2012/08/1330309619_3471d56c.jpg" alt="" width="407" height="550" />][3]
 
 想搜索Dr. Ronald L. Green和Dr. Thomas P.Buttz关于光合作用（photosynthesis）的论文？
 
@@ -60,7 +60,7 @@ Step3：想让搜索结果更明确，在关键词旁加入双引号，在此加
 
 **第三招 &#8211; 移行换单位**
 
-[<img class="aligncenter size-full wp-image-605" title="1330309651_84010023" src="http://www.crackedzone.com/wp-content/uploads/2012/08/1330309651_84010023.jpg" alt="" width="391" height="550" />][4]
+[<img class="aligncenter size-full wp-image-605" title="1330309651_84010023" src="{{ site.url }}/uploads/2012/08/1330309651_84010023.jpg" alt="" width="391" height="550" />][4]
 
 字词定义
 
@@ -80,7 +80,7 @@ Step3：想让搜索结果更明确，在关键词旁加入双引号，在此加
 
 例如：54 pounds in kilograms，中文也可：54磅in公斤
 
-**第四招 &#8211; 杀手键**[<img class="aligncenter size-full wp-image-606" title="1330309688_5034cf07" src="http://www.crackedzone.com/wp-content/uploads/2012/08/1330309688_5034cf07.jpg" alt="" width="404" height="550" />][5]
+**第四招 &#8211; 杀手键**[<img class="aligncenter size-full wp-image-606" title="1330309688_5034cf07" src="{{ site.url }}/uploads/2012/08/1330309688_5034cf07.jpg" alt="" width="404" height="550" />][5]
 
 在这里一般键盘上为Ctrl 键，Apple的使用者则是用Command键（空格键旁边的那颗）：
 
@@ -102,7 +102,7 @@ Ctrl加上tab键，可以切换到浏览器下一个分页
 
 **第五招 &#8211; 万宗归一心法**
 
-[<img class="aligncenter size-full wp-image-607" title="1330309736_7583f96d" src="http://www.crackedzone.com/wp-content/uploads/2012/08/1330309736_7583f96d.jpg" alt="" width="280" height="550" />][6]
+[<img class="aligncenter size-full wp-image-607" title="1330309736_7583f96d" src="{{ site.url }}/uploads/2012/08/1330309736_7583f96d.jpg" alt="" width="280" height="550" />][6]
 
 善用你的图书馆数据库
 
@@ -118,9 +118,9 @@ Google也许是十分好用的工具，但也别忘了许多重要的文献还�
 
 即使Google如此方便，大家还是要动动脑、重新消化一番呀。可不要复制贴上大法，到时老板也用五招秘籍找到一样的数据，被抓包可就得不偿失了。
 
- [1]: http://www.crackedzone.com/wp-content/uploads/2012/08/google.jpg
- [2]: http://www.crackedzone.com/wp-content/uploads/2012/08/1330309577_5594f73c.jpg
- [3]: http://www.crackedzone.com/wp-content/uploads/2012/08/1330309619_3471d56c.jpg
- [4]: http://www.crackedzone.com/wp-content/uploads/2012/08/1330309651_84010023.jpg
- [5]: http://www.crackedzone.com/wp-content/uploads/2012/08/1330309688_5034cf07.jpg
- [6]: http://www.crackedzone.com/wp-content/uploads/2012/08/1330309736_7583f96d.jpg
+ [1]: {{ site.url }}/uploads/2012/08/google.jpg
+ [2]: {{ site.url }}/uploads/2012/08/1330309577_5594f73c.jpg
+ [3]: {{ site.url }}/uploads/2012/08/1330309619_3471d56c.jpg
+ [4]: {{ site.url }}/uploads/2012/08/1330309651_84010023.jpg
+ [5]: {{ site.url }}/uploads/2012/08/1330309688_5034cf07.jpg
+ [6]: {{ site.url }}/uploads/2012/08/1330309736_7583f96d.jpg
