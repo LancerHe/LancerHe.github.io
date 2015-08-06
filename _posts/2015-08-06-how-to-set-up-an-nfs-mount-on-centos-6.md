@@ -10,7 +10,7 @@ tags:
   - nfs
 ---
 
-> 本文翻译来自：https://www.digitalocean.com/community/tutorials/how-to-set-up-an-nfs-mount-on-centos-6
+> 本文翻译自：[How To Set Up an NFS Mount on CentOS 6](https://www.digitalocean.com/community/tutorials/how-to-set-up-an-nfs-mount-on-centos-6){:target="_blank"}
 
 ### 关于 NFS (Network File System) 挂载
 
