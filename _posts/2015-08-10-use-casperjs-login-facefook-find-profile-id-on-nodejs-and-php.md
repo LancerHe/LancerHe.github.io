@@ -197,6 +197,10 @@ nodejs 目前使用 casperjs 库没有成功访问页面，但是网上推荐使
     });
     httpserver.listen('8016', "0.0.0.0");
 
+通过 curl 访问我们的 nodejs 服务：
+    
+    curl http://localhost:8016/?url=https://www.facebook.com/app_scoped_user_id/72497915498194
+
 以下是 CasperJS 的日志：
 
 ![流量拓扑图]({{ site.url }}/uploads/2015/08/facebook-login.png)
