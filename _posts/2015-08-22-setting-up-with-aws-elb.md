@@ -25,6 +25,8 @@ tags:
 7. Add Tags
 8. Review: Press **[Create]**
 
+<!--more-->
+
 ### Check ELB Status
 
 1. DNS Name: xxx-2019755801.us-west-2.elb.amazonaws.com
