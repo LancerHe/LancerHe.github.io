@@ -2,7 +2,7 @@
 title: Setting Up with AWS ElastiCache(Redis)
 author: 谇雨
 layout: post
-permalink: /setting-up-with-aws-rds-elasticache-redis.html
+permalink: /setting-up-with-aws-elasticache-redis.html
 categories:
   - AWS
 tags:
