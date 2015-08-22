@@ -12,9 +12,9 @@ tags:
 ### Create S3 Bucket
 1. S3 Dashboard > **[Create Bucket]**
 2. Create a Bucket - Select a Bucket Name and Region  
-![AWS](http://192.168.1.7:4000/uploads/2015/08/aws-sign-up-with-s3-1.png)
+![AWS]({{ site.url }}/uploads/2015/08/aws-sign-up-with-s3-1.png)
 3. Bucket: [cash-001]
-![AWS](http://192.168.1.7:4000/uploads/2015/08/aws-sign-up-with-s3-2.png)
+![AWS]({{ site.url }}/uploads/2015/08/aws-sign-up-with-s3-2.png)
 
 <!--more-->
 
@@ -24,13 +24,13 @@ tags:
 2. Enter User Names: [cash-001]  
 Generate an access key for each user: [Checked]
 3. Press [Download Credentials]  
-![AWS](http://192.168.1.7:4000/uploads/2015/08/aws-sign-up-with-s3-3.png)
+![AWS]({{ site.url }}/uploads/2015/08/aws-sign-up-with-s3-3.png)
 4. Configure Permissions  
-![AWS](http://192.168.1.7:4000/uploads/2015/08/aws-sign-up-with-s3-4.png)
+![AWS]({{ site.url }}/uploads/2015/08/aws-sign-up-with-s3-4.png)
 5. Attach Policy  
-![AWS](http://192.168.1.7:4000/uploads/2015/08/aws-sign-up-with-s3-5.png)
+![AWS]({{ site.url }}/uploads/2015/08/aws-sign-up-with-s3-5.png)
 6. Policy Name : [AmazonS3FullAccess]  
-![AWS](http://192.168.1.7:4000/uploads/2015/08/aws-sign-up-with-s3-6.png)
+![AWS]({{ site.url }}/uploads/2015/08/aws-sign-up-with-s3-6.png)
 
 ### Install s3cmd on CentOS 6
 
@@ -46,4 +46,4 @@ Generate an access key for each user: [Checked]
     s3cmd --help
     s3cmd ls
 
-![AWS](http://192.168.1.7:4000/uploads/2015/08/aws-sign-up-with-s3-7.png)
+![AWS]({{ site.url }}/uploads/2015/08/aws-sign-up-with-s3-7.png)

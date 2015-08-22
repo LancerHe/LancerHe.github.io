@@ -14,15 +14,15 @@ tags:
 2. Select Engine **[MySQL]**
 3. Do you plan to use this database for production purposes? [No]
 4. Specify DB Details  
-![AWS](http://192.168.1.7:4000/uploads/2015/08/aws-sign-up-with-rds-1.png)
+![AWS]({{ site.url }}/uploads/2015/08/aws-sign-up-with-rds-1.png)
 5. Configure Advanced Settings  
-![AWS](http://192.168.1.7:4000/uploads/2015/08/aws-sign-up-with-rds-2.png)  
-![AWS](http://192.168.1.7:4000/uploads/2015/08/aws-sign-up-with-rds-3.png)
+![AWS]({{ site.url }}/uploads/2015/08/aws-sign-up-with-rds-2.png)  
+![AWS]({{ site.url }}/uploads/2015/08/aws-sign-up-with-rds-3.png)
 6. Get EndPoint  
-![AWS](http://192.168.1.7:4000/uploads/2015/08/aws-sign-up-with-rds-4.png)
+![AWS]({{ site.url }}/uploads/2015/08/aws-sign-up-with-rds-4.png)
 
 <!--more-->
 
 ### Mysql connection test
 
-![AWS](http://192.168.1.7:4000/uploads/2015/08/aws-sign-up-with-rds-5.png)
+![AWS]({{ site.url }}/uploads/2015/08/aws-sign-up-with-rds-5.png)
