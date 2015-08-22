@@ -4,12 +4,9 @@ author: 谇雨
 layout: post
 permalink: /setting-up-with-aws-ec2.html
 categories:
-  - PHP
-  - NodeJS
-  - CasperJS
+  - AWS
 tags:
-  - CasperJs
-  - facebook
+  - AWS
 ---
 
 ### Create Security Groups
