@@ -205,6 +205,6 @@ nodejs 目前使用 casperjs 库没有成功访问页面，但是网上推荐使
 
 以下是 CasperJS 的日志：
 
-![流量拓扑图]({{ site.url }}/uploads/2015/08/facebook-login.png)
+![CasperJS]({{ site.url }}/uploads/2015/08/facebook-login.png)
 
-![流量拓扑图]({{ site.url }}/uploads/2015/08/facebook-getprofileid.png)
+![CasperJS]({{ site.url }}/uploads/2015/08/facebook-getprofileid.png)
