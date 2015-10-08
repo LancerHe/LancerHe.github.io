@@ -46,7 +46,7 @@ ShadowSocks属于Socks5代理，是一个开源项目。ShadowSocks使用自定�
 
     crontab -u root -e 输入 0 */1 * * * /etc/init.d/shadowsocks restart
 
-ShadowSocks客户端可以参考这里的(下载地址)[https://shadowsocks.com/client.html]，安装完成后，配置客户端参数。
+ShadowSocks客户端可以参考这里的[下载地址](https://shadowsocks.com/client.html){:target="_blank"}，安装完成后，配置客户端参数。
 
 如果有智能路由器的话，在路由器上安装ShadowSocks，可以不需要在电脑安装客户端。
 
