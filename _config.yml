@@ -5,7 +5,9 @@ comments:         true
 share:            true
 #Your site's domain goes here. Leave localhost server or blank when working locally.
 url:              http://www.crackedzone.com
-relative_permalinks: true
+# 3.0 not support relative_permalinks
+# relative_permalinks: true
+gems: [jekyll-paginate]
 
 
 # Owner/author information
