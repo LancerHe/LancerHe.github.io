@@ -2,7 +2,7 @@
 title: SSH免密码登录的方法
 author: 谇雨
 layout: post
-permalink: /ssh-without-password.md
+permalink: /ssh-without-password.html
 categories:
   - Linux
 tags:
