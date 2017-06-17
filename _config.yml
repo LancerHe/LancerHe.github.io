@@ -1,10 +1,12 @@
 title:            Lancer's Blog
-description:      #一个分享Web应用, 自学PHP开发的空间
+keywords:         linux, macos, php, java
+description:      一个分享Web应用, 服务端研发的空间
 disqus_shortname: Lancer He
 comments:         true
 share:            true
 #Your site's domain goes here. Leave localhost server or blank when working locally.
 url:              http://www.crackedzone.com
+#url:              http://127.0.0.1:4000
 # 3.0 not support relative_permalinks
 # relative_permalinks: true
 gems: [jekyll-paginate]
@@ -49,8 +51,11 @@ links:
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    Asia/Shanghai
 future:      true
-markdown: kramdown
 highlighter: rouge
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 
 redcarpet:
   extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data", "strikethrough","superscript"]
