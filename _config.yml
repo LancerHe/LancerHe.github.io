@@ -56,7 +56,6 @@ markdown: kramdown
 kramdown:
   input: GFM
   syntax_highlighter: rouge
-
 redcarpet:
   extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data", "strikethrough","superscript"]
 
@@ -73,7 +72,7 @@ kramdown:
   toc_levels: 1..6
   enable_coderay: false
 
-  coderay:
+  syntax_highlighter_opts:
     coderay_line_numbers: nil
     coderay_line_numbers_start: 1
     coderay_tab_width: 4
