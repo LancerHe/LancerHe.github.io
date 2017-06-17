@@ -12,7 +12,9 @@ tags:
 
 由于公司搬迁到原因，一直以来都和其他部门公用SVN，权限分配也是分管部门配置的，SVN上很多项目文件，各种branches，tags命名不规范化，产品运营也都混合使用，介于此情况下，考虑将我们有价值以及正在研发都项目都迁移到我们自己到Git服务上，综合考虑决定搭建一个GitLab。
 
-部署GitLab本身很简单，官方有简单到安装命令步骤
+## 部署GitLab
+
+部署本身很简单，官方有简单到安装命令步骤
 
     yum install curl policycoreutils openssh-server openssh-clients
     yum install postfix
@@ -43,11 +45,13 @@ tags:
 
 一切就绪，我们需要开始导入原来SVN上需要到项目，这里需要操作时支持git svn命令
 
-1. 建立users.txt：存储svn账号与gitlab上账号的关联性，如下：  
-yonghe = yonghe<×××@163.com>  
-lihe = lihe<×××@163.com>  
+## 迁移
 
-格式: svn用户名 = git用户名<git用户对应的邮箱帐号>
+#### 建立users.txt(存储svn账号与gitlab上账号的关联性)   
+格式: svn用户名 = git用户名<git用户对应的邮箱帐号>，如：
+
+    yonghe = yonghe<×××@163.com>  
+    lihe = lihe<×××@163.com>  
 
 注意: svn里面有的账号必须要做关联，否则clone会失败。比如上面的user11找不到是哪个开发人员，也不知道它该对应哪个git账号，那就随便指定一个git账号就行了，这样做的目的其实就是将user11在svn里面的所有提交日志关联到yqdong的git账号下。转到git之后，原svn账号就无关紧要，各司其职了。
  
@@ -57,17 +61,17 @@ lihe = lihe<×××@163.com>
 
     svn log -q | awk -F '|' '/^r/ {sub("^ ", "", $2); sub(" $", "", $2); print $2" = "$2" <"$2">"}' | sort -u > users.txt
 
-2. 导出svn上到项目数据
+#### 导出svn上到项目数据
 
     git svn clone https://svn.mydomain/amz/selenium-center/ --trunk="trunk" --tags="tags" --branches="branches" --authors-file=amz-selenium-center/users.txt --no-metadata selenium-center
 
-3. 添加GitLab到Git源信息
+#### 添加GitLab到Git源信息
 
     git remote add origin git@gitlab.mydomain.com:amz/selenium-server.git
 
-4. 将trunk, branches等上传
+#### 将trunk, branches等上传
 
-   git push origin master
+    git push origin master
 
 回到GitLab平台既可看到项目相关Commit信息
 
