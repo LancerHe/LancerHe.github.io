@@ -71,6 +71,8 @@ tags:
 
     tar xvf mysql-proxy-0.8.5.tar.gz
     cd mysql-proxy-0.8.5
+    ## 注意若是mysql-5.7版本以上, 需要执行下面命令替换 CLIENT_SECURE_CONNECTION -> CLIENT_RESERVED2
+    # sed -i 's/CLIENT_SECURE_CONNECTION/CLIENT_RESERVED2/g' `grep -rl "CLIENT_SECURE_CONNECTION"`
     ./configure --prefix=/usr/local/mysql-proxy-0.8.5
     make && make install
     cp lib/rw-splitting.lua /usr/local/lib/
