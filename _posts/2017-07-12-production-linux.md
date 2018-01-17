@@ -45,7 +45,7 @@ yum upgrade
 
 ### 4. 系统时间更新和设定定时任务
 ```
-echo '*/30 *  *  *  *  ntpdate cn.pool.ntp.org && hwclock -w && hwclock --systohc >/dev/null 2>&1' >> /var/spool/cron/root
+echo '*/30 *  *  *  *  /usr/sbin/ntpdate cn.pool.ntp.org && hwclock -w && hwclock --systohc >/dev/null 2>&1' >> /var/spool/cron/root
 ```
 
 ### 5. 修改ip地址、网关、主机名、DNS #eth0 网卡设置
