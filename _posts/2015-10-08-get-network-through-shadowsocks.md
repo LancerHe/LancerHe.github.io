@@ -44,7 +44,7 @@ ShadowSocks属于Socks5代理，是一个开源项目。ShadowSocks使用自定�
 
 每隔1小时重启服务：
 
-    crontab -u root -e 输入 0 */1 * * * /etc/init.d/shadowsocks restart
+    echo " 0 */1 * * * /etc/init.d/shadowsocks restart" > /var/spool/cron/root
 
 ShadowSocks客户端可以参考这里的[下载地址](https://shadowsocks.com/client.html){:target="_blank"}，安装完成后，配置客户端参数。
 
