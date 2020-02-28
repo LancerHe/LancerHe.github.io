@@ -107,3 +107,4 @@ width: 2em;
     width: 260px;
     margin-left: 50px;
 }
+.entry-meta .vcard a {color: #333; text-decoration: underline; font-weight: 600;}
