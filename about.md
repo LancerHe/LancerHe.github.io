@@ -15,9 +15,9 @@ share: true
 {: .pull-right .avatar-about}
 
 ### **ABOUT:**
-曾任职于Baidu 91无线商业化产品中心产品研发部任资深研发工程师\\
-IGG Tapcash组 任高级服务端工程师\\
-先就职于福州点金信息技术(Tapcash) 负责产品研发管理工作
+曾任职于Baidu 91无线商业化产品中心产品研发部任资深研发工程师\\  
+IGG Tapcash组 任高级服务端工程师\\  
+先就职于福州点金信息技术(Tapcash) 负责产品研发管理工作\\  
 Email: lancer.he@gmail.com.
 
 ### WORK EXPERIENCE
