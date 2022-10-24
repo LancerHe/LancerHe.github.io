@@ -38,7 +38,7 @@ http://localhost/ci/index.php/welcome
   
 为此开始第一个实例：模仿welcome在控制器下建立一个Blog类，但要注意类名第一个字母要大写的
 
-<pre class="lang:php decode:true " ><?php
+<?php
 class Blog extends Controller{
 	function __construct(){
 		parent::Controller();
@@ -48,7 +48,7 @@ class Blog extends Controller{
 		echo $id;
 	}
 }
-?></pre>
+?>
 
 现在访问:http://localhost/ci/index.php/blog/category/2  
 浏览器输出:2  
@@ -61,7 +61,7 @@ class Blog extends Controller{
 
 <pre class="lang:apache decode:true " >RewriteEngine on
 RewriteCond $1 !^(index\.php)
-RewriteRule ^(.*)$ index.php/$1 [L]</pre>
+RewriteRule ^(.*)$ index.php/$1 [L]
 
 因为我的CI不在根目录，所以使用RewriteRule ^(.*)$ index.php/$1 [L]  
 OK.访问 http://localhost/ci/blog/category/2 成功

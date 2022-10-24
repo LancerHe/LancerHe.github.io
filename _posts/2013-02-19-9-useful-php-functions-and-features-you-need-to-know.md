@@ -40,7 +40,7 @@ foo();
 /* 输出:
 arg1:
 arg2:
-*/</pre>
+*/
 
 <!--more-->现在我们来看一看一个不定参数的函数，其使用到了
 
@@ -71,7 +71,7 @@ foo('hello', 'world', 'again');
 arg1: hello
 arg2: world
 arg3: again
-*/</pre>
+*/
 
 
 
@@ -93,7 +93,7 @@ Array
     [2] => post_output.php
     [3] => test.php
 )
-*/</pre>
+*/
 
 还可以查找多种后缀名
 
@@ -111,7 +111,7 @@ Array
     [4] => log.txt
     [5] => test.txt
 )
-*/</pre>
+*/
 
 你还可以加上路径：
 
@@ -124,7 +124,7 @@ Array
     [0] => ../images/apple.jpg
     [1] => ../images/art.jpg
 )
-*/</pre>
+*/
 
 如果你想得到绝对路径，你可以调用[realpath()][4] 函数：
 
@@ -140,7 +140,7 @@ Array
     [0] => C:\wamp\www\images\apple.jpg
     [1] => C:\wamp\www\images\art.jpg
 )
-*/</pre>
+*/
 
 
 
@@ -173,7 +173,7 @@ Final: 885912 bytes
 echo "Peak: ".memory_get_peak_usage()." bytes \n";
 /* 输出峰值
 Peak: 13687072 bytes
-*/</pre>
+*/
 
 
 
@@ -204,7 +204,7 @@ Array
     [ru_stime.tv_sec] => 0
 )
 
-*/</pre>
+*/
 
 这个结构看上出很晦涩，除非你对CPU很了解。下面一些解释：
 
@@ -241,7 +241,7 @@ echo "System time: ".
 
 /* 输出
 User time: 0.011552
-System time: 0</pre>
+System time: 0
 
 sleep是不占用系统时间的，我们可以来看下面的一个例子：
 
@@ -261,7 +261,7 @@ echo "System time: ".
 /* 输出
 User time: 1.424592
 System time: 0.004204
-*/</pre>
+*/
 
 这花了大约14秒的CPU时间，几乎所有的都是用户的时间，因为没有系统调用。
 
@@ -284,7 +284,7 @@ echo "System time: ".
 /* prints
 User time: 1.088171
 System time: 1.675315
-*/</pre>
+*/
 
 我们可以看到上面这个例子更耗CPU。  
 
@@ -301,7 +301,7 @@ require_once('config/database.php');
 
 // this is always relative to this file's path
 // no matter where it was included from
-require_once(dirname(__FILE__) . '/config/database.php');</pre>
+require_once(dirname(__FILE__) . '/config/database.php');
 
 下面是使用 \_\_LINE\_\_ 来输出一些debug的信息，这样有助于你调试程序：
 
@@ -321,7 +321,7 @@ Line 11: another debug message
 
 function my_debug($msg, $line) {
     echo "Line $line: $msg\n";
-}</pre>
+}
 
 
 
@@ -330,7 +330,7 @@ function my_debug($msg, $line) {
 有很多人使用 md5() 来生成一个唯一的ID，如下所示：
 
 <pre class="lang:php decode:true">// generate unique string
-echo md5(time() . mt_rand(1,1000000));</pre>
+echo md5(time() . mt_rand(1,1000000));
 
 实，PHP中有一个叫[uniqid()][9] 的函数是专门用来干这个的：
 
@@ -344,7 +344,7 @@ echo uniqid();
 echo uniqid();
 /* 输出
 4bd67c9472340
-*/</pre>
+*/
 
 可能你会注意到生成出来的ID前几位是一样的，这是因为生成器依赖于系统的时间，这其实是一个非常不错的功能，因为你是很容易为你的这些ID排序的。这点MD5是做不到的。
 
@@ -366,7 +366,7 @@ echo uniqid('',true);
 echo uniqid('bar_',true);
 /* 输出
 bar_4bd67da367b650.43684647
-*/</pre>
+*/
 
 而且，生成出来的ID会比MD5生成的要短，这会让你节省很多空间。  
 
@@ -408,7 +408,7 @@ Array
 
     [3] => apple
 )
-*/</pre>
+*/
 
 这是PHP的原生函数，然而在今天JSON越来越流行，所以在PHP5.2以后，PHP开始支持JSON，你可以使用 json\_encode() 和 json\_decode() 函数
 
@@ -447,7 +447,7 @@ Array
 
     [3] => apple
 )
-*/</pre>
+*/
 
 
 
@@ -488,7 +488,7 @@ Compressed size: 418
 */
 
 // 解压缩
-$original = gzuncompress($compressed);</pre>
+$original = gzuncompress($compressed);
 
 
 
@@ -505,7 +505,7 @@ $start_time = microtime(true);
 // display how long the script took
 echo "execution took: ".
         (microtime(true) - $start_time).
-        " seconds.";</pre>
+        " seconds.";
 
 上面这个示例只不过是用来计算某个函数运行的时间。然后，如果你在函数中间调用[exit()][17] 函数，那么你的最后的代码将不会被运行到。并且，如果该脚本在浏览器终止（用户按停止按钮），其也无法被运行。
 
@@ -524,7 +524,7 @@ function my_shutdown() {
     echo "execution took: ".
             (microtime(true) - $start_time).
             " seconds.";
-}</pre>
+}
 
  [1]: http://us2.php.net/manual/en/function.func-get-args.php
  [2]: http://us.php.net/manual/en/function.glob.php

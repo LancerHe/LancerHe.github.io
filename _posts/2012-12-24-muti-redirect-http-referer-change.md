@@ -60,6 +60,6 @@ tags:
 
 <pre class="lang:php decode:true " title="shopping.php" >$url = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 $url = base64_encode($url);
-header ('Location: http://me1.taobao.com/?referer='.$url);</pre>
+header ('Location: http://me1.taobao.com/?referer='.$url);
 
  [1]: #

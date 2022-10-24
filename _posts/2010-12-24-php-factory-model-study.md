@@ -18,7 +18,7 @@ tags:
 
 加入我们现在有两个数据库类
 
-<pre class="lang:php decode:true " >class PGSQL {
+class PGSQL {
 	function __construct() {}
   function connect() {}
 }
@@ -50,7 +50,7 @@ class Database {
 // -- 用法 -- 
 
 $db = Database::load();
-$db->connect();</pre>
+$db->connect();
 
 通过工厂类Database, 通过不同的配置实例化不同的数据库类。
 

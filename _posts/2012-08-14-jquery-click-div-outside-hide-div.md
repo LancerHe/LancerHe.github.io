@@ -20,7 +20,7 @@ jQuery本身没有这样一个事件，要实现这个效果，我们首先要�
 
 <!--more-->
 
-<pre class="lang:xhtml decode:true " ><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <head>
@@ -34,7 +34,7 @@ jQuery本身没有这样一个事件，要实现这个效果，我们首先要�
          </div>
     </div>
 </body>
-</html></pre>
+</html>
 
 上述代码运行后，点击链接，以此会出现link, inner, outer, document,转向百度。  
 也就是说我们点击链接后 click事件一直冒泡传递在最外层body。
@@ -47,7 +47,7 @@ jQuery本身没有这样一个事件，要实现这个效果，我们首先要�
 	$("#link").click(function(event) {
 		event.stopPropagation();
 	});
-}); </pre>
+}); 
 
 上述代码运行后，点击链接，按顺序会出现link, 转向百度。
 
@@ -60,7 +60,7 @@ jQuery本身没有这样一个事件，要实现这个效果，我们首先要�
 		event.preventDefault(); 
 	});
 }); 
-</pre>
+
 
 上述代码运行后，点击链接，按顺序会出现link, inner, outer, document, 但是不转向百度。
 
@@ -73,7 +73,7 @@ jQuery本身没有这样一个事件，要实现这个效果，我们首先要�
 		return false;
 	});
 });
-</pre>
+
 
 上述代码运行后，点击链接，只会出现link。
 
@@ -81,7 +81,7 @@ jQuery本身没有这样一个事件，要实现这个效果，我们首先要�
 
 所以鼠标点击Div区域外隐藏Div正需要用到事件冒泡。
 
-<pre class="lang:xhtml decode:true " ><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -100,7 +100,7 @@ body { background:black; }
     	<option>Test</option>
     </select></p> 
 </div> 
-<input id="btn" type="button" value="显示DIV" /> </pre>
+<input id="btn" type="button" value="显示DIV" /> 
 
 在jquery click事件上设置click事件：  
 首先在document上添加一个点击隐藏Div的事件  
@@ -115,6 +115,6 @@ body { background:black; }
 }); 
 $("#demo").click(function (event) { 
 	event.stopPropagation();//在Div区域内的点击事件阻止冒泡到document 
-}); </pre>
+}); 
 
  [1]: {{ site.url }}/uploads/2012/08/divout.jpg

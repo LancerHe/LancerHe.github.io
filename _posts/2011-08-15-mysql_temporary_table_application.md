@@ -60,14 +60,14 @@ $insertSql = substr($insertSql,0 , strlen($insertSql)-1);
 $this->DB->query($insertSql);
 
 //临时表建立完成，等于B表
-</pre>
+
 
 <pre class="lang:tsql decode:true " >SELECT tmp_currentdate AS currentdate, IF(counts IS NULL,0,counts) AS counts
 FROM
   (SELECT currentdate, counts FROM stat) AS A
 RIGHT JOIN
   tmp_table AS TMP
-ON A.currentdate=TMP.tmp_currentdate</pre>
+ON A.currentdate=TMP.tmp_currentdate
 
 就能返回出
 

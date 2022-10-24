@@ -32,7 +32,7 @@ box-shadow:2px 2px 10px #909090;
 第三个参数是往四周阴影段长度
 第四个参数是阴影段颜色
 */
-}</pre>
+}
 
 <pre class="lang:default decode:true " title="固定Div位置" >.fix{
     width:50px; position:fixed; background:black; 
@@ -48,4 +48,3 @@ box-shadow:2px 2px 10px #909090;
 				document.body.scrollTop + (document.body.clientHeight - this.clientHeight )/ 2 );
     */
 }
-</pre>

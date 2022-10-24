@@ -28,15 +28,15 @@ tags:
   
 由于我们通常取出处理的二维数组是这样的：
 
-<pre class="lang:php decode:true " >$arr = array (
+$arr = array (
 	1 => array('id' => 2, 'fid' => '3' , 'data' => 'aa' ),
 	2 => array('id' => 3, 'fid' => '1' , 'data' => 'bb' ),
 	3 => array('id' => 1, 'fid' => '2' , 'data' => 'bb' )
-);</pre>
+);
 
 假如我们需要把这个数组按照fid排序，按照array_multisort函数的要求我们就要取出fid这一列，然后根据这一列的升序，来调整原来的数组也升序。
 
-<pre class="lang:php decode:true " >function multi_array_sort($multi_array,$sort_field,$sort_type = SORT_ASC){
+function multi_array_sort($multi_array,$sort_field,$sort_type = SORT_ASC){
 	if (!is_array($multi_array)) return FALSE;
 	foreach ($multi_array as $row){
 		if(! is_array($row)) return FALSE;
@@ -45,4 +45,4 @@ tags:
 	array_multisort($arr_field,$sort_type,$multi_array);
 	return $multi_array;
 }//看看结果
-print_r(multi_array_sort($arr, 'fid',SORT_DESC));</pre>
+print_r(multi_array_sort($arr, 'fid',SORT_DESC));

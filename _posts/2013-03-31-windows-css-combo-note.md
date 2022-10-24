@@ -29,17 +29,17 @@ ccs-combo的源文件托管地址：
 [http://nodejs.org/dist/npm/](http://nodejs.org/dist/npm/){:target="_blank"}  
 将npm源代码解压到D:\npmjs目录中，在命令提示符窗口中执行下面的操作，完成npm的安装：
 
-    <pre>D:\>cd npmjs
-    node cli.js install npm -gf</pre>
+    D:\>cd npmjs
+    node cli.js install npm -gf
 
 3. 安装css-combo  
 
-    <pre>npm install -g css-combo</pre>
+    npm install -g css-combo
 
 4. 使用css-combo  
 命令行下，可以先进入需要打包的文件所在目录，然后
 
-    <pre>csscombo test.source.css test.combo.css</pre>
+    csscombo test.source.css test.combo.css
 
 <!--more-->
 
@@ -47,30 +47,30 @@ ccs-combo的源文件托管地址：
 
 1. 需要先建立一个txt文件，比如pack-list.txt，里面的结构如下，类似一个二维数组。
     
-    <pre>D:\www\test\css\ source-1.css source-1.combo.css
-    D:\www\test\css\ source-2.css source-2.combo.css</pre>
+    D:\www\test\css\ source-1.css source-1.combo.css
+    D:\www\test\css\ source-2.css source-2.combo.css
 
 2. 建立一个bat，循环读出txt行内容，并直接执行csscombo命令。
 
-    <pre>@echo off
+    @echo off
 
     for /f  "tokens=1-3 delims= " %%i in (pack-list.txt) do (
         csscombo %%i%%j %%i%%k
-    )</pre>
+    )
 
 #### 给CSS右键添加一个Combo功能
 
 1. 首先也是建立一个bat文件，用于执行csscombo时的自动判断文件给文件重命名时加入一个combo后缀。
 
-    <pre>@echo off
-    csscombo %1 -o %~n1.combo%~x1</pre>
+    @echo off
+    csscombo %1 -o %~n1.combo%~x1
 
 2. 然后建立一个reg文件，用于提交注册表，保证CSS文件的shell有这个命令。
 
-    <pre>Windows Registry Editor Version 5.00
+    Windows Registry Editor Version 5.00
 
     [HKEY_CLASSES_ROOT\CSSFile\shell\Combo CSS]
     @="Combo CSS"
 
     [HKEY_CLASSES_ROOT\CSSFile\shell\Combo CSS\Command]
-    @="D:\\www\\tools\\csscombo.bat %1"</pre>
+    @="D:\\www\\tools\\csscombo.bat %1"

@@ -18,11 +18,11 @@ tags:
 
 网站优化过程中，经常会遇到很多要批量修改的东西，一个个修改，明显效率低下。本文是使用DW正则表达式批量替换的一个实例。
 
-<pre class="lang:xhtml decode:true " ><!--想法：想把-->
+<!--想法：想把-->
 <a  href="#" target="_blank">BBBBBBB</a>
 <!--替换成 -->
 <a  href="http://www.yourdomain.com/keyword.asp?=BBBBBBB" target="_blank">BBBBBBB</a>
-</pre>
+
 
 如果&#8221;BBBBBBB&#8221;一样的话，那么简单，如果内容不一样的话，就不能使用简单的查找替换功能了。那么就使用DW正则表达式批量替换吧。
 

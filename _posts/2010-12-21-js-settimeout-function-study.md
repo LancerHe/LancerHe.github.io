@@ -16,10 +16,10 @@ tags:
 
 延迟载入广告JS
 
-<pre class="lang:xhtml decode:true " ><script language="JavaScript" src="" id="my"></script> 
+<script language="JavaScript" src="" id="my"></script> 
 <script> 
 setTimeout("document.getElementById('my').src='js/ad.js'; ",3000); 
-</script></pre>
+</script>
 
 <!--more-->
 
@@ -38,7 +38,7 @@ setTimeout的标准语法是: setTimeout(表达式,时间(毫秒)) 两个参数.
 
 setTimeout(alertMsg,3000);
  
-setTimeout("alertMsg()",3000);</pre>
+setTimeout("alertMsg()",3000);
 
 2. 函数有参:
 
@@ -47,4 +47,4 @@ setTimeout("alertMsg()",3000);</pre>
 }
 
 //此时应设置如下方式，不然会提示参数未定义。
-setTimeout(function(){alertMsg(event);},3000); </pre>
+setTimeout(function(){alertMsg(event);},3000); 

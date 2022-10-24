@@ -16,7 +16,8 @@ tags:
 一般来说国家列表非常长的，在客户端一般不使用连接数据库来读取数据的国家列表。这不仅消耗内存而且让页面加载速度也变慢，为此把国家列表存在XML中是一个很好的选择。  
 部分XML数据：data/countries.xml，列表太长，完整的放在附件中。
 
-<pre class="lang:xhtml decode:true " ><?xml version="1.0" encoding="utf-8"?>
+```
+<?xml version="1.0" encoding="utf-8"?>
 <countries>
 	<region id="1" name="America">
 		<country id="92" name="Uruguay" code="UY" />
@@ -41,14 +42,15 @@ tags:
 		<country id="155" name="Tonga" code="TO" />
 		<country id="156" name="Vanuatu" code="VU" />
 	</region>
-</countries></pre>
-
+</countries>
+```
 <!--more-->
 
   
 PHP函数及调用方法：index.php
 
-<pre class="lang:php decode:true " >function get_country_select($xml, $sele=0,$type='id'){
+```
+function get_country_select($xml, $sele=0,$type='id'){
 	if(!file_exists($xml)) return 'File not exists';
 	
 	$country_xml = simplexml_load_file($xml);	
@@ -77,7 +79,8 @@ $xml = './data/countries.xml';
 $list = get_country_select($xml);
 echo '<select id=country>';
 echo $list;
-echo '</select>';</pre>
+echo '</select>';
+```
 
 为什么要把<select>写在函数外面呢？因为往往select需要id,name毕竟提交表单需要一些信息，个人并不喜欢函数带太多参数。  
 国家列表完整XML下载：<a href= 'http://blog.crackedzone.com/wp-content/uploads/2010/09/countries.zip' rel='attachment wp-att-52'>countries.xml</a>

@@ -25,7 +25,7 @@ tags:
 举个例子就很好理解
 
 <pre class="lang:sh decode:true " >mysql > SELECT IF(1>2,'yes ','no');
-          > 'yes'</pre>
+          > 'yes'
 
 数据库表结构设计：
 
@@ -37,9 +37,9 @@ topdeadline: int(10) //置顶截止时间，时间戳格式..
 
 PHP中操作Mysql：
 
-<pre class="lang:php decode:true " >//这里有额外的要求，当置顶截止时间为空时，代表永久置顶。
+//这里有额外的要求，当置顶截止时间为空时，代表永久置顶。
 $timestamp = mktime(); //获取当前时间戳
 //置顶为1时，截止时间大于当前时间或者 截止时间为0，定义一个字段为top为其赋值
 $sql = "SELECT id, title,
 IF(istop=1 AND (topdeadline>" . $timestamp . " OR topdeadline=0), 1, 0) AS top,1
-FROM article ORDER BY id DESC";</pre>
+FROM article ORDER BY id DESC";

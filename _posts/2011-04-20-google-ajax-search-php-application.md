@@ -21,16 +21,18 @@ tags:
 
 主要采用JS的方法加载 
 
-<pre class="lang:xhtml decode:true " ><script type="text/javascript" src="https://www.google.com/jsapi?key=INSERT_YOUR_KEY"></script></pre>
+```
+<script type="text/javascript" src="https://www.google.com/jsapi?key=INSERT_YOUR_KEY"></script>
+```
 
 然后通过search对象控制搜索，官方API文档写的很具体。
 
 但是有时候并不是很好控制，因此官方开放了另一个与其他语言交互的API接口  
-  
 <a href="http://code.google.com/intl/zh-CN/apis/websearch/docs/#fonje" target="_blank">http://code.google.com/intl/zh-CN/apis/websearch/docs/#fonje</a> 
 
 通过curl获取Get参数的回传值 
 
+```
 > curl -e http://www.my-ajax-site.com \  
 > &#8216;https://ajax.googleapis.com/ajax/services/search/web?v=1.0&q=Paris%20Hilton&key=INSERT-YOUR-KEY&#8217;
 
@@ -39,6 +41,7 @@ tags:
 参数 q为关键词，需要urlencode；  
 参数 key为申请的key，其实不用必填，若填写了一定要正确的key。这个key直接可以关联到google account，所以还是建议申请。  
 更多参数请查阅：<a href="http://code.google.com/intl/zh-CN/apis/websearch/docs/reference.html#_fonje_args" target="_blank">ttp://code.google.com/intl/zh-CN/apis/websearch/docs/reference.html#_fonje_args</a>。 
+```
 
 我这里用到另外一个类HttpClient模拟获取Get值，原理其实很Curl一样。  
   
@@ -47,10 +50,11 @@ HttpClient类可参考我之前写的这篇文章：
 
 <!--more-->
 
-  
+
 具体方法：
 
-<pre class="lang:php decode:true " >require_once 'inc/class/HttpClient.php';	
+```
+require_once 'inc/class/HttpClient.php';	
   
   function getGoogleSearchJson($args, $inSite=false) {
   //$args为传给Google的参数
@@ -137,6 +141,7 @@ if(!$keyword) {
 		'rsz'    => 8, //每页显示记录数  最高8条
 		'start'  => ($page-1) * 8 //记录开始的下界。
 	), true); 
-}</pre>
+}
+```
 
 OK 最后写一些CSS样式表

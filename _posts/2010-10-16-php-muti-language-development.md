@@ -61,10 +61,10 @@ site.php, admin.php, msg.php, product.php &#8230;&#8230;..
 
 site.php 中可能是如下形式：
 
-<pre class="lang:php decode:true " >$site['contact_us'] = '联系我们';
+$site['contact_us'] = '联系我们';
 $site['my_account'] = '我的账户';
 $site['company_info'] = '公司简介';
-.........</pre>
+.........
 
 就可以将特定的语言包信息显示出用户。也可以让用户保存自己使用的语言。
 

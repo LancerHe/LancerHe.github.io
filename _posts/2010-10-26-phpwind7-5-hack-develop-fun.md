@@ -14,7 +14,7 @@ tags:
 ---
 常量和变量:
 
-<pre class="lang:php decode:true " >R_P  //用于记录总论坛目录的绝对路径
+R_P  //用于记录总论坛目录的绝对路径
   D_P  //用于分论坛目录的绝对路径
   H_R  //用于论坛使用插件目录的绝对路径  ./hack/bank/
   phpwind  //常用变量
@@ -25,14 +25,14 @@ tags:
   $onlineip //访问IP地址
   $timestamp //当前时间戳
   $imgdir    //图片dir
-  $attachdir //附件dir</pre>
+  $attachdir //附件dir
 
 <!--more-->
 
   
 常用函数:
 
-<pre class="lang:php decode:true " >//对所有变量进行过滤，论坛没定义的变量都不能在程序中运行 
+//对所有变量进行过滤，论坛没定义的变量都不能在程序中运行 
 function InitGP($keys,$method=null,$cvtype=1)
 
 //提示信息
@@ -54,4 +54,4 @@ function pwEscape($var,$strip = true)
 function pwImplode($array,$strip=true) 
 
 //获取数据的分页连接串
-function numofpage($count,$page,$numofpage,$url,$max=null)</pre>
+function numofpage($count,$page,$numofpage,$url,$max=null)

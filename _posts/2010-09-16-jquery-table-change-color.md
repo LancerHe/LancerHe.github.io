@@ -14,19 +14,19 @@ tags:
 ---
 用过JavaScript的实现表格的隔行变色，鼠标经过加亮至少需要20行以上的代码，而是用jQuery只需要短短几行的代码。
 
-<pre class="lang:css decode:true " >td {padding:6px 11px;border-bottom:1px solid #95bce2;vertical-align:top;text-align:center;} 
+td {padding:6px 11px;border-bottom:1px solid #95bce2;vertical-align:top;text-align:center;} 
 td * {padding:6px 11px; } 
 /*偶数行 tr 加上背景色*/
 tr.even td {background:#ecf6fc;} 
 /*这个将是鼠标高亮行的背景色*/   
-tr.over td {background:#bcd4ec;}  </pre>
+tr.over td {background:#bcd4ec;}  
 
 <pre class="lang:js decode:true " >$(document).ready(function(){
 	$('.pm tr').mouseover(function(){
 		$(this).addClass('over');}).mouseout(function(){$(this).removeClass('over');
 	});
 	$('.pm tr:even').addClass('even');
-});</pre>
+});
 
 <!--more-->
 
@@ -42,4 +42,4 @@ $(".pm tr").mouseout(function(){
 $('.pm tr').mouseover(function(){
 		$(this).addClass('over');}).mouseout(function(){$(this).removeClass('over');
 	});
-//说明jQuery是链式的行为  </pre>
+//说明jQuery是链式的行为  

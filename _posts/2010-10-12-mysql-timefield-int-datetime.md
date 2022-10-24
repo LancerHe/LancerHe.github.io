@@ -55,7 +55,7 @@ CREATE TABLE `test`.`date_test4` (
 `start_time` DATETIME NOT NULL ,
 `some_content` CHAR( 255 ) NOT NULL ,
 PRIMARY KEY ( `id` )
-) ENGINE = InnoDB;</pre>
+) ENGINE = InnoDB;
 
 现在我们开始做测试，环境是php，先向各个表插入一百万条数据。插入的时候分200次，每次进库5000条。
 

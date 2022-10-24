@@ -16,7 +16,7 @@ tags:
 刚开始一直百思不得其解，百度的结果居然是平时看到的 Db::getInstance()-> ，原来这个就是所谓的单例模式。  
 先看我们平时使用的方法
 
-<pre class="lang:php decode:true " >class Category{
+class Category{
 	//定义一个获取分类方法
 	function getCategory() {
 		//这时我们不得不重新初始化一个数据库句柄,试想多个应用场景下，这样的代码是多么可怕啊？！ 
@@ -27,11 +27,11 @@ tags:
 		//但一般在OPP编程中，不使用这样的方法，同时global存在安全隐患
 		//同时单例模式恰恰是对全局变量的一种改进，避免了那些存储唯一实例的全局变量污染命名空间
 	}
-}</pre>
+}
 
 倘若采用单例模式
 
-<pre class="lang:php decode:true " >class Category{
+class Category{
 	//定义一个获取分类方法
 	function getCategory() {
 		//所有的应用情景只有一个数据库句柄资源，嘿嘿，效率老高了， 
@@ -39,7 +39,7 @@ tags:
 		$query = Db::getInstance()->query($sql);
 		$array = Db::getInstance()->fetch_array($query);
 	}
-}</pre>
+}
 
 <!--more-->
 
@@ -56,7 +56,7 @@ tags:
 
 下面写个单例类
 
-<pre class="lang:php decode:true " >class MySQL{ 
+class MySQL{ 
 	/** 
 	*  静态成员变量 保存全局实例 
 	*  @access private 
@@ -85,7 +85,7 @@ tags:
 	 */ 
 	public function connect() {} 
 	public function query() {} 
-} </pre>
+} 
 
 从以上代码中，我们总结出 PHP 单例模式实现的核心要点有如下三条：  
 1. 需要一个保存类的唯一实例的静态成员变量（通常为$_instance 私有变量）  

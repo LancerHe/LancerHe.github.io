@@ -33,7 +33,7 @@ Li标签Float:left在做网页侧栏的一些tags的时候，是一种很好的�
     float:left; 
     list-style: none; 
     margin: 5px;
-}</pre>
+}
 
 其次是HTML结构
 
@@ -42,7 +42,7 @@ Li标签Float:left在做网页侧栏的一些tags的时候，是一种很好的�
     <ul class="city">        
         <li>厦门</li><li>桂林</li><li>张家界</li><li>贵州</li><li>新疆</li><li>宁夏</li><li>四川</li><li>重庆</li><li>东北</li><li>北京</li><li>云南</li><li>西藏</li><li>华东</li><li>甘南</li><li>江西</li><li>三峡</li><li>海南</li><li>山东</li><li>青海</li><li>夕阳红</li>
     </ul>  
-</div></pre>
+</div>
 
 #### 解决方案
 
@@ -53,6 +53,6 @@ Li标签Float:left在做网页侧栏的一些tags的时候，是一种很好的�
     list-style: none; 
     margin: 5px; 
     white-space: nowrap;
-}</pre>
+}
 
  [1]: {{ site.url }}/uploads/2012/12/li-ie7-ie8.jpg

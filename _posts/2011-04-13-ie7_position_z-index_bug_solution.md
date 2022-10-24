@@ -37,13 +37,13 @@ tags:
     <div id="box1">This box should be on top</div>
 </div>
 <div id="box2">This box should not be on top; IE however seems to create a new stacking context for positioned elements, even when the computed z-index of that element is 'auto'.</div>
-</pre>
 
-<pre class="lang:css decode:true " >body { margin: 0; padding: 0; }
+
+body { margin: 0; padding: 0; }
 #container { position: relative; }
 #box1 { position: absolute; top: 100px; left: 510px; width: 200px; height: 200px; background-color: yellow; z-index: 20; }
 #box2 { position: absolute; top: 50px; left: 460px; width: 200px; height: 200px; background-color: lime; z-index: 10; }
-#content { width: 420px; padding: 20px; }</pre>
+#content { width: 420px; padding: 20px; }
 
 正常理解是应该显示上图右边的那种情况，但是IE7上的确是一件很怪异的事情，查了许多资料终于找到了解决方案:  
 <a href="http://brenelz.com/blog/squish-the-internet-explorer-z-index-bug/" target="_blank">http://brenelz.com/blog/squish-the-internet-explorer-z-index-bug/</a>
@@ -54,7 +54,7 @@ tags:
 
 在上述的box1中的父元素container设置一个更大的z-index就能解决这个问题，如下：
 
-<pre class="lang:css decode:true " >#container { position: relative; z-index:30;}</pre>
+#container { position: relative; z-index:30;}
 
 这一Bug差点搞残我。。。
 

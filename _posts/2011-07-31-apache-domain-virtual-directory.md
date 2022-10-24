@@ -29,7 +29,7 @@ ServerName local.cart.com
 <VirtualHost *:80>
 DocumentRoot "D:\www\zone"
 ServerName local.zone.com
-</VirtualHost></pre>
+</VirtualHost>
 
 保存配置文件，重启apache后，虚拟目录就创建好了。然后需要对域名进行强制解析转向到我们的虚拟目录。  
 打开C:\WINDOWS\system32\drivers\etc文件夹下的host文件  
@@ -39,4 +39,4 @@ ServerName local.zone.com
 192.168.1.100 local.guestbook.com
 192.168.1.100 local.cart.com
 192.168.1.100 local.crackedzone.com
-192.168.1.100 local.test.com</pre>
+192.168.1.100 local.test.com

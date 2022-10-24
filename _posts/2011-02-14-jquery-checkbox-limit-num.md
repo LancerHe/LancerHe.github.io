@@ -36,4 +36,4 @@ $("input:checkbox[name='option[]']").each(function(){
     }
   });
 
-});</pre>
+});

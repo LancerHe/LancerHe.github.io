@@ -17,7 +17,7 @@ tags:
 
 Html中**mailto标签**是一个非常实用的贴近用户体验的标签，大多情况下人们都在这样使用
 
-<pre class="lang:default decode:true " ><a href="mailto:example@phplamp.com">example@phplamp.com</a></pre>
+<pre class="lang:default decode:true " ><a href="mailto:example@phplamp.com">example@phplamp.com</a>
 
 这样，当我们点击了example@phplamp.com链接后浏览器会为我们自动选择本地的默认邮件软件，并将mailto标签后example@phplamp.com邮件地址放到邮件软件的发送地址中，少去了我们发送邮件时输入发送地址的烦扰，同时也可以避免输错邮件地址。
 
@@ -27,26 +27,26 @@ Html中**mailto标签**是一个非常实用的贴近用户体验的标签，大
 
 **1. 为邮件加入默认标题**
 
-<pre class="lang:default decode:true " ><a href="mailto:example@phplamp.com?subject=邮件的默认标题">example@phplamp.com</a></pre>
+<pre class="lang:default decode:true " ><a href="mailto:example@phplamp.com?subject=邮件的默认标题">example@phplamp.com</a>
 
 **2. 为邮件加入默认的抄送地址**
 
-<pre class="lang:default decode:true " ><a href="mailto:example@phplamp.com?cc=example2@phplamp.com">example@phplamp.com</a></pre>
+<pre class="lang:default decode:true " ><a href="mailto:example@phplamp.com?cc=example2@phplamp.com">example@phplamp.com</a>
 
 **3. 为邮件加入默认暗送（密件抄送）地址**
 
-<pre class="lang:default decode:true " ><a href="mailto:example@phplamp.com?bcc=example2@phplamp.com">example@phplamp.com</a></pre>
+<pre class="lang:default decode:true " ><a href="mailto:example@phplamp.com?bcc=example2@phplamp.com">example@phplamp.com</a>
 
 **4. 为邮件加入默认的内容**
 
-<pre class="lang:default decode:true " ><a href="mailto:example@phplamp.com?body=欢迎您来到phplamp博客站-http://www.phplamp.org">example@phplamp.com</a></pre>
+<pre class="lang:default decode:true " ><a href="mailto:example@phplamp.com?body=欢迎您来到phplamp博客站-http://www.phplamp.org">example@phplamp.com</a>
 
 **5. 多个邮件地址**
 
-<pre class="lang:default decode:true " ><a href="mailto:example@phplamp.com,example2@phplamp.com">example@phplamp.com</a></pre>
+<pre class="lang:default decode:true " ><a href="mailto:example@phplamp.com,example2@phplamp.com">example@phplamp.com</a>
 
 **6. 来个综合型的：加入默认抄送地址，标题，内容**
 
-<pre class="lang:default decode:true " ><a href="mailto:example@phplamp.com?cc=example2@phplamp.com&#038;subject=phplamp博客站&#038;body=欢迎您来到phplamp博客站-http://www.phplamp.org">example@phplamp.com</a></pre>
+<pre class="lang:default decode:true " ><a href="mailto:example@phplamp.com?cc=example2@phplamp.com&#038;subject=phplamp博客站&#038;body=欢迎您来到phplamp博客站-http://www.phplamp.org">example@phplamp.com</a>
 
 由上例可以看出，假如有多个默认值需要添加的话，与邮件地址相连接的字符为&#8221;?&#8221;，默认值间相连接的符号为&#8221;&&#8221;。

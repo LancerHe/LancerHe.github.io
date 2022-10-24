@@ -34,7 +34,7 @@ tags:
     $_COOKIE   = clean($_COOKIE);
     $_REQUEST  = clean($_REQUEST);
 }
-</pre>
+
 
 情况1：  
 通过上面的操作我们得到的数据就已经自动转义的
@@ -65,6 +65,6 @@ tags:
 
     return $data;
 }
-</pre>
+
 
 入库后则显示：为什么1 + 2 &gt  2 &quot;一种证明方案&quot;

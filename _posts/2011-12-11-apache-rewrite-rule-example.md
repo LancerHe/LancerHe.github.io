@@ -21,7 +21,7 @@ URL 静态化是一个利于搜索引擎的设置，通过 URL 静态化，达�
 Apache 1.x 的用户请检查 conf/httpd.conf 中是否存在如下两段代码：
 
 <pre class="lang:apache decode:true">LoadModule Rewrite_module libexec/mod_Rewrite.so
-AddModule mod_Rewrite.c</pre>
+AddModule mod_Rewrite.c
 
 Apache 2.x 的用户请检查 conf/httpd.conf 中是否存在如下一段代码：
 
@@ -36,7 +36,7 @@ RewriteRule ^(.*)/forum-([0-9]+)-([0-9]+)\.html$ $1/forumdisplay.php?fid=$2&page
 RewriteRule ^(.*)/thread-([0-9]+)-([0-9]+)-([0-9]+)\.html$ $1/viewthread.php?tid=$2&extra=page\%3D$4&page=$3
 RewriteRule ^(.*)/space-(username|uid)-(.+)\.html$ $1/space.php?$2=$3
 RewriteRule ^(.*)/tag-(.+)\.html$ $1/tag.php?name=$2
-</IfModule></pre>
+</IfModule>
 
 如果没有安装 mod_Rewrite，您可以重新编译 Apache，并在原有 configure 的内容中加入 --enable-Rewrite=shared，然后再在 Apache 配置文件中加入上述代码即可。
 
@@ -56,7 +56,7 @@ RewriteRule ^archiver/((fid|tid)-[\w\-]+\.html)$ archiver/index.php?$1
 RewriteRule ^forum-([0-9]+)-([0-9]+)\.html$ forumdisplay.php?fid=$1&page=$2
 RewriteRule ^thread-([0-9]+)-([0-9]+)-([0-9]+)\.html$ viewthread.php?tid=$1&extra=page\%3D$3&page=$2
 RewriteRule ^space-(username|uid)-(.+)\.html$ space.php?$1=$2
-RewriteRule ^tag-(.+)\.html$ tag.php?name=$1</pre>
+RewriteRule ^tag-(.+)\.html$ tag.php?name=$1
 
 添加内容时，请遵照上面的提示，修改论坛所在的路径，然后保存。将 .htaccess 文件上传到论坛所在的目录中。然后进入论坛系统设置的搜索引擎优化，根据需要开启 URL 静态化功能。
 
@@ -79,7 +79,7 @@ RewriteRule ^/category(.+)$ /index.php?action/category/catid$1 [L]
 RewriteRule ^/viewnews(.+)$ /index.php?action/viewnews/itemid$1 [L]
 RewriteRule ^/viewthread(.+)$ /index.php?action/viewthread/tid$1 [L]
 RewriteRule ^/mygroup(.+)$ /index.php?action/mygroup/gid$1 [L]
-</IfModule></pre>
+</IfModule>
 
 Apache 虚拟主机用户：
 
@@ -98,7 +98,7 @@ RewriteRule ^action(.+)$ index.php?action$1 [L]
 RewriteRule ^category(.+)$ index.php?action/category/catid$1 [L]
 RewriteRule ^viewnews(.+)$ index.php?action/viewnews/itemid$1 [L]
 RewriteRule ^viewthread(.+)$ index.php?action/viewthread/tid$1 [L]
-RewriteRule ^mygroup(.+)$ index.php?action/mygroup/gid$1 [L]</pre>
+RewriteRule ^mygroup(.+)$ index.php?action/mygroup/gid$1 [L]
   
   <p>
     <strong>ECShop2.6.0 规则</strong>
@@ -133,7 +133,7 @@ RewriteRule ^(.*)/brand-([0-9]+)(.*)\.html $1/brand.php?id=$2
 RewriteRule ^(.*)/tag-(.*)\.html $1/search.php?keywords=$2
 RewriteRule ^(.*)/snatch-([0-9])\.html$ $1/snatch.php?id=$2
 RewriteRule ^(.*)/group_buy-([0-9])\.html$ $1/group_buy.php?act=view&id=$2
-</IfModule></pre>
+</IfModule>
   
   <p>
     Apache 虚拟主机用户：
@@ -166,7 +166,7 @@ RewriteRule ^brand-([0-9]+)(.*)\.html brand\.php\?id=$1 [QSA,L]
 RewriteRule ^tag-(.*)\.html search\.php\?keywords=$1 [QSA,L]
 RewriteRule ^snatch-([0-9]+)\.html$ snatch\.php\?id=$1 [QSA,L]
 RewriteRule ^group_buy-([0-9]+)\.html$ group_buy\.php\?act=view&id=$1 [QSA,L]
-RewriteRule ^auction-([0-9]+)\.html$ auction\.php\?act=view&id=$1 [QSA,L]</pre>
+RewriteRule ^auction-([0-9]+)\.html$ auction\.php\?act=view&id=$1 [QSA,L]
   
   <p>
     <strong>SupeV1.0beta 规则</strong>
@@ -185,7 +185,7 @@ RewriteRule ^(.*)/category-cid-([0-9]+)(-tag-([^-]*))?(-timelimit-([0-9]+))?(-or
 RewriteRule ^(.*)/vspace-(mid|username)-(.+)\.html$ $1/vspace.php?$2=$3
 RewriteRule ^(.*)/video-(vid|ivid)-(.+)\.html$ $1/video.php?$2=$3
 RewriteRule ^(.*)/special-spid-([0-9]+)\.html$ $1/special.php?spid=$2
-</IfModule></pre>
+</IfModule>
   
   <p>
     Apache 虚拟主机用户：
@@ -202,7 +202,7 @@ RewriteRule ^icategory\.html$ icategory.php
 RewriteRule ^category-cid-([0-9]+)(-tag-([^-]*))?(-timelimit-([0-9]+))?(-orderlimit-([0-9]+))?(-page-([0-9]+))?\.html$ category.php?cid=$1&tag=$3&timelimit=$5&orderlimit=$7&page=$9
 RewriteRule ^vspace-(mid|username)-(.+)\.html$ vspace.php?$1=$2
 RewriteRule ^video-(vid|ivid)-(.+)\.html$ video.php?$1=$2
-RewriteRule ^special-spid-([0-9]+)\.html$ special.php?spid=$1</pre>
+RewriteRule ^special-spid-([0-9]+)\.html$ special.php?spid=$1
   
   <p>
     <strong>UCHome1.0 规则</strong>
@@ -215,7 +215,7 @@ RewriteRule ^special-spid-([0-9]+)\.html$ special.php?spid=$1</pre>
   <pre class="lang:apache decode:true ">RewriteEngine On
 RewriteRule ^/(space|network)\-(.+)\.html$ /$1.php?Rewrite=$2 [L]
 RewriteRule ^/(space|network)\.html$ /$1.php [L]
-RewriteRule ^/([0-9]+)$ /space.php?uid=$1 [L]</pre>
+RewriteRule ^/([0-9]+)$ /space.php?uid=$1 [L]
   
   <p>
     Apache 虚拟主机用户：
@@ -225,7 +225,7 @@ RewriteRule ^/([0-9]+)$ /space.php?uid=$1 [L]</pre>
 RewriteBase /
 RewriteRule ^(space|network)\-(.+)\.html$ $1.php?Rewrite=$2 [L]
 RewriteRule ^(space|network)\.html$ $1.php [L]
-RewriteRule ^([0-9]+)$ space.php?uid=$1 [L]</pre>
+RewriteRule ^([0-9]+)$ space.php?uid=$1 [L]
   
   <p>
     当然，在我们每个发布的程序包中，都有关于此版本程序对应的 Rewrite 规则，大家可以在那里找到相对应的 Rewrite 规则。
@@ -245,7 +245,7 @@ RewriteRule ^([0-9]+)$ space.php?uid=$1 [L]</pre>
   
   <pre class="lang:apache decode:true ">RewriteRule ^/(space|network)-(.+)\.html$ /$1\.php\?rewrite=$2 [L]
 RewriteRule ^/(space|network)\.html$ /$1\.php [L]
-RewriteRule ^/([0-9]+)$ /space\.php\?uid=$1 [L]</pre>
+RewriteRule ^/([0-9]+)$ /space\.php\?uid=$1 [L]
   
   <p>
     Apache 虚拟主机用户：
@@ -256,7 +256,7 @@ RewriteEngine On
 RewriteBase /03uchome
 RewriteRule ^(space|network)\-(.+)\.html$ $1.php?rewrite=$2 [L]
 RewriteRule ^(space|network)\.html$ $1.php [L]
-RewriteRule ^([0-9]+)$ space.php?uid=$1 [L]</pre>
+RewriteRule ^([0-9]+)$ space.php?uid=$1 [L]
   
   <p>
     <strong>最后注意一点：<br /> </strong><strong><br /> </strong>查找到httpd.conf文件,如果AllowOverride为None的话..请一定把None都改成all.这样你写.htaccess这样的文件才会起到作用..

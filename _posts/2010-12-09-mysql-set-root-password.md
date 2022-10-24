@@ -17,6 +17,6 @@ tags:
 
 <pre class="lang:sh decode:true " >mysql> grant all privileges on *.* to 'root'@'localhost' identified by 'root123' with grant option;
 mysql> flush privileges;
-mysql> exit;</pre>
+mysql> exit;
 
 Ok..登陆MySql就用新密码吧。

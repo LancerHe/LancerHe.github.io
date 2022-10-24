@@ -22,7 +22,7 @@ PHP检验邮箱大部分都通过正则，
 
 注意的是：该函数在php5.3版本下只在Linux下起作用。
 
-<pre class="lang:php decode:true " >function checkEmail($email){
+function checkEmail($email){
 	$exp = "/^[0-9a-zA-Z]+([_a-z0-9\-\.]+)*@[a-zA-Z0-9]{2,}(?:[-.][a-zA-Z0-9]+)*\.[a-zA-Z]{2,}$/";
 		if( preg_match($exp, $email) ){
 			if(checkdnsrr(array_pop(explode("@",$email)),"MX"))
@@ -32,4 +32,4 @@ PHP检验邮箱大部分都通过正则，
 		} else {
 			return false;
 		}
-}</pre>
+}

@@ -19,13 +19,13 @@ mb\_convert\_encoding($content,&#8221;gb2312&#8243;,&#8221;UTF-8&#8243;)，转�
 经过资料查找，发现其实是CSV格式并不支持UTF-8的编码。但是他支持UTF-16的编码  
 可用此方法解决CSV中的编码问题
 
-<pre class="lang:php decode:true " >//输出BOM
+//输出BOM
 header('Cache-control: private');
 header('Content-Disposition: attachment; filename=test.csv');
 header('Content-type: text/csv; charset=UTF-16LE');
 echo(chr(255).chr(254));
 echo(mb_convert_encoding($content,"UTF-16LE","UTF-8"));
-</pre>
+
 
 但是打开Excel还是可能出现一定的问题。
 

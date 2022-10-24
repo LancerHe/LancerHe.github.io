@@ -26,7 +26,7 @@ tags:
 
 利用这三个函数足以实现同步资源。因此我设置了两个函数。<!--more-->
 
-<pre class="lang:php decode:true " >//FTP连接
+//FTP连接
     function loginFtp() {
         // set up basic connection
         $ftp_server = 'serverName Or Ip';
@@ -84,4 +84,3 @@ tags:
     // close the FTP stream
     ftp_close($conn);
 
-</pre>

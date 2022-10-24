@@ -36,7 +36,7 @@ tags:
 首先登陆在数据库所在Linux上用Root权限登陆Mysql。
 
 <pre class="lang:default decode:true " >use mysql;
-select host, user from mysql;</pre>
+select host, user from mysql;
 
 [<img class="alignnone size-full wp-image-751" title="remote-mysql-2" src="{{ site.url }}/uploads/2012/12/remote-mysql-2.gif" alt="" width="370" height="300" />][3]
 
@@ -54,13 +54,13 @@ select host, user from mysql;</pre>
 
 <pre class="lang:default decode:true " >mysql > grant all privileges on *.* to admin@localhost identified by '123456' with grant option;
 mysql > grant all privileges on *.* to admin@'%' identified by '123456' with grant option;
-</pre>
+
 
 其中第二句中&#8217;%&#8217;表示通配符，任何IP都能通过admin帐户远程访问mysql。  
 建立好之后我们再看看
 
 <pre class="lang:default decode:true " >select host, user from user;
-</pre>
+
 
 是不是发现有两个新的用户名是admin，这时我们就可以开启远程访问了。
 

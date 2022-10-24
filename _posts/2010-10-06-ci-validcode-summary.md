@@ -25,7 +25,7 @@ tags:
 
 <!--more-->
 
-<pre class="lang:php decode:true " ><?php
+<?php
 class Validation extends Controller{
 	function __construct(){
 		parent::Controller();
@@ -47,11 +47,11 @@ class Validation extends Controller{
 		}
 	}
 }
-?></pre>
+?>
 
 在views下建立一个视图 register,直接显示控制器Validation中的script方法.
 
-<pre class="lang:xhtml decode:true " ><script type="text/javascript" src="<?=site_url('validation/script')?>"></script></pre>
+<script type="text/javascript" src="<?=site_url('validation/script')?>"></script>
 
 附件下载：[Authcode CI验证码类][1]
 

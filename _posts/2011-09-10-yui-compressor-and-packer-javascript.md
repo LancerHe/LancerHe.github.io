@@ -49,7 +49,7 @@ compressor.reg 源代码，根据需求设置
 @="Compressor JS"
 
 [HKEY_CLASSES_ROOT\JSFile\shell\Compress JS\Command]
-@="D:\\www\\projects\\compressor.bat %1"</pre>
+@="D:\\www\\projects\\compressor.bat %1"
 
 ### 创建一个批处理compressor.bat
 
@@ -63,7 +63,7 @@ compressor.bat 源代码，根据需求设置
 
 java -jar D:\www\projects\yuicompressor.jar %1 -o %~n1.min%~x1
 java -jar D:\www\projects\jspacker.jar D:\www\projects\packer.js %~n1.min%~x1 %~n1.pack%~x1
-</pre>
+
 
 当然之前在网上看到很多批处理能把文件夹内所有的文件一起打包，个人觉得那个太智能了，遍历的文件夹也很多，导致我之前.svn文件夹下的文件也被打包了，很是郁闷，后来还是决定用单个文件的形式，毕竟我打包的数目也不多。
 

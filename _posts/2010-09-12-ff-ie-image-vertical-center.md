@@ -17,11 +17,13 @@ tags:
 一般来说在div中实现文字垂直居中可以做到：比如div {height:200px;line-height:200px;}只要把height和line-height设置差不多就好办了。但是假如是图片。。那么在FF中必然over了。。  
 无意间。我发现。。只要在图片前面有文字或者空格。就居中。。无奈中。。
 
-<pre class="lang:xhtml decode:true " ><style type="text/css">
+```
+<style type="text/css">
 #idiv {height:200px;width:200px;border:1px solid black;line-height:200px;}
 <style>
 <body>
 <div id="idiv">
 &nbsp;
 <img src="http://bbs.blueidea.com/images/smilies/default/eek.gif" />
-</div></pre>
+</div>
+```

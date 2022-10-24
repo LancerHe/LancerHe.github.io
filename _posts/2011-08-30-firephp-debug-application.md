@@ -29,7 +29,7 @@ tags:
 
 <pre class="lang:default decode:true " title="框架中调用FirePHP类" >//使用FirePHP.class.php
 $this->load->library('firephp');   //载入firephp类
-$this->firephp->log($this->pagination);  //调用该类的log方法</pre>
+$this->firephp->log($this->pagination);  //调用该类的log方法
 
 之后就可以在Firebug的控制台看到这个对象或者数据的结构，但并不影响整个页面HTML和Dom的结构。
 

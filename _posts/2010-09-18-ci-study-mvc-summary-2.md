@@ -29,7 +29,7 @@ tags:
   今天学习了CI的Model模型，总的来说Model完全就是用来给数据库打交道用了。<br /> 在models文件架建立blog_model.php用于给文章的数据增加，更新，查询的Model。
 </p>
 
-<pre class="lang:php decode:true " ><?php
+<?php
 class Blog_model extends Model {
 	
 	public $post_title;
@@ -60,7 +60,7 @@ class Blog_model extends Model {
 		return $query->result_array();
 	}
 }
-?></pre>
+?>
 
 <!--more-->
 
@@ -90,4 +90,4 @@ class Blog extends Controller{
 		$this->Blog_model->update_art($id);
 	}
 }
-?></pre>
+?>

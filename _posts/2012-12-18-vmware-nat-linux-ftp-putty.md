@@ -47,7 +47,7 @@ tags:
 > /etc/network/interfaces
 
 <pre class="lang:sh decode:true " >~$ vi /etc/network/interfaces
-</pre>
+
 
 修改刚刚设置好的信息  
 auto eth0  
@@ -61,7 +61,7 @@ netmask 255.255.255.0 (子网掩码)
 > /etc/resolv.conf
 
 <pre class="lang:sh decode:true " >~$ vi /etc/resolv.conf
-</pre>
+
 
 修改刚刚设置好的信息  
 nameserver 192.168.100.2 (网关)
@@ -70,7 +70,7 @@ nameserver 192.168.100.2 (网关)
 这是我们需要使用FTP来连接虚拟机，首先要Linux安装FTP服务
 
 <pre class="lang:sh decode:true " >~$ sudo apt-get install vsftpd
-</pre>
+
 
 此后即可连接FTP了。
 
@@ -81,7 +81,7 @@ nameserver 192.168.100.2 (网关)
 ~$ sudo apt-get install openssh-client
 ~$ sudo apt-get install openssh-server
 ~$ ps -A | grep ssh
-</pre>
+
 
 安装好后我们就可以使用Putty登陆  
 [<img class="alignnone size-full wp-image-740" title="vmware-3" src="{{ site.url }}/uploads/2012/12/vmware-3.jpg" alt="" width="589" height="176" />][4]

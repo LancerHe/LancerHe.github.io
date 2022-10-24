@@ -19,10 +19,10 @@ tags:
 
 写一个PHP页面，如emailcron.php：
 
-<pre class="lang:php decode:true " >//随便写，写自己要的效果，和计划任务无关
+//随便写，写自己要的效果，和计划任务无关
 require("mail.php");
 mail_send('lancer_he@hotmail.com', 'body test', 'test123AAABBBccc');
-mail_send('sd6192709@126.com', 'body test', 'test123AAABBBccc');</pre>
+mail_send('sd6192709@126.com', 'body test', 'test123AAABBBccc');
 
 新建计划任务，在程序处选择php.exe所在位置
 

@@ -19,7 +19,9 @@ tags:
 
 > **Note: **如果使用 PHP 的 CLI 交互模式 时，Autoloading 不存在。 
 
-<pre class="lang:php decode:true " >function __autoload($className){
+```
+function __autoload($className){
 	if (!class_exists($className, false))
 		require_once(dirname(__FILE__).'/../classes/'.$className.'.php');
-}</pre>
+}
+```

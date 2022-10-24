@@ -39,7 +39,7 @@ Ext.data.DataProxy类并不常使用， 一般使用它的子类：
 	[3,'泉州市'],
 	[4,'漳州市'],
 	[5,'三明市']
-]);</pre>
+]);
 
 Ext.data.DataReader类,其实总是依靠DataProxy做事，主要定义Proxy的逻辑结构，如：逻辑名称:name,数据类型:type,列与数据源的索引映射：mapping等等  
 data.DataReader类也有三个子类：**Ext.data.ArrayReader、Ext.data.JsonReader、Ext.data.XmlReader**。  
@@ -48,7 +48,7 @@ data.DataReader类也有三个子类：**Ext.data.ArrayReader、Ext.data.JsonRea
 <pre class="lang:js decode:true " title="定义Reader" >var cityReader = new Ext.data.ArrayReader({},[
 	{name: 'cid', type:'int', mapping:0},
 	{name: 'cname', type:'string', mapping:1}
-]);</pre>
+]);
 
 接下来的Store就简单了
 
@@ -56,7 +56,7 @@ data.DataReader类也有三个子类：**Ext.data.ArrayReader、Ext.data.JsonRea
 	proxy: cityProxy,
 	reader:cityReader,
 	autoLoad:true //开启自动加载，一般情况下没有开启，属于延迟加载，也可以采用 cityStore.load()方法
-});</pre>
+});
 
 我们用画张图来看看关系：  
 <img src="http://crackedzone.com/blog/wp-content/uploads/2011/01/Ext-store-understand.gif" alt="" title="Ext-store-understand" width="265" height="196" class="aligncenter size-full wp-image-374" />  
@@ -72,7 +72,7 @@ data.DataReader类也有三个子类：**Ext.data.ArrayReader、Ext.data.JsonRea
 	displayField: 'cname',  //显示的字段
 	valueField  : 'cid',    //真实的字段
 	emptyText   : '请选择福建的城市',
-});</pre>
+});
 
 再设置一个按钮通过ComboBox类中的两个方法：getValue()和getRawValue()，来查看下拉列表框的显示值和真实值：
 
@@ -82,4 +82,4 @@ data.DataReader类也有三个子类：**Ext.data.ArrayReader、Ext.data.JsonRea
 	handler : function() {
 		Ext.Msg.alert('结构','实际值:' + cityCombo.getValue() + '; 显示值:' + cityCombo.getRawValue());
 	}
-});</pre>
+});

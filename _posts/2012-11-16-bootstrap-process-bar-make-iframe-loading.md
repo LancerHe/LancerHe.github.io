@@ -40,7 +40,7 @@ tags:
 </div>
 <div id="layout-right">
     <iframe id="content" frameborder="0" name="content" src="about:blank"></iframe>
-</div></pre>
+</div>
 
 loading-Frame为Loading所在整个区域，将用于覆盖在IFrame之上，形成遮罩效果。  
 layout-left为左侧导航用于点击将内容显示在iframe内中。  
@@ -53,7 +53,7 @@ layout-right用于存放iframe容器。
 #layout-left a {font-size: 12px; font-family: "微软雅黑"}
 #layout-right, #loading-frame {left: 197px;right: 0;z-index: 10; background: #FFF}
 #loading-frame {background: #000; z-index: 11;}
-#loading-wrap {width: 300px; left: 50%; top:40%; margin-left: -150px;}</pre>
+#loading-wrap {width: 300px; left: 50%; top:40%; margin-left: -150px;}
 
 定义样式要注意到 #loading-frame比#loading-wrap的z-index要高。  
 接下来就是制作loading动画效果：
@@ -117,7 +117,7 @@ $("#left-nav a").bind('click', function(){
         };  
     }
     return false;
-});</pre>
+});
 
 效果图如下：  
 [<img src="{{ site.url }}/uploads/2012/11/bootstrap-loading-screen.jpg" alt="" title="bootstrap-loading-screen" width="1009" height="562" class="alignnone size-full wp-image-727" />][2]

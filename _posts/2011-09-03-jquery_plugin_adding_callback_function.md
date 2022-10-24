@@ -30,7 +30,7 @@ tags:
 		config.initFn.call(this); // 执行回调函数
   }
 
-};</pre>
+};
 
 在页面中调用
 
@@ -40,4 +40,3 @@ tags:
 		alert('init successfully');
 	}
 })
-</pre>

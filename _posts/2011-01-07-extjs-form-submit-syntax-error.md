@@ -87,7 +87,7 @@ ExtJS制作Form
   
   Login.render(Ext.get('loginForm'));
 });
-</pre>
+
 
 PHP文件
 
@@ -101,4 +101,4 @@ PHP文件
 	} else {
 		echo "{success:true,msg:'Wrong user name or password.'}";exit();
 	}
-}</pre>
+}

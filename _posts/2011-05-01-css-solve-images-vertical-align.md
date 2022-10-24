@@ -16,7 +16,8 @@ tags:
 
 使用纯CSS实现未知尺寸的图片(但高宽都小于200px)在200px的正方形容器中水平和垂直居中。
 
-<pre class="lang:css decode:true " >.box {
+```
+.box {
         /*非IE的主流浏览器识别的垂直居中的方法*/
         display: table-cell;
         vertical-align:middle;
@@ -33,10 +34,11 @@ tags:
 .box img {
         /*设置图片垂直居中*/
         vertical-align:middle;
-}</pre>
+}
 
-<pre class="lang:xhtml decode:true " ><div class="box">
+<div class="box">
         <img src="http://www.playgoogle.com/image/logo/playgoogleLogo.jpg" />
-</div></pre>
+</div>
+```
 
 这种解决方法的好处是不用加一些不必要的xhtml代码。缺陷是需要已知容器的高度，在容器高度未知时，无法处理。

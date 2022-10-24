@@ -87,9 +87,9 @@ tags:
 
 于是可以这样来区分IE6，IE7，firefox
 
-<pre class="lang:css decode:true " >background:orange !important;
+background:orange !important;
 *background:green;
-_background:blue;</pre>
+_background:blue;
 
 <!--more-->
 

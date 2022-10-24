@@ -25,7 +25,7 @@ tags:
 </p>
 
 <pre class="lang:sh decode:true " >PATH=$PATH:/sbin
-export PATH=$PATH:/sbin</pre>
+export PATH=$PATH:/sbin
 
 <p style="text-indent: 2em;">
   花了很久时间终于学会了使用:wq保存退出,注销重新登录,输入ifconfig,OK~

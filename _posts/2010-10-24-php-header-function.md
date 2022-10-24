@@ -18,7 +18,7 @@ header(&#8216;Content-Type: text/html; charset=utf-8&#8242;);
 下面列出header函数的大部分使用方式  
 <!--more-->
 
-<pre class="lang:php decode:true " ><?php
+<?php
 // fix 404 pages: 
 header('HTTP/1.1 200 OK'); 
 
@@ -91,4 +91,4 @@ header('HTTP/1.1 401 Unauthorized');
 header('WWW-Authenticate: Basic realm="Top Secret"'); 
 print 'Text that will be displayed if the user hits cancel or '; 
 print 'enters wrong login data'; 
-?></pre>
+?>
