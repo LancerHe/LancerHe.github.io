@@ -67,7 +67,7 @@ $($NGINX_CMD -s reload)
 */5 * * * * /bin/bash /usr/bin/block-ip.sh &> /dev/null
 ```
 
-类似文档：[Runbing's Blog](https://runbing.cc/archives/nginx-limite-request-and-block-ip.html){:target="_blank"}
+参考文章：[Runbing's Blog](https://runbing.cc/archives/nginx-limite-request-and-block-ip.html){:target="_blank"}
 
 此时虽然负载下降，服务资源也可用，但是实际上对爬虫采集没有任何威胁，只是拉长它采集的时间而已，还是对我们的网站念念不忘，于是灵机一动，决定给他返回状态码从503改成正常返回200，同时构造了一个空返回值，毕竟很多关键词返回都是空的，这样我们就混淆的所有的结果，让爬虫获得非正确的结果数据。
 
@@ -77,10 +77,10 @@ $($NGINX_CMD -s reload)
 location ^~ /search{
         limit_req zone=search_second;
         limit_req zone=search_minute;
-        error_page 503 =200 /search-term-503-res;
+        error_page 503 =200 /search-503-res;
 }
 
-location /search-term-503-res {
+location /search-503-res {
         return 200 '{"code":1,"data":[]}';
 }
 ```
