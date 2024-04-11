@@ -52,9 +52,7 @@ links:
 timezone:    Asia/Shanghai
 future:      true
 highlighter: rouge
-kramdown:
-  input: GFM
-  syntax_highlighter: rouge
+markdown: kramdown
 redcarpet:
   extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data", "strikethrough","superscript"]
 
@@ -65,6 +63,8 @@ permalink:   /:categories/:year/:month/:day/:title
 paginate: 5
 
 kramdown:
+  input: GFM
+  syntax_highlighter: rouge
   auto_ids: true
   footnote_nr: 1
   entity_output: as_char
